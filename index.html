@@ -51,6 +51,21 @@
     background:var(--teal);border-radius:2px;left:0;opacity:0}
   .caret.on{opacity:1;animation:blink .8s steps(1) infinite}
   @keyframes blink{50%{opacity:0}}
+  .cover-refinement{position:absolute;inset:0;z-index:1;pointer-events:none;font-family:Arial,Inter,sans-serif;color:#092d5a}
+  .cover-brand-mask{position:absolute;left:0;top:0;width:100%;height:27.5%;background:#fff}
+  .cover-title-mask{position:absolute;left:0;top:27.4%;width:63%;height:22.3%;background:linear-gradient(90deg,#fff 0%,#fff 90%,rgba(255,255,255,.85) 94%,rgba(255,255,255,.38) 98%,rgba(255,255,255,0) 100%);clip-path:polygon(0 0,100% 0,100% 100%,0 95%)}
+  .cover-footer-mask{position:absolute;left:0;top:54.5%;width:64%;height:45.5%;overflow:visible}
+  .cover-logo-icon{position:absolute;left:0;top:0;width:42%;height:27%;object-fit:contain}
+  .cover-wordmark{position:absolute;left:34.5%;top:11.3%;font-size:9.6cqw;line-height:1;font-weight:800;letter-spacing:.015em;white-space:nowrap;color:#082c59}
+  .cover-wordmark span{color:#05a88f}
+  .cover-tagline{position:absolute;left:31.5%;top:19%;font-size:1.9cqw;font-weight:600;letter-spacing:.4cqw;white-space:nowrap;color:#05a88f}
+  .cover-title-copy{position:absolute;left:9%;top:27.8%;font-size:7.5cqw;line-height:1;font-weight:750;white-space:nowrap;color:#092d5a}
+  .cover-accent{position:absolute;left:9%;top:34.7%;width:8.5%;height:.45%;background:#dba54c}
+  .cover-description{position:absolute;left:9%;top:37.5%;width:53%;font-size:3.2cqw;line-height:1.34;font-weight:500;color:#153a64}
+  .cover-footer-line{position:absolute;left:9.3%;bottom:15%;width:9%;height:.35%;background:#dba54c}
+  .cover-footer-copy{position:absolute;left:9.3%;bottom:6.8%;width:48%;font-size:1.9cqw;line-height:1.45;font-weight:500;letter-spacing:0;color:#f4f4f2}
+  .cover-footer-copy span{display:block}
+  .cover-footer-copy strong{font-weight:700;color:#3ddbb0}
 
   /* ---------- Page 2: founder zoom-in ---------- */
   .founder{left:69.6343%;top:7.0509%;width:22.5755%;height:19.2501%;
@@ -88,7 +103,7 @@
   .y3{background:#fff2d6;color:#a0620f}.y4{background:#efe6fd;color:#7c3aed}.y5{background:#ffe8da;color:#d9530b}
 
 
-  /* ---------- Page 3: Who we are / What we do / Initial focus ---------- */
+  /* ---------- Page 3: Introduction ---------- */
   .p3c{position:absolute;left:8.754%;top:18.30%;width:82.41%;height:74.3%;--pt:calc(100cqw / 419.25);
     font-family:'Inter',system-ui,sans-serif;color:#40506a;display:flex;flex-direction:column;gap:calc(var(--pt)*8)}
   .p3c .serif{font-family:'Caladea',Georgia,serif}
@@ -271,6 +286,22 @@
 .audience6 .bar-chart{grid-template-columns:repeat(8,1fr);align-items:end;gap:calc(100cqw / 419.25 * 5);height:calc(100cqw / 419.25 * 145);padding:calc(100cqw / 419.25 * 10) calc(100cqw / 419.25 * 8) calc(100cqw / 419.25 * 7);background-size:100% calc(100cqw / 419.25 * 29),calc(100cqw / 419.25 * 40) 100%,auto}.audience6 .bar-row{display:grid;grid-template-rows:auto 1fr auto;align-self:stretch;min-height:0}.audience6 .bar-meta{display:contents}.audience6 .bar-meta strong{grid-row:1;text-align:center;font-size:calc(100cqw / 419.25 * 5.4);white-space:nowrap}.audience6 .bar-meta span{grid-row:3;text-align:center;font-size:calc(100cqw / 419.25 * 5.2);white-space:nowrap}.audience6 .bar-track{grid-row:2;align-self:stretch;width:70%;height:auto;margin:calc(100cqw / 419.25 * 3) auto 0;border-radius:calc(100cqw / 419.25 * 3) calc(100cqw / 419.25 * 3) 0 0;background:rgba(255,255,255,.8);box-shadow:inset 0 0 0 1px #d1e2eb;display:flex;align-items:flex-end;overflow:hidden}.audience6 .bar-track i{width:100%;height:var(--bar);background:linear-gradient(180deg,#4d8dff,var(--a),#35d0ba);transform:scaleY(0);transform-origin:bottom;border-radius:inherit;box-shadow:0 0 calc(100cqw / 419.25 * 5) rgba(0,71,120,.2)}.audience6.play .bar-track i{animation:a6BarVertical 1.1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--delay,0s)}.audience6 .bar-row:last-child{grid-column:1 / -1;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:calc(100cqw / 419.25 * 4);min-height:calc(100cqw / 419.25 * 14)}.audience6 .bar-row:last-child .bar-meta{display:flex;gap:calc(100cqw / 419.25 * 4);align-items:center}.audience6 .bar-row:last-child .bar-meta span,.audience6 .bar-row:last-child .bar-meta strong{font-size:calc(100cqw / 419.25 * 5.6)}.audience6 .bar-row:last-child .bar-track{display:none}@keyframes a6BarVertical{to{transform:scaleY(1)}}
 .audience6 .bar-chart{display:block;height:auto;padding:calc(100cqw / 419.25 * 9);background:linear-gradient(#dcebf0 1px,transparent 1px),linear-gradient(180deg,#f7fcff,#eef6fb);background-size:100% calc(100cqw / 419.25 * 34),auto;border:1px solid #cfe2eb;border-radius:calc(100cqw / 419.25 * 5)}.audience6 .audience-svg{display:block;width:100%;height:auto;overflow:visible}.audience6 .audience-svg .grid{stroke:#cfdde5;stroke-width:1}.audience6 .audience-svg .axis{stroke:#687b8d;stroke-width:1.4}.audience6 .audience-svg text{font-family:'Inter',system-ui,sans-serif;fill:#16365a}.audience6 .audience-svg .value{font-size:14px;font-weight:800;text-anchor:middle}.audience6 .audience-svg .label{font-size:12px;text-anchor:middle}.audience6 .audience-svg .unit{font-size:11px;fill:#65778b}.audience6 .audience-svg .bar{transform-box:fill-box;transform-origin:center bottom;transform:scaleY(0)}.audience6.play .audience-svg .bar{animation:a6SvgBar 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--delay,0s)}.audience6 .audience-svg .bar:nth-of-type(1){--delay:.08s}.audience6 .audience-svg .bar:nth-of-type(2){--delay:.16s}.audience6 .audience-svg .bar:nth-of-type(3){--delay:.24s}.audience6 .audience-svg .bar:nth-of-type(4){--delay:.32s}.audience6 .audience-svg .bar:nth-of-type(5){--delay:.4s}.audience6 .audience-svg .bar:nth-of-type(6){--delay:.48s}.audience6 .audience-svg .bar:nth-of-type(7){--delay:.56s}.audience6 .audience-svg .bar:nth-of-type(8){--delay:.64s}@keyframes a6SvgBar{to{transform:scaleY(1)}}
 .audience6{position:absolute;inset:2% 2%;padding:calc(100cqw / 419.25 * 15);border:2px solid #d5e5ec;border-radius:calc(100cqw / 419.25 * 8);background:linear-gradient(145deg,#fff,#f8fcff);color:#14263d;font-family:'Inter',system-ui,sans-serif;overflow:hidden}.audience6:before{content:"";position:absolute;inset:0 auto 0 0;width:calc(100cqw / 419.25 * 3);background:linear-gradient(#3ddbb0,#0a6f9a)}.audience6 h4{margin:0;font-size:calc(100cqw / 419.25 * 23);line-height:1.08;background:linear-gradient(90deg,#0047a8,#08a7ae,#e04f8b);-webkit-background-clip:text;background-clip:text;color:transparent}.audience6 .sub{margin-top:calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 8.5);color:#52657a}.audience6 .horizon{display:inline-flex;margin-top:calc(100cqw / 419.25 * 5);padding:calc(100cqw / 419.25 * 3) calc(100cqw / 419.25 * 5);border-radius:999px;background:#e6faf4;color:#007b86;font-size:calc(100cqw / 419.25 * 6);font-weight:700;letter-spacing:.05em;text-transform:uppercase}.audience6 .hero{margin-top:calc(100cqw / 419.25 * 10);padding:calc(100cqw / 419.25 * 9);border:1px solid #cfe3ec;border-radius:calc(100cqw / 419.25 * 6);background:linear-gradient(135deg,#effaff,#f4f1ff);position:relative}.audience6 .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(100cqw / 419.25 * 2);background:#35d0ba}.audience6 .metric{font-size:calc(100cqw / 419.25 * 22);font-weight:800;color:#062657;line-height:1}.audience6 .metric-label{margin-top:calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 8.5);font-weight:700}.audience6 .source{margin-top:calc(100cqw / 419.25 * 2);font-size:calc(100cqw / 419.25 * 6.2);line-height:1.35;color:#52657a}.audience6 .section-title{margin:calc(100cqw / 419.25 * 10) 0 calc(100cqw / 419.25 * 5);font-size:calc(100cqw / 419.25 * 9);font-weight:800;color:#005f89;text-transform:uppercase;letter-spacing:.06em}.audience6 .country-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(100cqw / 419.25 * 4)}.audience6 .country{position:relative;padding:calc(100cqw / 419.25 * 6);min-height:calc(100cqw / 419.25 * 34);border:1px solid #cfe2eb;border-radius:calc(100cqw / 419.25 * 4);background:linear-gradient(135deg,#f2fbff,#f7f3ff);overflow:hidden}.audience6 .country:after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(100cqw / 419.25 * 2);background:var(--a,#35d0ba)}.audience6 .country:nth-child(2){--a:#ffb84d;background:linear-gradient(135deg,#fff9e9,#eff8ff)}.audience6 .country:nth-child(3){--a:#4d8dff;background:linear-gradient(135deg,#eef4ff,#f5f0ff)}.audience6 .country:nth-child(4){--a:#e56b9f;background:linear-gradient(135deg,#fff0f6,#fff8eb)}.audience6 .country:nth-child(5){--a:#9b6cff}.audience6 .country:nth-child(6){--a:#ff7b91}.audience6 .country:nth-child(7){--a:#35a9d0}.audience6 .country:nth-child(8){--a:#f2a93b}.audience6 .country:nth-child(9){--a:#7fb069}.audience6 .country b{display:block;font-size:calc(100cqw / 419.25 * 7.2);color:#12345d}.audience6 .country span{display:block;margin-top:calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 9);font-weight:800;color:#062657}.audience6 .footer-note{margin-top:calc(100cqw / 419.25 * 6);font-size:calc(100cqw / 419.25 * 5.6);line-height:1.35;color:#65778b;font-style:italic}
+.market-opportunity .doc-card { position: relative; padding-right: 90px; }
+.market-opportunity .market-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 65px; height: 65px; object-fit: contain; }
+  .doc-page-content.services-page{background:#fff;border-color:#d5e4ed;color:#092e57}
+  .services-page-number{color:#168b98}
+  .services-heading h2{color:#082f5a}
+  .services-heading h2 em{color:#008f9a}
+  .service-list{top:38%;bottom:15%;gap:calc(100cqw / 419.25 * 5)}
+  .service-row{grid-template-columns:calc(100cqw / 419.25 * 24) calc(100cqw / 419.25 * 38) minmax(0,1fr);gap:calc(100cqw / 419.25 * 8);border:1px solid #dce9f0;border-left:calc(100cqw / 419.25 * 3) solid #19b8a6;border-radius:calc(100cqw / 419.25 * 7);background:#f5fafb;box-shadow:0 2px 8px rgba(10,52,85,.06)}
+  .service-row:nth-child(2){border-left-color:#ed6da2;background:#fff7fa}.service-row:nth-child(3){border-left-color:#8a7de2;background:#f8f7ff}.service-row:nth-child(4){border-left-color:#f2a83b;background:#fffaf1}.service-row:nth-child(5){border-left-color:#4b9bd5;background:#f3f9ff}
+  .service-step{border:0;background:#dff5f0;color:#078c80;border-radius:50%}
+  .service-icon{width:calc(100cqw / 419.25 * 36);height:calc(100cqw / 419.25 * 36);object-fit:cover;border-radius:calc(100cqw / 419.25 * 8)}
+  .service-icon-other{display:grid;place-items:center;background:#dceeff;color:#1679b8;font-size:calc(100cqw / 419.25 * 25);font-weight:600}
+  .service-copy h3{color:#092f58;font-size:calc(100cqw / 419.25 * 10.5)}
+  .service-copy p{color:#526c82;font-size:calc(100cqw / 419.25 * 7.6);line-height:1.35}
+  .services-disclaimer{left:6%;right:6%;bottom:5%;color:#426078;background:#eef7fb;border-radius:calc(100cqw / 419.25 * 5);padding:calc(100cqw / 419.25 * 8)}
+  .services-disclaimer p{font-size:calc(100cqw / 419.25 * 8);font-weight:600}
 </style>
 <style>
   /* Keep the audience chart annotations inside the card at narrow sizes. */
@@ -284,6 +315,218 @@
   .audience6 .audience-svg .unit:nth-of-type(4){transform:translateX(21px)}
   .audience6 .audience-svg .unit:nth-of-type(5){transform:translateX(12px)}
   .audience6 .audience-svg>g{transform:translateX(18px)}
+  #book>.page:not([data-deck="keep"]){display:none}
+  .doc-page-content{position:absolute;inset:4.5% 5%;padding:calc(100cqw / 419.25 * 14);border:1px solid #d5e5ec;border-radius:calc(100cqw / 419.25 * 8);background:linear-gradient(145deg,#fff,#f8fcff);color:#14263d;font-family:'Inter',system-ui,sans-serif;overflow:hidden}
+  .doc-page-content:before{content:"";position:absolute;inset:0 auto 0 0;width:calc(100cqw / 419.25 * 3);background:linear-gradient(#3ddbb0,#0a6f9a)}
+  .doc-kicker{display:flex;align-items:center;gap:calc(100cqw / 419.25 * 4);font-size:calc(100cqw / 419.25 * 8);font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#087e86}
+  .doc-kicker:before{content:"";width:calc(100cqw / 419.25 * 12);height:calc(100cqw / 419.25 * 1.2);border-radius:99px;background:linear-gradient(90deg,#3ddbb0,#4d8dff)}
+  .doc-page-content h2{margin:calc(100cqw / 419.25 * 6) 0 0;font-size:calc(100cqw / 419.25 * 25);line-height:1.08;letter-spacing:-.03em;color:#062657}
+  .doc-lead{margin-top:calc(100cqw / 419.25 * 5);font-size:calc(100cqw / 419.25 * 9.5);line-height:1.45;color:#52657a}
+  .doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(100cqw / 419.25 * 6);margin-top:calc(100cqw / 419.25 * 9)}
+  .doc-card{position:relative;min-width:0;min-height:calc(100cqw / 419.25 * 76);padding:calc(100cqw / 419.25 * 8.5);border:1px solid #dce8ef;border-radius:calc(100cqw / 419.25 * 5);background:linear-gradient(145deg,#fff,#f3f9fc);overflow:hidden}
+  .doc-card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(100cqw / 419.25 * 1.6);background:linear-gradient(90deg,#3ddbb0,#4d8dff,#e56b9f)}
+  .doc-card .mark{display:grid;place-items:center;width:calc(100cqw / 419.25 * 20);height:calc(100cqw / 419.25 * 20);border-radius:50%;background:#e5f8f3;color:#078a79;font-size:calc(100cqw / 419.25 * 7.5);font-weight:800}
+  .doc-card h3{margin:calc(100cqw / 419.25 * 3) 0 0;font-size:calc(100cqw / 419.25 * 10.5);line-height:1.2;color:#12345d}
+  .doc-card p{margin:calc(100cqw / 419.25 * 2) 0 0;font-size:calc(100cqw / 419.25 * 8.5);line-height:1.4;color:#52657a}
+  .doc-card:nth-child(4n+2){background:linear-gradient(145deg,#fffaf0,#f2f8ff)}
+  .doc-card:nth-child(4n+3){background:linear-gradient(145deg,#f3fcf9,#f2f7ff)}
+  .doc-card:nth-child(4n){background:linear-gradient(145deg,#fff4f8,#f8f5ff)}
+  .doc-grid[data-count="3"]{grid-template-columns:1fr}
+  .doc-grid[data-count="3"] .doc-card{display:grid;grid-template-columns:calc(100cqw / 419.25 * 22) 1fr;column-gap:calc(100cqw / 419.25 * 5);align-items:center}
+  .doc-grid[data-count="3"] .mark{grid-row:1 / span 2}
+  .doc-grid[data-count="3"] .doc-card h3{margin:0}
+  .doc-grid[data-count="3"] .doc-card p{margin-top:calc(100cqw / 419.25 * 1)}
+  .doc-steps{display:grid;grid-template-columns:1fr 1fr;gap:calc(100cqw / 419.25 * 2.5);margin-top:calc(100cqw / 419.25 * 7)}
+  .doc-step{display:flex;align-items:flex-start;gap:calc(100cqw / 419.25 * 3);min-height:calc(100cqw / 419.25 * 30);padding:calc(100cqw / 419.25 * 3.2);border:1px solid #e1eaf0;border-radius:calc(100cqw / 419.25 * 3);background:#fff;font-size:calc(100cqw / 419.25 * 7.4);line-height:1.32;color:#52657a}
+  .doc-step b{flex:none;display:grid;place-items:center;width:calc(100cqw / 419.25 * 13);height:calc(100cqw / 419.25 * 13);border-radius:50%;background:#e4f8f2;color:#087e76;font-size:calc(100cqw / 419.25 * 5.8)}
+  .doc-step strong{color:#12345d}
+  .doc-note{margin-top:calc(100cqw / 419.25 * 6);padding:calc(100cqw / 419.25 * 6);border-radius:calc(100cqw / 419.25 * 4);background:linear-gradient(100deg,#062657,#0a6f9a,#05a5b5);color:white;font-size:calc(100cqw / 419.25 * 8.5);font-weight:700;line-height:1.35}
+  .doc-small{margin-top:calc(100cqw / 419.25 * 4);font-size:calc(100cqw / 419.25 * 5.7);line-height:1.35;color:#718198}
+  .doc-video{display:flex;align-items:center;gap:calc(100cqw / 419.25 * 10);margin-top:calc(100cqw / 419.25 * 10);padding:calc(100cqw / 419.25 * 12);border-radius:calc(100cqw / 419.25 * 7);background:linear-gradient(120deg,#062657,#0b4d79,#078877);color:white}
+  .doc-play{flex:none;display:grid;place-items:center;width:calc(100cqw / 419.25 * 34);height:calc(100cqw / 419.25 * 34);border:1px solid rgba(255,255,255,.55);border-radius:50%;color:#3ddbb0;font-size:calc(100cqw / 419.25 * 13);animation:docPulse 2.4s ease-in-out infinite}
+  .doc-video strong{display:block;font-size:calc(100cqw / 419.25 * 10)}
+  .doc-video span{display:block;margin-top:calc(100cqw / 419.25 * 2);font-size:calc(100cqw / 419.25 * 6.5);line-height:1.35;color:rgba(255,255,255,.8)}
+  .doc-page-content.mission-vision-page{padding:0;border-color:#d8e6ec;background:radial-gradient(ellipse at 9% 8%,rgba(61,219,176,.12),transparent 30%),linear-gradient(145deg,#fff,#f2f8fb)}
+  .doc-page-content.mission-vision-page:before{display:none}
+  .mission-photo{position:absolute;top:11%;right:6%;width:43%;height:25%;z-index:1;object-fit:cover;border:1px solid rgba(255,255,255,.9);border-radius:calc(100cqw / 419.25 * 7);box-shadow:0 calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 16) rgba(16,54,82,.18)}
+  .mission-page-number{position:absolute;top:4.5%;right:6%;z-index:2;color:#426178;font-size:calc(100cqw / 419.25 * 7);font-weight:600;letter-spacing:.16em}
+  .mission-heading{position:absolute;left:6%;top:12%;width:43%;z-index:1;color:#082d5d}
+  .mission-eyebrow{margin-bottom:calc(100cqw / 419.25 * 4);color:#138b83;font-size:calc(100cqw / 419.25 * 6.5);font-weight:750;letter-spacing:.14em}
+  .mission-heading h2{margin:0;line-height:1.02;letter-spacing:-.03em}
+  .mission-heading strong{display:block;font-size:calc(100cqw / 419.25 * 24);font-weight:750}
+  .mission-heading h2 span{display:block;margin-top:calc(100cqw / 419.25 * 1.5);font-size:calc(100cqw / 419.25 * 18);font-weight:500;line-height:1.04;color:#147d83}
+  .mission-heading p{max-width:98%;margin:calc(100cqw / 419.25 * 5) 0 0;color:#456278;font-size:calc(100cqw / 419.25 * 6.8);line-height:1.38}
+  .mission-card-row{position:absolute;left:6%;right:6%;top:42%;height:27%;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:2.5%}
+  .mission-card{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;padding:calc(100cqw / 419.25 * 10) calc(100cqw / 419.25 * 9);border:1px solid rgba(11,53,92,.1);border-radius:calc(100cqw / 419.25 * 8);text-align:center;box-shadow:0 calc(100cqw / 419.25 * 4) calc(100cqw / 419.25 * 12) rgba(16,54,82,.12)}
+  .mission-card.vision{background:linear-gradient(145deg,#062657,#0c4c7c);color:#fff}
+  .mission-card.mission{background:rgba(255,255,255,.95);color:#173858}
+  .mission-card-icon{display:grid;place-items:center;width:calc(100cqw / 419.25 * 38);height:calc(100cqw / 419.25 * 38);flex:none;border-radius:50%;background:#fff}
+  .mission-card-icon svg{width:65%;height:65%;stroke:#0b8d84;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .mission-card h3{margin:calc(100cqw / 419.25 * 3) 0 0;font-size:calc(100cqw / 419.25 * 9.5);line-height:1.1;letter-spacing:.06em}
+  .mission-card-rule{width:calc(100cqw / 419.25 * 20);height:1px;margin:calc(100cqw / 419.25 * 2.5) 0;background:#d4a554}
+  .mission-card p{max-width:100%;margin:0;font-size:calc(100cqw / 419.25 * 6.8);line-height:1.32}
+  .mission-card.vision p{color:rgba(255,255,255,.9)}
+  .mission-card.mission p{color:#536b7d}
+  .mission-core-values{position:absolute;left:6%;right:6%;top:72%;height:16%;z-index:1;padding:calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 7);border:1px solid rgba(20,66,100,.08);border-radius:calc(100cqw / 419.25 * 7);background:rgba(255,255,255,.94);box-shadow:0 calc(100cqw / 419.25 * 3) calc(100cqw / 419.25 * 10) rgba(16,54,82,.1)}
+  .mission-core-values h3{margin:0;text-align:center;color:#173b62;font-size:calc(100cqw / 419.25 * 8.5);line-height:1.1;letter-spacing:.08em}
+  .mission-values-row{display:grid;grid-template-columns:repeat(4,1fr);height:75%;margin-top:calc(100cqw / 419.25 * 3)}
+  .mission-value{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(100cqw / 419.25 * 1.5);border-right:1px solid #dce7ec;color:#294c6b;font-size:calc(100cqw / 419.25 * 5.8);font-weight:500}
+  .mission-value:last-child{border-right:0}
+  .mission-value svg{width:calc(100cqw / 419.25 * 17);height:calc(100cqw / 419.25 * 17);stroke:#123e65;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  .mission-vision-page.play .mission-heading{animation:missionRise .65s cubic-bezier(.2,.75,.25,1) both}
+  .mission-vision-page.play .mission-photo{animation:missionPhotoIn .8s cubic-bezier(.2,.75,.25,1) .12s both}
+  .mission-vision-page.play .mission-card{animation:missionRise .6s cubic-bezier(.2,.75,.25,1) both}
+  .mission-vision-page.play .mission-card:nth-child(2){animation-delay:.18s}
+  .mission-vision-page.play .mission-card-icon{animation:missionIconIn .55s cubic-bezier(.2,.8,.25,1) .22s both}
+  .mission-vision-page.play .mission-core-values{animation:missionRise .6s cubic-bezier(.2,.75,.25,1) .42s both}
+  .mission-vision-page.play .mission-value{animation:missionRise .45s cubic-bezier(.2,.75,.25,1) both}
+  .mission-vision-page.play .mission-value:nth-child(1){animation-delay:.55s}.mission-vision-page.play .mission-value:nth-child(2){animation-delay:.62s}.mission-vision-page.play .mission-value:nth-child(3){animation-delay:.69s}.mission-vision-page.play .mission-value:nth-child(4){animation-delay:.76s}
+  @keyframes missionRise{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 5))}to{opacity:1;transform:none}}
+  @keyframes missionPhotoIn{from{opacity:0;transform:translateX(calc(100cqw / 419.25 * 7)) scale(.97)}to{opacity:1;transform:none}}
+  @keyframes missionIconIn{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:scale(1)}}
+  @media(prefers-reduced-motion:reduce){.mission-vision-page.play .mission-heading,.mission-vision-page.play .mission-photo,.mission-vision-page.play .mission-card,.mission-vision-page.play .mission-card-icon,.mission-vision-page.play .mission-core-values,.mission-vision-page.play .mission-value{animation:none}}
+  .doc-page-content.services-page{padding:0;border-color:rgba(104,222,230,.34);background:radial-gradient(ellipse at 82% 18%,rgba(5,150,180,.2),transparent 34%),radial-gradient(ellipse at 7% 84%,rgba(8,104,144,.3),transparent 42%),linear-gradient(155deg,#03152b,#052d4b 58%,#04182f);color:#f4f8fc}
+  .doc-page-content.services-page:before{display:none}
+  .doc-page-content.founder-page{inset:0;padding:0;border:0;border-radius:0;background:#fff;overflow:hidden}
+  .doc-page-content.founder-page:before{display:none}
+  .founder-slide-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:fill}
+  .founder-page-number-mask{position:absolute;right:4.8%;bottom:2.5%;z-index:1;width:7.2%;height:3.3%;background:#002b57;pointer-events:none}
+  .services-page-number{position:absolute;top:4.5%;right:6%;z-index:3;color:rgba(199,234,244,.78);font-size:calc(100cqw / 419.25 * 7);font-weight:600;letter-spacing:.16em}
+  .services-heading{position:absolute;top:10%;left:6%;width:43%;z-index:2;color:#f5f8fb}
+  .services-heading h2{margin:0;font-size:calc(100cqw / 419.25 * 21);line-height:1.04;letter-spacing:-.035em;color:#f5f8fb}
+  .services-heading h2 span,.services-heading h2 em{display:block;font-style:normal}
+  .services-heading h2 em{margin-top:calc(100cqw / 419.25 * 1.5);color:#ffb84d}
+  .service-globe{position:absolute;top:5.5%;right:4%;width:44.5%;z-index:1;filter:drop-shadow(0 0 calc(100cqw / 419.25 * 8) rgba(20,205,224,.24))}
+  .service-globe svg{display:block;width:100%;height:auto;overflow:visible}
+  .globe-ocean{fill:url(#serviceOcean);stroke:#20c6dd;stroke-width:1.2}
+  .globe-halo{fill:none;stroke:#22c9de;stroke-opacity:.3;stroke-width:1}
+  .globe-grid{fill:none;stroke:#58d4e4;stroke-opacity:.21;stroke-width:.8}
+  .globe-longitude{transform-box:view-box;transform-origin:50% 50%}
+  .globe-land{fill:#12849a;fill-opacity:.68;stroke:#57e2e8;stroke-opacity:.42;stroke-width:1;transform-box:view-box;transform-origin:50% 50%}
+  .globe-rim{fill:none;stroke:#61eff1;stroke-opacity:.68;stroke-width:1.3}
+  .service-route{fill:none;stroke:#79f8ed;stroke-width:1.35;stroke-linecap:round;stroke-dasharray:120;stroke-dashoffset:120;filter:url(#serviceGlow)}
+  .service-origin{fill:#c5ffff;stroke:#25d5e4;stroke-width:1.2;opacity:0;transform-box:fill-box;transform-origin:center}
+  .service-origin-halo{fill:#39d9e5;opacity:.22}
+  .global-pranvas-pin{opacity:0;transform-box:view-box;transform-origin:151px 95px}
+  .global-pranvas-pin .pin-shape{fill:#ffb84d;stroke:#fff1c6;stroke-width:1}
+  .global-pranvas-pin .pin-dot{fill:#073653}
+  .global-pranvas-pin text{font-family:Inter,system-ui,sans-serif;fill:#fff;font-size:7px;font-weight:800;letter-spacing:.06em}
+  .global-pranvas-pin .pin-country{fill:#8de9e8;font-size:4.5px;font-weight:600;letter-spacing:.13em}
+  .service-list{position:absolute;top:40.5%;left:6%;right:6%;bottom:19%;display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:calc(100cqw / 419.25 * 3);z-index:2}
+  .service-row{display:grid;grid-template-columns:calc(100cqw / 419.25 * 25) minmax(0,1fr);align-items:center;gap:calc(100cqw / 419.25 * 6);min-height:0;padding:calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 7);border:1px solid rgba(93,200,217,.16);border-radius:calc(100cqw / 419.25 * 4);background:linear-gradient(110deg,rgba(3,48,76,.94),rgba(4,38,64,.88));box-shadow:0 calc(100cqw / 419.25 * 2) calc(100cqw / 419.25 * 8) rgba(0,0,0,.18)}
+  .service-step{display:grid;place-items:center;width:calc(100cqw / 419.25 * 21);height:calc(100cqw / 419.25 * 21);border:1px solid rgba(79,222,221,.42);border-radius:calc(100cqw / 419.25 * 3);color:#72e6df;font-size:calc(100cqw / 419.25 * 7.5);font-weight:700;font-variant-numeric:tabular-nums}
+  .service-copy{min-width:0}
+  .service-copy h3{margin:0;color:#fff;font-size:calc(100cqw / 419.25 * 8.7);line-height:1.17;font-weight:750}
+  .service-copy p{margin:calc(100cqw / 419.25 * 1.3) 0 0;color:#a8c9d8;font-size:calc(100cqw / 419.25 * 6.3);line-height:1.25}
+  .services-disclaimer{position:absolute;left:38%;right:6%;bottom:5.2%;z-index:2;color:#ffbc53}
+  .services-disclaimer p{margin:0;font-size:calc(100cqw / 419.25 * 8.2);line-height:1.28;font-weight:750}
+  .services-page.play .services-heading{animation:servicesEnter .65s cubic-bezier(.2,.75,.25,1) both}
+  .services-page.play .service-row{animation:servicesEnter .55s cubic-bezier(.2,.75,.25,1) both}
+  .services-page.play .service-row:nth-child(1){animation-delay:.2s}.services-page.play .service-row:nth-child(2){animation-delay:.28s}.services-page.play .service-row:nth-child(3){animation-delay:.36s}.services-page.play .service-row:nth-child(4){animation-delay:.44s}.services-page.play .service-row:nth-child(5){animation-delay:.52s}
+  .services-page.play .globe-land{animation:globeTurn 28s linear infinite}
+  .services-page.play .globe-longitude{animation:globeMeridian 5.5s ease-in-out infinite alternate}
+  .services-page.play .service-route.route-1{animation:routeDraw .8s ease-out .65s forwards}.services-page.play .service-route.route-2{animation:routeDraw .8s ease-out 1s forwards}.services-page.play .service-route.route-3{animation:routeDraw .8s ease-out 1.35s forwards}.services-page.play .service-route.route-4{animation:routeDraw .8s ease-out 1.7s forwards}.services-page.play .service-route.route-5{animation:routeDraw .8s ease-out 2.05s forwards}.services-page.play .service-route.route-6{animation:routeDraw .8s ease-out 2.4s forwards}
+  .services-page.play .service-origin.origin-1{animation:originPop .35s ease-out .65s forwards,pinPulse 2.4s ease-in-out 1.1s infinite}.services-page.play .service-origin.origin-2{animation:originPop .35s ease-out 1s forwards,pinPulse 2.4s ease-in-out 1.45s infinite}.services-page.play .service-origin.origin-3{animation:originPop .35s ease-out 1.35s forwards,pinPulse 2.4s ease-in-out 1.8s infinite}.services-page.play .service-origin.origin-4{animation:originPop .35s ease-out 1.7s forwards,pinPulse 2.4s ease-in-out 2.15s infinite}.services-page.play .service-origin.origin-5{animation:originPop .35s ease-out 2.05s forwards,pinPulse 2.4s ease-in-out 2.5s infinite}.services-page.play .service-origin.origin-6{animation:originPop .35s ease-out 2.4s forwards,pinPulse 2.4s ease-in-out 2.85s infinite}
+  .services-page.play .global-pranvas-pin{animation:pinLand .65s cubic-bezier(.2,.85,.25,1.3) 3s both}
+  .services-page.play .global-pranvas-pin text{animation:pinLabel .45s ease-out 3.45s both}
+  .services-page.play .services-disclaimer{animation:servicesEnter .6s ease-out 3.15s both}
+  @keyframes servicesEnter{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 5))}to{opacity:1;transform:none}}
+  @keyframes globeTurn{to{transform:rotate(360deg)}}
+  @keyframes globeMeridian{from{transform:scaleX(.72)}to{transform:scaleX(1.08)}}
+  @keyframes routeDraw{to{stroke-dashoffset:0}}
+  @keyframes originPop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+  @keyframes pinPulse{50%{filter:drop-shadow(0 0 4px #69fff1)}}
+  @keyframes pinLand{0%{opacity:0;transform:translateY(-8px) scale(.5)}75%{opacity:1;transform:translateY(1px) scale(1.12)}100%{opacity:1;transform:none}}
+  @keyframes pinLabel{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.services-page.play .services-heading,.services-page.play .service-row,.services-page.play .globe-land,.services-page.play .globe-longitude,.services-page.play .service-route,.services-page.play .service-origin,.services-page.play .global-pranvas-pin,.services-page.play .services-disclaimer,.services-page.play .global-pranvas-pin text{animation:none;opacity:1;stroke-dashoffset:0}}
+  .doc-page-content.welcome-page{border-color:rgba(255,255,255,.28);background:radial-gradient(ellipse at 78% 24%,rgba(61,219,176,.2),transparent 34%),radial-gradient(ellipse at 16% 70%,rgba(77,141,255,.18),transparent 38%),linear-gradient(155deg,#061c40,#073a70 62%,#087982);color:#fff}
+  .doc-page-content.welcome-page:before{display:none}
+  .welcome-artstage{position:absolute;left:0;right:0;top:7%;height:43%;z-index:3;display:grid;place-items:center}
+  .welcome-art-panel{position:relative;z-index:1;width:58%;height:96%;overflow:hidden;border:1px solid rgba(255,255,255,.72);border-radius:48% 48% 12% 12%;background:#fff;box-shadow:0 calc(100cqw / 419.25 * 10) calc(100cqw / 419.25 * 26) rgba(0,0,0,.24)}
+  .welcome-artwork{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+  .welcome-message{position:absolute;left:calc(100cqw / 419.25 * 20);right:calc(100cqw / 419.25 * 20);top:57%;z-index:3;text-align:center}
+  .welcome-message small{display:block;color:#8ce4d0;font-size:calc(100cqw / 419.25 * 6);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+  .welcome-message .namaste{margin:calc(100cqw / 419.25 * 3) 0 0;color:#f1c878;font-family:'Caladea',Georgia,serif;font-size:calc(100cqw / 419.25 * 32);line-height:1}
+  .welcome-message h2{margin:calc(100cqw / 419.25 * 2) 0 0;color:#fff;font-size:calc(100cqw / 419.25 * 19);line-height:1.15;letter-spacing:-.02em}
+  .welcome-message p{max-width:calc(100cqw / 419.25 * 300);margin:calc(100cqw / 419.25 * 4) auto 0;color:rgba(255,255,255,.78);font-size:calc(100cqw / 419.25 * 8);line-height:1.45}
+  .welcome-values{position:absolute;left:calc(100cqw / 419.25 * 18);right:calc(100cqw / 419.25 * 18);bottom:calc(100cqw / 419.25 * 21);z-index:3;display:flex;justify-content:center;align-items:center;gap:calc(100cqw / 419.25 * 4);padding-top:calc(100cqw / 419.25 * 6);border-top:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.76);font-size:calc(100cqw / 419.25 * 5.6);font-weight:700;letter-spacing:.08em;text-align:center}
+  .welcome-values>span+span:before{content:"·";margin-right:calc(100cqw / 419.25 * 4);color:#3ddbb0}
+  .welcome-type-char{opacity:0}
+  .welcome-page.play .welcome-type-char{animation:welcomeType .01s linear var(--type-delay) both}
+  .doc-page-content.welcome-page .doc-foot{z-index:3;color:rgba(255,255,255,.5)}
+  @keyframes welcomeType{to{opacity:1}}
+  .doc-page-content.welcome-page.play .welcome-art-panel{animation:welcomeArtIn .9s cubic-bezier(.2,.75,.25,1) .1s both}
+  .doc-page-content.welcome-page.play .welcome-message{animation:welcomeTextIn .7s cubic-bezier(.2,.75,.25,1) .55s both}
+  .doc-page-content.welcome-page.play .welcome-values{animation:welcomeTextIn .65s cubic-bezier(.2,.75,.25,1) .85s both}
+  @keyframes welcomeArtIn{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 10)) scale(.97)}to{opacity:1;transform:none}}
+  @keyframes welcomeTextIn{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 7))}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.doc-page-content.welcome-page.play .welcome-art-panel,.doc-page-content.welcome-page.play .welcome-message,.doc-page-content.welcome-page.play .welcome-values{animation:none}.welcome-type-char{opacity:1;animation:none!important}}
+  .doc-foot{position:absolute;bottom:calc(100cqw / 419.25 * 6);left:calc(100cqw / 419.25 * 14);right:calc(100cqw / 419.25 * 14);display:flex;justify-content:space-between;color:#8090a2;font-size:calc(100cqw / 419.25 * 5.5);letter-spacing:.07em}
+  .doc-page-content.play .doc-card,.doc-page-content.play .doc-step{animation:docRise .55s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(var(--n,0)*.05s)}
+  @keyframes docRise{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 4))}to{opacity:1;transform:none}}
+  @keyframes docPulse{50%{box-shadow:0 0 0 calc(100cqw / 419.25 * 4) rgba(61,219,176,.16);transform:scale(1.05)}}
+  @media(prefers-reduced-motion:reduce){.doc-page-content.play .doc-card,.doc-page-content.play .doc-step,.doc-play{animation:none}}
+  /* Services slide: keep the complete card styling together after the base rules. */
+  .doc-page-content.services-page{background:#fff;border-color:#d5e4ed;color:#092e57}
+  .services-page .services-page-number{color:#168b98}
+  .services-page .services-heading h2{color:#082f5a}
+  .services-page .services-heading h2 em{color:#008f9a}
+  .services-page .service-globe{top:4.5%;right:2.5%;width:48%;transform-origin:center}
+  .services-page.play .service-globe{animation:serviceGlobeFloat 4s ease-in-out infinite}
+  .services-page.play .globe-halo{transform-origin:115px 115px;animation:serviceHaloPulse 2.8s ease-in-out infinite}
+  .services-page.play .globe-land{animation:globeTurn 18s linear infinite}
+  .services-page.play .globe-longitude{animation:globeMeridian 3.5s ease-in-out infinite alternate}
+  @keyframes serviceGlobeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+  @keyframes serviceHaloPulse{0%,100%{stroke-opacity:.25;transform:scale(1)}50%{stroke-opacity:.65;transform:scale(1.035)}}
+  @media(prefers-reduced-motion:reduce){.services-page.play .service-globe,.services-page.play .globe-halo{animation:none}}
+  .services-page .services-heading{top:11%;left:7%;width:43%;text-align:left}
+  .services-page .services-heading h2{font-size:calc(100cqw / 419.25 * 20);line-height:1.12;letter-spacing:-.035em}
+  .services-page .services-heading h2 span,.services-page .services-heading h2 em{display:block;opacity:1}
+  .services-page.play .services-heading{animation:none}
+  .services-page.play .services-heading h2 span,.services-page.play .services-heading h2 em{animation:serviceTitleReveal .6s cubic-bezier(.2,.7,.2,1) both}
+  .services-page.play .services-heading h2 span:nth-child(2){animation-delay:.15s}
+  .services-page.play .services-heading h2 em{animation-delay:.3s}
+  @keyframes serviceTitleReveal{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  @media(prefers-reduced-motion:reduce){.services-page.play .services-heading h2 span,.services-page.play .services-heading h2 em{animation:none}}
+  .services-page .service-list{top:38%;bottom:15%;gap:calc(100cqw / 419.25 * 5)}
+  .services-page .service-row{display:grid;grid-template-columns:calc(100cqw / 419.25 * 24) calc(100cqw / 419.25 * 38) minmax(0,1fr);gap:calc(100cqw / 419.25 * 8);border:1px solid #dce9f0;border-left:calc(100cqw / 419.25 * 3) solid #19b8a6;border-radius:calc(100cqw / 419.25 * 7);background:#f5fafb;box-shadow:0 2px 8px rgba(10,52,85,.06)}
+  .services-page .service-row:nth-child(2){border-left-color:#ed6da2;background:#fff7fa}.services-page .service-row:nth-child(3){border-left-color:#8a7de2;background:#f8f7ff}.services-page .service-row:nth-child(4){border-left-color:#f2a83b;background:#fffaf1}.services-page .service-row:nth-child(5){border-left-color:#4b9bd5;background:#f3f9ff}
+  .services-page .service-step{border:0;background:#dff5f0;color:#078c80;border-radius:50%}
+  .services-page .service-icon{width:calc(100cqw / 419.25 * 36);height:calc(100cqw / 419.25 * 36);object-fit:cover;border-radius:calc(100cqw / 419.25 * 8)}
+  .services-page .service-icon-other{display:grid;place-items:center;background:#dceeff;color:#1679b8;font-size:calc(100cqw / 419.25 * 25);font-weight:600}
+  .services-page .service-copy h3{color:#092f58;font-size:calc(100cqw / 419.25 * 10.5)}
+  .services-page .service-copy p{color:#526c82;font-size:calc(100cqw / 419.25 * 7.6);line-height:1.35}
+  .services-page .services-disclaimer{left:6%;right:6%;bottom:5%;color:#426078;background:#eef7fb;border-radius:calc(100cqw / 419.25 * 5);padding:calc(100cqw / 419.25 * 8)}
+  .services-page .services-disclaimer p{font-size:calc(100cqw / 419.25 * 8);font-weight:600}
+  .market-opportunity .doc-grid[data-count="3"]{position:absolute;top:19%;bottom:17%;left:6%;right:6%;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:calc(100cqw / 419.25 * 7);margin:0}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:calc(100cqw / 419.25 * 7) calc(100cqw / 419.25 * 18);border-radius:calc(100cqw / 419.25 * 8)}
+  .market-opportunity .market-icon{position:static;transform:none;display:block;width:calc(100cqw / 419.25 * 60);height:calc(100cqw / 419.25 * 60);object-fit:contain;flex-shrink:0}
+  .market-opportunity .doc-card .mark{position:absolute;left:calc(100cqw / 419.25 * 10);top:calc(100cqw / 419.25 * 10)}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card h3{margin:calc(100cqw / 419.25 * 3) 0 0;font-size:calc(100cqw / 419.25 * 11.5)}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card p{margin:calc(100cqw / 419.25 * 3) 0 0;font-size:calc(100cqw / 419.25 * 8.8);line-height:1.3}
+  .market-opportunity .doc-note{position:absolute;left:6%;right:6%;bottom:7%;margin:0;padding:calc(100cqw / 419.25 * 9) calc(100cqw / 419.25 * 11);background:#eef7f8;border-left:calc(100cqw / 419.25 * 3) solid #0a9a97;color:#34536b;font-size:calc(100cqw / 419.25 * 9);font-weight:500;line-height:1.4}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card{display:grid;grid-template-columns:calc(100cqw / 419.25 * 90) minmax(0,1fr);grid-template-rows:auto auto;column-gap:calc(100cqw / 419.25 * 12);align-content:center;align-items:center;text-align:left;padding:calc(100cqw / 419.25 * 12) calc(100cqw / 419.25 * 15)}
+  .market-opportunity .doc-grid[data-count="3"] .market-icon{grid-column:1;grid-row:1 / 3;justify-self:center;width:calc(100cqw / 419.25 * 78);height:calc(100cqw / 419.25 * 78)}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card h3{grid-column:2;grid-row:1;align-self:end;margin:0 0 calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 12)}
+  .market-opportunity .doc-grid[data-count="3"] .doc-card p{grid-column:2;grid-row:2;align-self:start;margin:0;font-size:calc(100cqw / 419.25 * 9);line-height:1.4}
+  .market-opportunity .doc-card .mark{left:calc(100cqw / 419.25 * 7);top:calc(100cqw / 419.25 * 7);width:calc(100cqw / 419.25 * 17);height:calc(100cqw / 419.25 * 17)}
+  .doc-page-content.mission-vision-page{background:#fff;border-color:#dbe8ed}
+  .mission-vision-page .mission-heading{left:7%;top:10%;width:42%}
+  .mission-vision-page .mission-heading strong{font-size:calc(100cqw / 419.25 * 25);color:#082e5a}
+  .mission-vision-page .mission-heading h2 span{font-size:calc(100cqw / 419.25 * 21);font-weight:650;color:#008e8c}
+  .mission-vision-page .mission-heading p{margin-top:calc(100cqw / 419.25 * 9);font-size:calc(100cqw / 419.25 * 8);line-height:1.5}
+  .mission-vision-page .mission-photo{top:9%;right:6%;width:42%;height:27%;border-radius:calc(100cqw / 419.25 * 10);box-shadow:0 6px 18px rgba(15,55,76,.14)}
+  .mission-vision-page .mission-card-row{left:7%;right:7%;top:41%;height:27%;gap:3%}
+  .mission-vision-page .mission-card{align-items:flex-start;justify-content:center;text-align:left;padding:calc(100cqw / 419.25 * 15);border-radius:calc(100cqw / 419.25 * 10);box-shadow:0 4px 14px rgba(16,54,82,.08)}
+  .mission-vision-page .mission-card.vision{background:#0b3965}
+  .mission-vision-page .mission-card.mission{background:#f1f9f8;border-color:#dceeea}
+  .mission-vision-page .mission-card-icon{width:calc(100cqw / 419.25 * 34);height:calc(100cqw / 419.25 * 34);background:#e4f6f2}
+  .mission-vision-page .mission-card h3{margin-top:calc(100cqw / 419.25 * 9);font-size:calc(100cqw / 419.25 * 10.5)}
+  .mission-vision-page .mission-card-rule{width:calc(100cqw / 419.25 * 24);height:2px;margin:calc(100cqw / 419.25 * 6) 0;background:#31bcae}
+  .mission-vision-page .mission-card p{font-size:calc(100cqw / 419.25 * 8);line-height:1.45}
+  .mission-vision-page .mission-core-values{left:7%;right:7%;top:72%;height:17%;padding:calc(100cqw / 419.25 * 10);background:#f7fafc;border-color:#e2edf1;box-shadow:none}
+  .mission-vision-page .mission-core-values h3{text-align:left;font-size:calc(100cqw / 419.25 * 9);color:#0b3965}
+  .mission-vision-page .mission-values-row{height:70%;margin-top:calc(100cqw / 419.25 * 6)}
 </style>
 </head>
 <body>
@@ -293,31 +536,25 @@
   <div id="loader">LOADING…</div>
   <div id="wrap"><div id="book">
     <!-- Page 1 : cover -->
-    <div class="page" data-density="hard">
-      <img class="pg" src="img/p01.jpg" alt="PRANVAS cover">
-      <div class="ov ring track"></div>
-      <div class="ov ring spin"></div>
-      <div class="ov logo"><img src="img/logo.png" alt=""></div>
-      <div class="ov title" id="title"><img src="img/title.png" alt="PRANVAS"><span class="caret" id="caret"></span></div>
-    </div>
-    <!-- Page 2 : founder -->
-    <div class="page">
-      <img class="pg" src="img/p02.jpg" alt="Chapter 1 – The Founder">
-      <div class="p2c" id="p2c">
-        <p class="intro">A healthcare entrepreneur with over 12 years of experience in medical supply, healthcare business development, digital health solutions, and strategic partnerships.</p>
-        <h3>Entrepreneurial <span>Journey</span></h3>
-        <div class="ms">
-          <div class="row head"><div>YEAR</div><div>MILESTONE</div><div>DESCRIPTION</div></div>
-          <div class="row"><div class="yr y1">2019</div><div class="mi">Dental Store Nepal</div><div class="de">Founded Nepal's first dedicated e-commerce platform for the dentistry sector.</div></div>
-          <div class="row"><div class="yr y2">2022</div><div class="mi">Business Exit</div><div class="de">Successfully sold Dental Store Nepal, marking a significant entrepreneurial milestone.</div></div>
-          <div class="row"><div class="yr y3">2023–2024</div><div class="mi">Research &amp; Product Development</div><div class="de">Conducted extensive market research and spent a year developing, testing, and refining a healthcare management software solution.</div></div>
-          <div class="row"><div class="yr y4">Mar 2025</div><div class="mi">ProCare Nepal</div><div class="de">Launched a healthcare technology venture focused on clinic management solutions.</div></div>
-          <div class="row"><div class="yr y5">Aug 2026</div><div class="mi">New Investor Entry</div><div class="de">Welcomed new investors into ProCare Nepal, marking a new phase of strategic partnership and business growth.</div></div>
-        </div>
+    <div class="page" data-density="hard" data-deck="keep">
+      <img class="pg" src="img/pranvas-investor-cover-sharp.png" alt="PRANVAS Medical Tourism partnership proposal cover, proposed launch December 6, 2026">
+      <div class="cover-refinement" aria-hidden="true">
+        <div class="cover-brand-mask"></div>
+        <div class="cover-title-mask"></div>
+        <svg class="cover-footer-mask" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0C20 40 50 65 100 80V100H0Z" fill="#062b59"/></svg>
+        <img class="cover-logo-icon" src="img/logo.png" alt="">
+        <div class="cover-wordmark">PRAN<span>VAS</span></div>
+        <div class="cover-tagline">A PARTNERSHIP PROPOSAL</div>
+        <div class="cover-title-copy">Medical Tourism</div>
+        <div class="cover-accent"></div>
+        <div class="cover-description">Medical Care, Beyond Borders.</div>
+        <div class="cover-footer-line"></div>
+        <div class="cover-footer-copy"><span>Presented by <strong>Sanjeev Baral</strong> · Founder &amp; CEO</span><span>Proposed launch: <strong>December 6, 2026</strong></span><span>pranvas.com</span></div>
       </div>
-      <div class="ov founder" id="founder"><img src="img/founder.jpg" alt="Sanjeev Baral"></div>
     </div>
-    <div class="page"><img class="pg" src="img/p03.jpg" alt="Page 3">
+    <!-- Page 2 : welcome -->
+    <div class="page" data-deck="keep"></div>
+    <div class="page" data-deck="keep"><img class="pg" src="img/p03.jpg" alt="Page 3">
       <div class="p3c p3" id="p3">
         <div class="hero rise d1">
           <div class="globe">
@@ -334,9 +571,9 @@
             </svg>
           </div>
           <div>
-            <div class="kicker">01 · Who We Are</div>
-            <h4 class="serif">A global medical tourism &amp; healthcare facilitation platform</h4>
-            <p>PRANVAS is a global medical tourism and healthcare facilitation platform dedicated to connecting patients with trusted healthcare providers across borders.</p>
+            <div class="kicker">02 · Introduction</div>
+            <h4 class="serif">Introducing PRANVAS</h4>
+            <p>PRANVAS is a healthcare facilitation platform connecting international patients with healthcare providers and coordinated support throughout their care journey.</p>
           </div>
         </div>
 
@@ -347,18 +584,18 @@
                 <path d="M6 20.5s-4-4.2-4-7.1a4 4 0 0 1 8 0c0 2.9-4 7.1-4 7.1Z" class="draw" pathLength="1"/><circle cx="6" cy="13.4" r="1.3"/>
                 <path d="M18 9.5s-3.2-3.4-3.2-5.7a3.2 3.2 0 0 1 6.4 0c0 2.3-3.2 5.7-3.2 5.7Z" stroke="#05a5b5" class="draw" pathLength="1"/><circle cx="18" cy="3.9" r="1" stroke="#05a5b5"/>
                 <path d="M9 20.5h4.5a3 3 0 0 0 0-6h-1a3 3 0 0 1 0-6H16" stroke-dasharray="1.6 2.2" stroke="#3ddbb0"/></svg></div>
-              <div><div class="kicker">02 · What We Do</div><h5 class="serif">End-to-end care journeys</h5></div>
+              <div><div class="kicker">01 · Healthcare Connections</div><h5 class="serif">Healthcare connections</h5></div>
             </div>
-            <p>We coordinate personalized, end-to-end healthcare journeys, making access to quality medical services simpler, smoother, and more accessible.</p>
+            <p>Helping patients explore suitable providers and treatment options.</p>
           </div>
           <div class="card rise d3">
             <div class="top">
               <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.7">
                 <path d="M3 11.2 12 4l9 7.2" class="draw" pathLength="1"/><path d="M5.2 9.6V20h13.6V9.6" class="draw" pathLength="1"/>
                 <path d="M12 17.6s-3.4-2-3.4-4.3a1.9 1.9 0 0 1 3.4-1.1 1.9 1.9 0 0 1 3.4 1.1c0 2.3-3.4 4.3-3.4 4.3Z" fill="#3ddbb0" stroke="#05a5b5" stroke-width="1.2"/></svg></div>
-              <div><div class="kicker">03 · Our Initial Focus</div><h5 class="serif">Care back home in Nepal</h5></div>
+              <div><div class="kicker">02 · Patient Coordination</div><h5 class="serif">Patient coordination</h5></div>
             </div>
-            <p>Our first-year focus is to serve Nepali patients living abroad who seek quality healthcare in Nepal, providing a seamless and personalized experience from arrival to treatment and beyond.</p>
+            <p>Supporting the journey from inquiry through follow-up.</p>
           </div>
         </div>
 
@@ -367,19 +604,20 @@
           <div class="track">
             <div class="line"></div>
             <svg class="plane" viewBox="-7 -7 14 14"><path transform="rotate(90)" d="M0-6 1.6-1.4 6.5 1.2v1.5L1.6 1.4 1.1 5l1.9 1.4v1.2L0 6.7-3 7.6V6.4L-1.1 5-1.6 1.4-6.5 2.7V1.2l4.9-2.6Z" fill="currentColor"/></svg>
-            <div class="step s1"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-2.6 2.3-3.6 5.3-3.6 8.5s1 6.2 3.6 8.5M12 3.5c2.6 2.3 3.6 5.3 3.6 8.5s-1 6.2-3.6 8.5"/></svg></div><b>Patients abroad</b><span>First inquiry</span></div>
-            <div class="step s2"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M3 20h18"/><path d="M4.5 13.5 8 12l-2.6-5 1.8-.7 4.6 4.2 5.4-2.3a1.8 1.8 0 0 1 1.4 3.3L6.8 17.2 4 15Z"/></svg></div><b>Arrival</b><span>Pickup &amp; stay</span></div>
-            <div class="step s3"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.2v7.6M8.2 12h7.6" stroke="#05a5b5" stroke-width="2.2"/></svg></div><b>Treatment</b><span>Trusted providers</span></div>
-            <div class="step s4"><div class="node pulse"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M12 20s-7-4.3-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.7 12 20 12 20Z" fill="#e6faf4"/><path d="M7.5 12.5h2.3l1.2-2 2 4 1.2-2h2.3" stroke="#05a5b5"/></svg></div><b>And beyond</b><span>Recovery &amp; follow-up</span></div>
+            <div class="step s1"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-2.6 2.3-3.6 5.3-3.6 8.5s1 6.2 3.6 8.5M12 3.5c2.6 2.3 3.6 5.3 3.6 8.5s-1 6.2-3.6 8.5"/></svg></div><b>Explore care</b><span>Suitable providers</span></div>
+            <div class="step s2"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M3 20h18"/><path d="M4.5 13.5 8 12l-2.6-5 1.8-.7 4.6 4.2 5.4-2.3a1.8 1.8 0 0 1 1.4 3.3L6.8 17.2 4 15Z"/></svg></div><b>Connect</b><span>Healthcare providers</span></div>
+            <div class="step s3"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.2v7.6M8.2 12h7.6" stroke="#05a5b5" stroke-width="2.2"/></svg></div><b>Coordinate</b><span>Care journey</span></div>
+            <div class="step s4"><div class="node pulse"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M12 20s-7-4.3-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.7 12 20 12 20Z" fill="#e6faf4"/><path d="M7.5 12.5h2.3l1.2-2 2 4 1.2-2h2.3" stroke="#05a5b5"/></svg></div><b>Follow-up</b><span>Ongoing support</span></div>
           </div>
         </div>
 
         <div class="banner rise d5">
-          <div class="l1 serif">Beyond Hospital Connections.</div>
-          <div class="l2 serif">A Complete Patient Care Experience.</div>
+          <div class="l1 serif">Connecting Patients to Care.</div>
+          <div class="l2 serif">Support Throughout the Patient Journey.</div>
         </div>
       </div>
     </div>
+    <!-- Remaining proposal slides are inserted here before the legacy pages. -->
     <div class="page"><img class="pg" src="img/p04.jpg" alt="Page 4"><div class="market4" id="p4market">
       <div class="mhead"><div><h4>Local Market Opportunity</h4><div class="eyebrow">A growing opportunity to bring healthcare closer to Nepali communities.</div></div><div class="badge">Nepal · Local</div></div>
       <div class="stats"><div class="stat"><div class="stat-icon">🌍</div><div class="value">2.19M</div><div class="label">Nepalis Living Abroad</div><div class="source">2021 National Census</div></div><div class="stat"><div class="stat-icon">✈️</div><div class="value">537,246</div><div class="label">Migrant Worker Returnees</div><div class="source">FY 2023/24</div></div><div class="stat"><div class="stat-icon">📋</div><div class="value">839,270</div><div class="label">Labour Approvals</div><div class="source">FY 2024/25, including renewals</div></div><div class="stat"><div class="stat-icon">💰</div><div class="value">NPR 1.5B+</div><div class="label">Foreign Patient Revenue</div><div class="source">Nepal Netra Jyoti Sangh network, FY 2025/26</div></div></div>
@@ -429,8 +667,130 @@
 <script>
 (function(){
   var RATIO = 1258/1787;            // page width / height
-  var TOTAL = 16;
+  var TOTAL = 22;
   var book = document.getElementById('book');
+
+  var proposalSlides = [
+    {section:'Opening',title:'Welcome to PRANVAS',lead:'Medical care, made easier to navigate.',items:[['PRANVAS','MEDICAL CARE, BEYOND BORDERS'],['Investor Presentation','A connected, guided healthcare journey for international patients.'],['2026','Investor presentation']]},
+    {section:'01 · Introduction & Vision',title:'Introducing PRANVAS',lead:'PRANVAS is a healthcare facilitation platform connecting international patients with healthcare providers and coordinated support throughout their care journey.',items:[['Healthcare connections','Helping patients explore suitable providers and treatment options.'],['Patient coordination','Supporting the journey from inquiry through follow-up.']]},
+    {section:'01 · Introduction & Vision',title:'The Problem We Are Solving',lead:'For a patient seeking treatment abroad, the challenge is often bigger than choosing a doctor.',items:[['Finding trusted care','Identifying suitable hospitals, doctors and treatment options.'],['Managing information','Understanding requirements, medical documents and next steps.'],['Coordinating travel','Arranging appointments, accommodation and transportation.'],['Navigating an unfamiliar place','Having reliable guidance before, during and after treatment.']]},
+    {section:'01 · Introduction & Vision',title:'Our Solution',lead:'One coordinated experience across the patient journey.',items:[['Discover','Explore providers and treatment options.'],['Coordinate','Connect with hospitals and doctors.'],['Support','Guide travel, arrival and appointments.'],['Follow through','Assist with recovery and post-departure follow-up.']],note:'A personal patient concierge approach, supported by a digital platform and partner network.'},
+    {section:'01 · Introduction & Vision',title:'The Founder Behind PRANVAS',design:'founder',image:'img/founder-slide.png'},
+    {section:'01 · Introduction & Vision',title:'Our Vision & Mission',design:'mission-vision',items:[['Vision','Build a trusted pathway for international patients seeking healthcare in Nepal.'],['Mission','Coordinate access to healthcare providers and guide patients through a supported treatment journey.'],['Core values','Trust · Care · Coordination · Clarity']]},
+    {section:'01 · Introduction & Vision',title:'Market Opportunity',lead:'An opportunity to serve patients looking for coordinated care beyond their home country.',items:[['Medical tourism','Patients consider treatment options across borders.'],["Nepal's potential",'Position Nepal as a healthcare destination.'],['Target markets','Build awareness among selected international audiences.']],note:'Market size and priority countries will be confirmed through further research.'},
+    {section:'01 · Introduction & Vision',title:'Services & Treatment Categories',design:'service-treatment',disclaimer:'Final service list to be aligned with confirmed partner provider capabilities.',items:[['Dental care','Dental consultations and treatment.'],['IVF & fertility','Fertility-related treatment pathways.'],['Hair transplant','Hair restoration procedures.'],['Cosmetic surgery','Selected cosmetic procedures.'],['Other treatments','Additional selected medical services.']]},
+    {section:'01 · Introduction & Vision',title:'Target Patients & Source Markets',items:[['International patients','People exploring treatment options in Nepal.'],['Nepali diaspora','People living abroad who may seek care or coordinate care for family.'],['Selected source countries','Markets to be prioritized based on demand, reach and partner readiness.']],note:'Insert the confirmed target-country list when finalized.'},
+    {section:'02 · Platform, Services & Operations',title:'Introducing Our Digital Platform',lead:'The PRANVAS website is the digital entry point for patient discovery and coordination.',items:[['Patient registration','Capture patient details and requirements.'],['Hospital listings','Present healthcare provider options.'],['Inquiry & coordination','Support communication and next steps.']],note:'Replace the reference thumbnail with the latest approved PRANVAS website screenshot.'},
+    {section:'02 · Platform, Services & Operations',title:'Hospital Partnership Strategy',lead:'A curated partner network built around service standards and patient needs.',items:[['150','TARGET PARTNER HOSPITALS & CLINICS'],['Clinical service capability','Partner selection focus'],['Patient service standards','Partner selection focus'],['Coordination readiness','Partner selection focus']],note:'Confirm the target of 150 with the partnership team.'},
+    {section:'02 · Platform, Services & Operations',title:'Complete Patient Journey — Animated Video',lead:'A visual overview of the patient experience — from first inquiry to continued follow-up.',items:[['Inquiry','First contact'],['Registration','Patient details'],['Doctor match','Care options'],['Treatment','Coordinated care'],['Recovery','Patient support'],['Follow-up','Continued contact']],video:'Patient journey animation placeholder · To be added',note:'Plan a short animation with moving arrows, icons and transitions. Keep it separate from the detailed flowchart.'},
+    {section:'02 · Platform, Services & Operations',title:'Detailed Patient Journey — Operational Flow',lead:'A detailed 17-step pathway with consultation decisions, travel support and follow-up.',steps:[['Patient Inquiry','Website / Social Media / Referral.'],['Patient Registration','Personal details and treatment requirements.'],['Medical Documents Collection','Reports and medical history.'],['Hospital & Doctor Matching','Verified partner hospitals.'],['Online Doctor Consultation','Medical evaluation.'],['Treatment Plan & Cost Estimate','Treatment, duration and estimated cost.'],['Patient Confirms Treatment?','YES: continue to booking and travel planning. NO: further consultation or alternative hospital/treatment.'],['Booking & Travel Planning','Appointment, hotel and arrival date.'],['Airport Pickup & Welcome','PRANVAS representative receives the patient.'],['Private Vehicle Transfer','Airport to hotel.'],['Hotel Check-in & Assistance','Accommodation and schedule briefing.'],['Hotel to Hospital Transfer','Scheduled vehicle pickup.'],['Personal Hospital Guide','Reception, registration and department guidance.'],['Doctor Consultation & Treatment','Appointment coordination and reduced waiting.'],['Return Transfer & Recovery','Hospital to hotel; further treatment or follow-up if required.'],['Discharge & Departure Preparation','Hotel to airport transfer and private vehicle departure assistance.'],['Post-Departure Follow-up','Continued patient support.']]},
+    {section:'02 · Platform, Services & Operations',title:'Patient Concierge & Transportation Operations',items:[['Dedicated coordinator','A consistent point of contact for the patient.'],['Personal guide','Support with hospital navigation and appointments.'],['Private vehicle','Planned transportation between airport, hotel and hospital.'],['Airport transfers','Arrival and departure assistance.']],note:'Confirm the service scope and availability with the operating team and transport partners.'},
+    {section:'02 · Platform, Services & Operations',title:'Marketing & Patient Acquisition Strategy',lead:'A multi-channel approach to build awareness, generate inquiries and support patient acquisition.',items:[['Search','Google Ads · SEO'],['Social','Meta Ads · Content'],['Trust & reach','Influencer collaborations'],['Awareness','News · Airport advertising'] ]},
+    {section:'03 · Business & Financial Plan',title:'Business Model & Revenue Streams',items:[['Patient facilitation commission','10% of the treatment value. Average treatment value assumption: NPR 100,000 per completed patient. Commission per completed patient: NPR 10,000.'],['Healthcare provider subscription','NPR 50,000 per clinic/hospital per year (Year 2 assumption).']],note:'Revenue is planned from completed patient treatment journeys and annual subscriptions from listed providers, beginning in Year 2.'},
+    {section:'03 · Business & Financial Plan',title:'Monthly Operating & Marketing Expenses',lead:'Monthly operating and marketing expense assumptions.',items:[['Salary','NPR 80,000'],['Google Ads','NPR 50,000'],['Facebook & Instagram Ads','NPR 50,000'],['Content Creation (5 × 5,000)','NPR 25,000'],['SEO','NPR 15,000'],['Influencer Collaboration, News & Airport Advertising','NPR 2,00,000']],note:'TOTAL MONTHLY EXPENDITURE — NPR 4,20,000 · TOTAL ANNUAL EXPENDITURE — NPR 50,40,000'},
+    {section:'03 · Business & Financial Plan',title:'Year 1 & Year 2 Revenue Projections',items:[['YEAR 1','150 qualified healthcare providers onboarded (network target; no subscription revenue assumed). 365 completed patient journeys × NPR 10,000 commission = NPR 3,650,000 (NPR 36.5 lakh).'],['YEAR 2','500 paying providers × NPR 50,000 annual subscription = NPR 25,000,000 (NPR 2.5 crore). 1,500 completed patient journeys × NPR 10,000 commission = NPR 15,000,000 (NPR 1.5 crore). Total projected Year 2 revenue = NPR 40,000,000 (NPR 4 crore).']],note:'These are gross revenue projections, not net profit. Operating expenses, taxes, refunds, payment processing costs and partner shares are not deducted.'},
+    {section:'04 · Growth & Partnership',title:'Growth Milestones & Global Expansion',items:[['Launch','Establish platform and operating readiness.'],['Build network','Onboard selected hospital and clinic partners.'],['Serve patients','Work toward the first 1,000 successfully served patients in Nepal.'],['Expand','Explore international market expansion.']],note:'Growth milestones should be tied to measurable targets and delivery capacity.'},
+    {section:'04 · Growth & Partnership',title:'Launch Roadmap & Execution Plan',items:[['01 · Platform readiness','Website and patient inquiry flow.'],['02 · Partner onboarding','Hospital and clinic coordination.'],['03 · Marketing activation','Campaigns and awareness.'],['04 · Operations','Patient support and service delivery.']],note:'PROPOSED LAUNCH — 6 DECEMBER 2026'},
+    {section:'04 · Growth & Partnership',title:'Partnership Proposal & Closing',lead:'Building a more connected healthcare journey, together.',items:[['Investment','Proposed investment structure.'],['Equity','Proposed equity structure.'],['Next steps','Partner expectations and discussion.']],note:'PRANVAS · Thank you.'}
+  ];
+
+  function escapeHtml(value){
+    return String(value).replace(/[&<>"']/g,function(char){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char];
+    });
+  }
+  function makeMissionVisionContent(slide,slideNumber){
+    var vision=slide.items.find(function(item){return item[0]==='Vision';});
+    var mission=slide.items.find(function(item){return item[0]==='Mission';});
+    var coreValues=slide.items.find(function(item){return item[0]==='Core values';});
+    if(!vision||!mission||!coreValues) throw new Error('The mission and vision slide is missing required content.');
+    var valueIcons=[
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 20 5.7v5.5c0 5.1-3.4 8.7-8 10.8-4.6-2.1-8-5.7-8-10.8V5.7Z"/><path d="m8 12 2.5 2.5 5.5-6"/></svg>',
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 8.8c0 5.4-8.5 11-8.5 11s-8.5-5.6-8.5-11a4.7 4.7 0 0 1 8.5-2.7 4.7 4.7 0 0 1 8.5 2.7Z"/></svg>',
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3.5 19c.4-3 2.5-5 5.5-5s5.1 2 5.5 5M15 14c2.8-.2 4.7 1.5 5.2 4"/></svg>',
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.2 14.8A7 7 0 1 1 15.8 15c-1 .7-1.3 1.5-1.3 2.4h-5c0-.9-.4-1.8-1.3-2.6Z"/><path d="M9.5 20h5M10.5 22h3M12 1v2M3.8 5l1.5 1.5M20.2 5l-1.5 1.5"/></svg>'
+    ];
+    var values=coreValues[1].split(' · ');
+    var valueMarkup=values.map(function(value,index){
+      return '<div class="mission-value">'+valueIcons[index]+'<span>'+escapeHtml(value)+'</span></div>';
+    }).join('');
+    var content=document.createElement('div');
+    content.className='doc-page-content mission-vision-page';
+    content.innerHTML='<img class="mission-photo" src="img/mission-vision-strategy.png" alt="Team members planning vision and mission together around a laptop"><div class="mission-page-number">'+String(slideNumber).padStart(2,'0')+'</div><section class="mission-heading"><div class="mission-eyebrow">PURPOSE &amp; DIRECTION</div><h2><strong>Our Vision</strong><span>&amp; Mission</span></h2><p>Guided by a clear purpose, we are building a more connected and compassionate healthcare journey for international patients.</p></section><section class="mission-card-row"><article class="mission-card vision"><div class="mission-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24s7.2-12 20-12 20 12 20 12-7.2 12-20 12S4 24 4 24Z"/><circle cx="24" cy="24" r="7"/><circle cx="24" cy="24" r="2" fill="#0b8d84"/></svg></div><h3>VISION</h3><span class="mission-card-rule"></span><p>'+escapeHtml(vision[1])+'</p></article><article class="mission-card mission"><div class="mission-card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="11"/><circle cx="24" cy="24" r="4"/><path d="m25 23 14-14M32 9h7v7"/></svg></div><h3>MISSION</h3><span class="mission-card-rule"></span><p>'+escapeHtml(mission[1])+'</p></article></section><section class="mission-core-values"><h3>CORE VALUES</h3><div class="mission-values-row">'+valueMarkup+'</div></section>';
+    return content;
+  }
+  function makeServicesContent(slide,slideNumber){
+    if(!Array.isArray(slide.items)||slide.items.length!==5) throw new Error('The healthcare services slide must contain five treatment categories.');
+    var rows=slide.items.map(function(item,index){
+      var icon=index<4?'<img class="service-icon" src="'+['img/categories/dental.jpg','img/categories/ivf.jpg','img/categories/hair.jpg','img/categories/skin.jpg'][index]+'" alt="">':'<span class="service-icon service-icon-other" aria-hidden="true">+</span>';
+      return '<article class="service-row"><span class="service-step">'+String(index+1).padStart(2,'0')+'</span>'+icon+'<div class="service-copy"><h3>'+escapeHtml(item[0])+'</h3><p>'+escapeHtml(item[1])+'</p></div></article>';
+    }).join('');
+    var globe='<div class="service-globe" role="img" aria-label="Animated global routes from international locations converge on PRANVAS in Nepal"><svg viewBox="0 0 230 230" aria-hidden="true"><defs><radialGradient id="serviceOcean" cx="34%" cy="28%" r="74%"><stop stop-color="#0b7895"/><stop offset=".58" stop-color="#04516f"/><stop offset="1" stop-color="#022b49"/></radialGradient><clipPath id="serviceGlobeClip"><circle cx="115" cy="115" r="99"/></clipPath><filter id="serviceGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle class="globe-halo" cx="115" cy="115" r="108"/><circle class="globe-ocean" cx="115" cy="115" r="99"/><g clip-path="url(#serviceGlobeClip)"><g class="globe-grid"><ellipse cx="115" cy="115" rx="98" ry="36"/><ellipse cx="115" cy="115" rx="98" ry="67"/><ellipse cx="115" cy="115" rx="36" ry="98"/><ellipse class="globe-longitude" cx="115" cy="115" rx="67" ry="98"/><path d="M17 115h196M27 67h176M27 163h176"/></g><g class="globe-land"><path d="m31 66 8-14 17-8 8-10 15 3 8 8 16 2 4 9-9 7-7 11-11 5-9 14-13 1-6-10-12-4Z"/><path d="m76 103 11 5 9 10 3 15-6 13-4 17-8 14-7-8 1-14-8-12-3-17 5-13Z"/><path d="m102 64 8-8 15 1 7 7-5 8-11 4-5 10-10-2-4-9Z"/><path d="m110 88 12-6 13 4 8 12-3 13-10 8-5 15-8 12-8-5-3-16-9-10 1-16Z"/><path d="m129 61 19-9 22 4 15 11 18 2 8 11-9 10-17-2-9 11-14-4-10-9-14 3-9-10-11-3Z"/><path d="m156 137 16-2 14 8 8 14-12 8-17-4-12-12Z"/></g><g class="globe-routes"><path class="service-route route-1" d="M47 76Q91 62 151 95"/><path class="service-route route-2" d="M101 61Q130 63 151 95"/><path class="service-route route-3" d="M129 107Q139 101 151 95"/><path class="service-route route-4" d="M151 132Q163 111 151 95"/><path class="service-route route-5" d="M181 158Q171 122 151 95"/><path class="service-route route-6" d="M181 82Q162 76 151 95"/><g class=\"service-origin origin-1\"><circle class=\"service-origin-halo\" cx=\"47\" cy=\"76\" r=\"5\"/><circle cx=\"47\" cy=\"76\" r=\"2.3\"/></g><g class=\"service-origin origin-2\"><circle class=\"service-origin-halo\" cx=\"101\" cy=\"61\" r=\"5\"/><circle cx=\"101\" cy=\"61\" r=\"2.3\"/></g><g class=\"service-origin origin-3\"><circle class=\"service-origin-halo\" cx=\"129\" cy=\"107\" r=\"5\"/><circle cx=\"129\" cy=\"107\" r=\"2.3\"/></g><g class=\"service-origin origin-4\"><circle class=\"service-origin-halo\" cx=\"151\" cy=\"132\" r=\"5\"/><circle cx=\"151\" cy=\"132\" r=\"2.3\"/></g><g class=\"service-origin origin-5\"><circle class=\"service-origin-halo\" cx=\"181\" cy=\"158\" r=\"5\"/><circle cx=\"181\" cy=\"158\" r=\"2.3\"/></g><g class=\"service-origin origin-6\"><circle class=\"service-origin-halo\" cx=\"181\" cy=\"82\" r=\"5\"/><circle cx=\"181\" cy=\"82\" r=\"2.3\"/></g></g><g class=\"global-pranvas-pin\"><path class=\"pin-shape\" d=\"M151 86c-5 0-8.5 3.7-8.5 8.2 0 5.8 8.5 13.8 8.5 13.8s8.5-8 8.5-13.8c0-4.5-3.5-8.2-8.5-8.2Z\"/><circle class=\"pin-dot\" cx=\"151\" cy=\"94\" r=\"2.7\"/><text x=\"162\" y=\"94\">PRANVAS</text><text class=\"pin-country\" x=\"162\" y=\"101\">NEPAL</text></g></g><circle class=\"globe-rim\" cx=\"115\" cy=\"115\" r=\"99\"/></svg></div>';
+    var content=document.createElement('div');
+    content.className='doc-page-content services-page';
+    content.innerHTML='<div class="services-page-number">'+String(slideNumber).padStart(2,'0')+'</div><header class="services-heading"><h2><span>Services &amp;</span><span>Treatment</span><em>Categories</em></h2></header>'+globe+'<section class="service-list" aria-label="Healthcare service categories">'+rows+'</section><aside class="services-disclaimer"><p>'+escapeHtml(slide.disclaimer)+'</p></aside>';
+    return content;
+  }
+  function makeFounderContent(slide){
+    if(!slide.image) throw new Error('The founder slide is missing its approved artwork.');
+    var content=document.createElement('div');
+    content.className='doc-page-content founder-page';
+    content.innerHTML='<img class="founder-slide-art" src="'+escapeHtml(slide.image)+'" alt="The Founder Behind PRANVAS: Sanjeev Baral, Founder and CEO"><span class="founder-page-number-mask" aria-hidden="true"></span>';
+    return content;
+  }
+  function makeProposalContent(slide,slideNumber){
+    if(slide.design==='mission-vision') return makeMissionVisionContent(slide,slideNumber);
+    if(slide.design==='service-treatment') return makeServicesContent(slide,slideNumber);
+    if(slide.design==='founder') return makeFounderContent(slide);
+    var content=document.createElement('div');
+    content.className='doc-page-content'+(slide.title==='Market Opportunity'?' market-opportunity':'');
+    var cards=(slide.items||[]).map(function(item,itemIndex){
+      var artwork=slide.title==='Market Opportunity'?'<img class="market-icon" src="'+['img/medical-tourism-cutout.png','img/nepal-potential.png','img/target-markets.png'][itemIndex]+'" alt="">':'';
+      return '<div class="doc-card" style="--n:'+itemIndex+'">'+artwork+'<span class="mark">'+String(itemIndex+1).padStart(2,'0')+'</span><h3>'+escapeHtml(item[0])+'</h3><p>'+escapeHtml(item[1])+'</p></div>';
+    }).join('');
+    var steps=(slide.steps||[]).map(function(item,itemIndex){
+      return '<div class="doc-step" style="--n:'+itemIndex+'"><b>'+String(itemIndex+1).padStart(2,'0')+'</b><span><strong>'+escapeHtml(item[0])+'</strong> · '+escapeHtml(item[1])+'</span></div>';
+    }).join('');
+    var video=slide.video?'<div class="doc-video"><span class="doc-play">▶</span><div><strong>'+escapeHtml(slide.video)+'</strong><span>No video file has been embedded. Add the approved video later.</span></div></div>':'';
+    var note=slide.note?'<div class="doc-note">'+escapeHtml(slide.note)+'</div>':'';
+    content.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2>'+(slide.lead?'<p class="doc-lead">'+escapeHtml(slide.lead)+'</p>':'')+(slide.steps?'<div class="doc-steps">'+steps+'</div>':'<div class="doc-grid" data-count="'+(slide.items||[]).length+'">'+cards+'</div>')+video+note+'<div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
+    return content;
+  }
+  function renderProposalSlides(){
+    var pages=document.querySelectorAll('#book > .page');
+    if(pages.length<3) throw new Error('The original introduction page was not found.');
+    var welcome=document.createElement('div');
+    welcome.className='doc-page-content welcome-page';
+    welcome.innerHTML='<div class="welcome-artstage"><div class="welcome-art-panel"><img class="welcome-artwork" src="img/welcome-namaste.png" alt="Traditional Nepali characters greeting with Namaste and a Nepal flag"></div></div><section class="welcome-message"><small data-typewriter>MEDICAL CARE, MADE EASIER TO NAVIGATE</small><div class="namaste" data-typewriter>Namaste</div><h2 data-typewriter>Welcome to PRANVAS</h2><p data-typewriter>Discover trusted healthcare in Nepal, with thoughtful guidance from your first inquiry through follow-up.</p></section><div class="welcome-values"><span data-typewriter>TRUSTED PROVIDERS</span><span data-typewriter>PERSONAL GUIDANCE</span><span data-typewriter>SUPPORT THROUGH FOLLOW-UP</span></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>01 / 21</span></div>';
+    var typeDelay=0;
+    Array.prototype.forEach.call(welcome.querySelectorAll('[data-typewriter]'),function(node){
+      var text=node.textContent;
+      node.textContent='';
+      Array.from(text).forEach(function(character){
+        var letter=document.createElement('span');
+        letter.className='welcome-type-char';
+        letter.textContent=character;
+        letter.style.setProperty('--type-delay',typeDelay+'ms');
+        node.appendChild(letter);
+        typeDelay+=28;
+      });
+      typeDelay+=150;
+    });
+    pages[1].appendChild(welcome);
+    var anchor=pages[2];
+    var previous=anchor;
+    proposalSlides.slice(2).forEach(function(slide,index){
+      var slideNumber=index+3;
+      var page=document.createElement('div');
+      page.className='page';
+      page.setAttribute('data-deck','keep');
+      if(slideNumber===21) page.setAttribute('data-density','hard');
+      page.appendChild(makeProposalContent(slide,slideNumber));
+      previous.parentNode.insertBefore(page,previous.nextSibling);
+      previous=page;
+    });
+  }
+  renderProposalSlides();
 
   // ---- size the book to the viewport (two-page spread on wide screens, single page on phones)
   // size the wrapper to exactly one spread (or one page on phones) so the book has no side offset
@@ -468,6 +828,7 @@
     caret.style.left = 'calc(' + pct + '% + 0.6%)';
   }
   function playTyping(){
+    if(!titleImg||!caret) return;
     typingTimers.forEach(clearTimeout); typingTimers = [];
     setReveal((31.52*3 - BOX_X0) / BOX_W * 100);   // start of the "P" – nothing visible yet
     caret.classList.add('on');
@@ -479,25 +840,20 @@
     typingTimers.push(setTimeout(function(){ caret.classList.remove('on'); }, t + edges.length*190 + 2600));
   }
 
-  // ---- founder photo zoom-in
-  var founder = document.getElementById('founder');
-  function playFounder(){
-    founder.classList.remove('play','done');
-    void founder.offsetWidth;                    // restart animation
-    founder.classList.add('play');
-  }
+  var proposalPages = Array.prototype.slice.call(document.querySelectorAll('.doc-page-content'));
   var p3 = document.getElementById('p3');
-  function playP3(){ p3.classList.remove('play'); void p3.offsetWidth; p3.classList.add('play'); }
-  var p4 = document.getElementById('p4market');
-  function playP4(){ p4.classList.remove('play'); void p4.offsetWidth; p4.classList.add('play'); }
-  var p5 = document.getElementById('p5market');
-  function playP5(){ p5.classList.remove('play'); void p5.offsetWidth; p5.classList.add('play'); }
-  var p6 = document.getElementById('p6audience');
-  function playP6(){ p6.classList.remove('play'); void p6.offsetWidth; p6.classList.add('play'); }
-  founder.addEventListener('animationend', function(){
-    founder.classList.remove('play'); founder.classList.add('done');
-  });
-
+  function playP3(){
+    p3.classList.remove('play');
+    void p3.offsetWidth;
+    p3.classList.add('play');
+  }
+  function playProposal(index){
+    var content=proposalPages[index];
+    if(!content) return;
+    content.classList.remove('play');
+    void content.offsetWidth;
+    content.classList.add('play');
+  }
   // ---- page flip
   var pageFlip = new St.PageFlip(book, {
     width: 560, height: 795, size: 'stretch',
@@ -505,7 +861,7 @@
     showCover: true, usePortrait: true, drawShadow: true, maxShadowOpacity: .45,
     flippingTime: 900, mobileScrollSupport: false, autoSize: true
   });
-  pageFlip.loadFromHTML(document.querySelectorAll('#book .page'));
+  pageFlip.loadFromHTML(document.querySelectorAll('#book .page[data-deck="keep"]'));
 
   var count = document.getElementById('count');
   var lastVisible = {};
@@ -521,11 +877,11 @@
     count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
     var now = {}; vis.forEach(function(p){ now[p] = true; });
     if (now[0] && !lastVisible[0]) playTyping();
-    if (now[1] && !lastVisible[1]) playFounder();
+    if (now[1] && !lastVisible[1]) playProposal(0);
     if (now[2] && !lastVisible[2]) playP3();
-    if (now[3] && !lastVisible[3]) playP4();
-    if (now[4] && !lastVisible[4]) playP5();
-    if (now[5] && !lastVisible[5]) playP6();
+    vis.forEach(function(p){
+      if (p >= 3 && !lastVisible[p]) playProposal(p-2);
+    });
     lastVisible = now;
   }
   // keep a single page (front / back cover) centred instead of sitting on one half
@@ -543,14 +899,14 @@
   }
   pageFlip.on('flip', function(){ update(); center(); });
   pageFlip.on('changeOrientation', function(){ lastVisible = {}; update(); center(); });
-  // start the founder zoom as soon as page 2 starts to be revealed while flipping
+  // Start the welcome-page animation as soon as it begins to turn into view.
   pageFlip.on('changeState', function(e){
     if ((e.data === 'flipping' || e.data === 'user_fold') && shift !== 0) {
       wrap.style.transform = 'translateX(0px)'; shift = 0;
     }
     if (e.data === 'flipping' || e.data === 'user_fold') {
       var i = pageFlip.getCurrentPageIndex();
-      if (i === 0 && !lastVisible[1]) { playFounder(); lastVisible[1] = true; }
+      if (i === 0 && !lastVisible[1]) { playProposal(0); lastVisible[1] = true; }
       if (i === 0 && pageFlip.getOrientation() !== 'portrait' && !lastVisible[2]) { playP3(); lastVisible[2] = true; }
     }
   });

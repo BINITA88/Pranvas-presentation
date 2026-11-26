@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1024" fill="none">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="720" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset=".58" stop-color="#f2f8fc"/>
+      <stop offset="1" stop-color="#dcecf5"/>
+    </linearGradient>
+    <linearGradient id="board" x1="390" y1="90" x2="690" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff"/>
+      <stop offset="1" stop-color="#f7fbfd"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="510" y1="405" x2="680" y2="790" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f3f6f7"/>
+      <stop offset="1" stop-color="#c5d6df"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="530" y1="300" x2="605" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#efc7a6"/>
+      <stop offset="1" stop-color="#c88f70"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="350" y="65" width="370" height="465" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="720" height="1024" fill="url(#room)"/>
+  <path d="M340 0h380v590H340z" fill="#eaf4f8" opacity=".46"/>
+  <path d="M350 0v620M710 0v620" stroke="#fff" stroke-width="8" opacity=".78"/>
+  <path d="M360 535h360" stroke="#b9d1dc" stroke-width="3" opacity=".45"/>
+  <path d="M370 520V80h328v440" fill="#486982" opacity=".12" filter="url(#soft-shadow)"/>
+  <rect x="372" y="82" width="326" height="430" rx="15" fill="url(#board)" stroke="#d3e2e9" stroke-width="4"/>
+  <path d="M398 151h273" stroke="#e1ebef" stroke-width="2"/>
+  <text x="402" y="128" fill="#315671" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">PATIENT JOURNEY PLAN</text>
+  <text x="402" y="178" fill="#8095a2" font-family="Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1.5">CARE COORDINATION</text>
+  <path d="M433 254h205" stroke="#9eb8c6" stroke-width="4" stroke-linecap="round"/>
+  <path d="m626 245 13 9-13 9" stroke="#9eb8c6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="439" cy="254" r="20" fill="#e2f6f0" stroke="#37b99e" stroke-width="3"/>
+  <circle cx="535" cy="254" r="20" fill="#eaf1ff" stroke="#5888d8" stroke-width="3"/>
+  <circle cx="636" cy="254" r="20" fill="#fff3db" stroke="#dea94e" stroke-width="3"/>
+  <path d="m430 254 6 6 12-14M527 254l6 6 12-14M628 254l6 6 12-14" stroke="#335c75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="409" y="297" fill="#526f80" font-family="Arial,sans-serif" font-size="12" font-weight="600">CONNECT</text>
+  <text x="511" y="297" fill="#526f80" font-family="Arial,sans-serif" font-size="12" font-weight="600">CARE</text>
+  <text x="605" y="297" fill="#526f80" font-family="Arial,sans-serif" font-size="12" font-weight="600">FOLLOW UP</text>
+  <rect x="401" y="335" width="118" height="96" rx="10" fill="#eaf6f3"/>
+  <rect x="535" y="335" width="135" height="96" rx="10" fill="#edf3fb"/>
+  <path d="M418 358h73M418 378h57M418 398h64M552 358h91M552 378h76M552 398h83" stroke="#a9bfca" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="649" cy="474" r="13" fill="#d7f0e9"/>
+  <path d="m643 474 4 4 8-9" stroke="#178f7c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M322 0h18v640h-18z" fill="#d7e8ef" opacity=".5"/>
+  <path d="M324 0h5v640h-5z" fill="#fff" opacity=".8"/>
+  <g transform="translate(0 -65)">
+  <path d="M515 424c-2-26 8-54 30-66 16-9 37-6 52 4 18 12 27 34 27 59l-12 24-88 1z" fill="#352f31"/>
+  <path d="M543 340c-15 9-23 27-22 46 2 28 20 48 44 49 24 1 43-20 43-47 0-23-14-43-35-50-11-4-21-3-30 2Z" fill="url(#skin)"/>
+  <path d="M523 366c-5-26 8-52 31-63 25-12 57 1 67 27 5 13 4 29-1 43-5-19-17-32-31-40-18 17-39 24-66 21Z" fill="#342b2c"/>
+  <path d="M522 377c-8-7-17-2-17 7 0 8 6 14 14 13M545 392c5 3 10 3 15 0" stroke="#8c5f4e" stroke-width="3" stroke-linecap="round"/>
+  <path d="M561 429c-20 2-38 14-50 34-18 31-23 103-24 179h170c-2-74-11-150-29-181-12-20-31-32-52-33l-8 20z" fill="url(#jacket)" stroke="#a9bdc7" stroke-width="3"/>
+  <path d="M555 435 579 467l24-32M579 467l-11 175M579 467l21 175" stroke="#b1c2ca" stroke-width="3"/>
+  <path d="M520 455c-14-18-29-39-45-60-8-11-16-22-24-33-6-8-17-5-18 4-1 7 5 14 9 20l39 76c8 14 21 24 38 25z" fill="url(#jacket)" stroke="#a9bdc7" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M447 365c-8-10-17-22-23-30-4-6-13-3-12 4 1 7 7 16 13 24l16 21 14-9z" fill="url(#skin)"/>
+  <path d="m418 349 14-8 20 35-14 8z" fill="#204e6e"/>
+  <path d="M601 457c20 17 30 49 34 87" stroke="#fff" stroke-width="4" opacity=".65" stroke-linecap="round"/>
+  </g>
+</svg>
