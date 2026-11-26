@@ -570,6 +570,13 @@
   .target-market-page .chart-column strong{z-index:2;bottom:calc(33% + var(--height) * .52);font-size:calc(100cqw / 419.25 * 8.5)}
   .target-market-page .chart-column b{bottom:12%;font-size:calc(100cqw / 419.25 * 7)}
   .target-market-page .chart-column small{bottom:0}
+  .target-market-page .column-chart{height:calc(100cqw / 419.25 * 135)}
+  .target-market-page .chart-column .column-bar{height:calc(var(--height) * .56);clip-path:polygon(50% 0,100% calc(100cqw / 419.25 * 5),100% calc(100% - calc(100cqw / 419.25 * 5)),50% 100%,0 calc(100% - calc(100cqw / 419.25 * 5)),0 calc(100cqw / 419.25 * 5))}
+  .target-market-page .chart-column .column-bar:before{height:calc(100cqw / 419.25 * 6)}
+  .target-market-page .chart-column strong{bottom:calc(33% + var(--height) * .56)}
+  .video-placeholder-box{position:absolute;left:7%;right:7%;top:25%;height:42%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(100cqw / 419.25 * 12);border:1px dashed #a6cbd3;border-radius:calc(100cqw / 419.25 * 10);background:#f2f9fa;color:#496c7d}
+  .video-placeholder-box span{display:grid;place-items:center;width:calc(100cqw / 419.25 * 48);height:calc(100cqw / 419.25 * 48);padding-left:3px;border-radius:50%;background:#d9f2ee;color:#078f88;font-size:calc(100cqw / 419.25 * 18)}
+  .video-placeholder-box p{margin:0;font-size:calc(100cqw / 419.25 * 11);font-weight:600}
 </style>
 </head>
 <body>
@@ -716,8 +723,8 @@
   var proposalSlides = [
     {section:'Opening',title:'Welcome to PRANVAS',lead:'Medical care, made easier to navigate.',items:[['PRANVAS','MEDICAL CARE, BEYOND BORDERS'],['Investor Presentation','A connected, guided healthcare journey for international patients.'],['2026','Investor presentation']]},
     {section:'01 · Introduction & Vision',title:'Introducing PRANVAS',lead:'PRANVAS is a healthcare facilitation platform connecting international patients with healthcare providers and coordinated support throughout their care journey.',items:[['Healthcare connections','Helping patients explore suitable providers and treatment options.'],['Patient coordination','Supporting the journey from inquiry through follow-up.']]},
-    {section:'01 · Introduction & Vision',title:'The Problem We Are Solving',lead:'For a patient seeking treatment abroad, the challenge is often bigger than choosing a doctor.',items:[['Finding trusted care','Identifying suitable hospitals, doctors and treatment options.'],['Managing information','Understanding requirements, medical documents and next steps.'],['Coordinating travel','Arranging appointments, accommodation and transportation.'],['Navigating an unfamiliar place','Having reliable guidance before, during and after treatment.']]},
-    {section:'01 · Introduction & Vision',title:'Our Solution',lead:'One coordinated experience across the patient journey.',items:[['Discover','Explore providers and treatment options.'],['Coordinate','Connect with hospitals and doctors.'],['Support','Guide travel, arrival and appointments.'],['Follow through','Assist with recovery and post-departure follow-up.']],note:'A personal patient concierge approach, supported by a digital platform and partner network.'},
+    {section:'01 · Introduction & Vision',title:'The Problem We Are Solving',design:'video-placeholder'},
+    {section:'01 · Introduction & Vision',title:'Our Solution',design:'video-placeholder'},
     {section:'01 · Introduction & Vision',title:'The Founder Behind PRANVAS',design:'founder',image:'img/founder-slide-clear.png'},
     {section:'01 · Introduction & Vision',title:'Our Vision & Mission',design:'mission-vision',items:[['Vision','Build a trusted pathway for international patients seeking healthcare in Nepal.'],['Mission','Coordinate access to healthcare providers and guide patients through a supported treatment journey.'],['Core values','Trust · Care · Coordination · Clarity']]},
     {section:'01 · Introduction & Vision',title:'Market Opportunity',lead:'An opportunity to serve patients looking for coordinated care beyond their home country.',items:[['Medical tourism','Patients consider treatment options across borders.'],["Nepal's potential",'Position Nepal as a healthcare destination.'],['Target markets','Build awareness among selected international audiences.']],note:'Market size and priority countries will be confirmed through further research.'},
@@ -792,6 +799,12 @@
     return content;
   }
   function makeProposalContent(slide,slideNumber){
+    if(slide.design==='video-placeholder'){
+      var placeholder=document.createElement('div');
+      placeholder.className='doc-page-content video-placeholder-page';
+      placeholder.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2><div class="video-placeholder-box"><span aria-hidden="true">▶</span><p>Video will be placed here</p></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
+      return placeholder;
+    }
     if(slide.design==='target-market') return makeTargetMarketContent(slide,slideNumber);
     if(slide.design==='mission-vision') return makeMissionVisionContent(slide,slideNumber);
     if(slide.design==='service-treatment') return makeServicesContent(slide,slideNumber);
