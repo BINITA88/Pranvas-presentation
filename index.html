@@ -22,6 +22,10 @@
   header b{color:var(--teal);font-weight:600}
   #stage{position:absolute;inset:26px 0 66px 0;overflow:auto;display:flex;padding:4px 1vw}
   #wrap{margin:auto;flex:none;transition:transform .7s cubic-bezier(.3,.7,.3,1)}
+  #wrap{position:relative}
+  .problem-video-spread{display:none;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25}
+  .problem-video-spread.is-visible{display:flex}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
+  .problem-video-brand{position:absolute;right:5%;bottom:4%;width:20%;height:12%;z-index:2;display:flex;align-items:center;justify-content:center;gap:3%;padding:1% 2%;border-radius:4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;box-shadow:0 2px 8px #001a3026}.problem-video-brand img{display:block;max-width:28%;height:100%;object-fit:contain}.problem-video-brand strong{color:#07345c;font:700 clamp(8px,1.2vw,16px)/1 Arial,sans-serif;letter-spacing:.03em}.problem-video-brand strong span{color:#009d93}
   #book{opacity:0;transition:opacity .6s ease, transform .7s cubic-bezier(.3,.7,.3,1)}
   #book.ready{opacity:1}
   #book,#book *{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -721,6 +725,7 @@
   .revenue-art{position:absolute;top:71%;bottom:0;left:0;right:0;background:#dce9ee url('img/pranvas-investor-cover.png') center bottom / 100% auto no-repeat}.revenue-art div{position:absolute;inset:0;background:#073b68;clip-path:polygon(0 15%,0 100%,46% 100%)}.revenue-page .doc-foot{z-index:2;color:#fff;text-shadow:0 1px 3px #001a30}
   .revenue-page.play .revenue-year{animation:marketingRise .6s ease both}.revenue-page.play .revenue-year:nth-child(2){animation-delay:.15s}@media(prefers-reduced-motion:reduce){.revenue-page.play .revenue-year{animation:none}}
   .doc-page-content.revenue-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-page:before{display:none}.revenue-page .doc-kicker{display:none}
+  .patient-video-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1}.patient-video-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7686;font-size:calc(100cqw / 419.25 * 9);line-height:1.45}.patient-video-frame{position:absolute;left:5%;right:5%;top:25%;height:45%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:calc(100cqw / 419.25 * 8);background:#09243b;box-shadow:0 4px 15px #102f4125}.patient-video-frame video{display:block;width:100%;height:100%;object-fit:contain}.patient-video-help{position:absolute;top:73%;left:8%;right:8%;text-align:center;color:#567385;font-size:calc(100cqw / 419.25 * 8.5)}
   .doc-page-content.revenue-image-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-image-page:before{display:none}.revenue-image-page img{display:block;width:100%;height:100%;object-fit:fill}
   .doc-page-content.revenue-image-page:before{display:block;content:"";position:absolute;left:5%;right:3%;top:66.5%;height:7%;width:auto;background:#fff;z-index:1;pointer-events:none}
   .revenue-image-page:after{content:"";position:absolute;left:0;bottom:0;width:37%;height:8%;background:linear-gradient(145deg,#013c76,#013066);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);mask-composite:intersect;pointer-events:none}
@@ -883,7 +888,7 @@
     {section:'02 · Platform, Services & Operations',title:'Introducing Our Digital Platform',design:'platform-gallery'},
     {section:'02 · Platform, Services & Operations',title:'Hospital Partnership Strategy',design:'partnership-reference'},
     {section:'02 · Platform, Services & Operations',title:'Complete Patient Journey',design:'journey-animation',items:[['Inquiry','First contact'],['Registration','Patient details'],['Doctor match','Care options'],['Treatment','Coordinated care'],['Recovery','Patient support'],['Follow-up','Continued contact']]},
-    {section:'02 · Platform, Services & Operations',title:'Detailed Patient Journey — Operational Flow',lead:'A detailed 17-step pathway with consultation decisions, travel support and follow-up.',steps:[['Patient Inquiry','Website / Social Media / Referral.'],['Patient Registration','Personal details and treatment requirements.'],['Medical Documents Collection','Reports and medical history.'],['Hospital & Doctor Matching','Verified partner hospitals.'],['Online Doctor Consultation','Medical evaluation.'],['Treatment Plan & Cost Estimate','Treatment, duration and estimated cost.'],['Patient Confirms Treatment?','YES: continue to booking and travel planning. NO: further consultation or alternative hospital/treatment.'],['Booking & Travel Planning','Appointment, hotel and arrival date.'],['Airport Pickup & Welcome','PRANVAS representative receives the patient.'],['Private Vehicle Transfer','Airport to hotel.'],['Hotel Check-in & Assistance','Accommodation and schedule briefing.'],['Hotel to Hospital Transfer','Scheduled vehicle pickup.'],['Personal Hospital Guide','Reception, registration and department guidance.'],['Doctor Consultation & Treatment','Appointment coordination and reduced waiting.'],['Return Transfer & Recovery','Hospital to hotel; further treatment or follow-up if required.'],['Discharge & Departure Preparation','Hotel to airport transfer and private vehicle departure assistance.'],['Post-Departure Follow-up','Continued patient support.']]},
+    {section:'02 · Platform, Services & Operations',title:'Detailed Patient Journey — Operational Flow',design:'patient-journey-video'},
     {section:'02 · Platform, Services & Operations',title:'Patient Concierge & Transportation Operations',design:'concierge',items:[['Dedicated coordinator','A consistent point of contact for the patient.'],['Personal guide','Support with hospital navigation and appointments.'],['Private vehicle','Planned transportation between airport, hotel and hospital.'],['Airport transfers','Arrival and departure assistance.']],note:'Service scope and availability to be confirmed with the operating team and transport partners.'},
     {section:'02 · Platform, Services & Operations',title:'Marketing & Patient Acquisition Strategy',design:'marketing-channels',lead:'A multi-channel approach to build awareness, generate inquiries and support patient acquisition.',items:[['Search','Google Ads · SEO'],['Social','Meta Ads · Content'],['Trust & reach','Influencer collaborations'],['Awareness','News · Airport advertising'] ]},
     {section:'03 · Business & Financial Plan',title:'Business Model & Revenue Streams',items:[['Patient facilitation commission','10% of the treatment value. Average treatment value assumption: NPR 100,000 per completed patient. Commission per completed patient: NPR 10,000.'],['Healthcare provider subscription','NPR 50,000 per clinic/hospital per year (Year 2 assumption).']],note:'Revenue is planned from completed patient treatment journeys and annual subscriptions from listed providers, beginning in Year 2.'},
@@ -949,6 +954,12 @@
     return content;
   }
   function makeProposalContent(slide,slideNumber){
+    if(slide.design==='patient-journey-video'){
+      var videoPage=document.createElement('div');videoPage.className='doc-page-content patient-video-page';
+      videoPage.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2><p class="patient-video-lead">Follow the patient journey from inquiry through departure.</p><div class="patient-video-frame"><video controls playsinline preload="metadata" aria-label="Medical tourism patient journey from inquiry to departure"><source src="img/medical-tourism-process-nepal-step-by-step-full-patient-journey-from-inquiry-to-departure-with-nepa.mp4" type="video/mp4">Your browser does not support video playback.</video></div><p class="patient-video-help">Tap play to watch the complete patient journey.</p><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
+      var player=videoPage.querySelector('video');['mousedown','touchstart','pointerdown','click'].forEach(function(type){player.addEventListener(type,function(event){event.stopPropagation();});});
+      return videoPage;
+    }
     if(slide.design==='revenue-comparison'){
       var revenueImage=document.createElement('div');
       revenueImage.className='doc-page-content revenue-image-page';
@@ -1090,6 +1101,12 @@
   // ---- size the book to the viewport (two-page spread on wide screens, single page on phones)
   // size the wrapper to exactly one spread (or one page on phones) so the book has no side offset
   var wrap = document.getElementById('wrap');
+  var problemVideoSpread=document.createElement('div');
+  problemVideoSpread.className='problem-video-spread';
+  problemVideoSpread.innerHTML='<div class="problem-video-inner"><video controls playsinline preload="metadata" aria-label="Problem and solution presentation video"><source src="img/WhatsApp%20Video%202026-11-26%20at%2023.02.17%20(1).mp4" type="video/mp4">Your browser does not support video playback.</video><div class="problem-video-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div></div>';
+  wrap.appendChild(problemVideoSpread);
+  var problemVideo=problemVideoSpread.querySelector('video');
+  ['mousedown','touchstart','pointerdown','click'].forEach(function(type){problemVideo.addEventListener(type,function(event){event.stopPropagation();});});
   var zoom = 1, ZOOMS = [1, 1.35, 1.75, 2.25];
   function fit(){
     var stage = document.getElementById('stage');
@@ -1176,6 +1193,11 @@
   }
   function update(){
     var vis = visiblePages();
+    var showProblemVideo=vis.indexOf(3)!==-1 || vis.indexOf(4)!==-1;
+    var wasShowing=problemVideoSpread.classList.contains('is-visible');
+    problemVideoSpread.classList.toggle('is-visible',showProblemVideo);
+    if(!showProblemVideo && wasShowing) problemVideo.pause();
+    if(showProblemVideo && !wasShowing){var playRequest=problemVideo.play();if(playRequest && playRequest.catch) playRequest.catch(function(){});}
     count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
     var now = {}; vis.forEach(function(p){ now[p] = true; });
     if (now[0] && !lastVisible[0]) playTyping();
@@ -1199,7 +1221,7 @@
     shift = x;
     wrap.style.transform = 'translateX(' + x + 'px)';
   }
-  pageFlip.on('flip', function(){ update(); center(); });
+  pageFlip.on('flip', function(){ document.querySelectorAll('.patient-video-page video').forEach(function(video){video.pause();}); update(); center(); });
   pageFlip.on('changeOrientation', function(){ lastVisible = {}; update(); center(); });
   // Start the welcome-page animation as soon as it begins to turn into view.
   pageFlip.on('changeState', function(e){
