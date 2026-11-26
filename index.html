@@ -25,6 +25,7 @@
   #wrap{position:relative}
   .problem-video-spread{display:none;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25}
   .problem-video-spread.is-visible{display:flex}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
+  .problem-video-content{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;gap:clamp(8px,1.2vw,18px)}.problem-video-content h2{flex:none;align-self:flex-start;margin:0;color:#092f5c;font-size:clamp(16px,2vw,27px);line-height:1.15}.problem-video-content .problem-video-inner{flex:0 1 auto;max-height:calc(100% - 45px)}
   .problem-video-brand{position:absolute;right:5%;bottom:4%;width:20%;height:12%;z-index:2;display:flex;align-items:center;justify-content:center;gap:3%;padding:1% 2%;border-radius:4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;box-shadow:0 2px 8px #001a3026}.problem-video-brand img{display:block;max-width:28%;height:100%;object-fit:contain}.problem-video-brand strong{color:#07345c;font:700 clamp(8px,1.2vw,16px)/1 Arial,sans-serif;letter-spacing:.03em}.problem-video-brand strong span{color:#009d93}
   #book{opacity:0;transition:opacity .6s ease, transform .7s cubic-bezier(.3,.7,.3,1)}
   #book.ready{opacity:1}
@@ -727,8 +728,8 @@
   .doc-page-content.revenue-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-page:before{display:none}.revenue-page .doc-kicker{display:none}
   .patient-video-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1}.patient-video-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7686;font-size:calc(100cqw / 419.25 * 9);line-height:1.45}.patient-video-frame{position:absolute;left:5%;right:5%;top:25%;height:45%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:calc(100cqw / 419.25 * 8);background:#09243b;box-shadow:0 4px 15px #102f4125}.patient-video-frame video{display:block;width:100%;height:100%;object-fit:contain}.patient-video-help{position:absolute;top:73%;left:8%;right:8%;text-align:center;color:#567385;font-size:calc(100cqw / 419.25 * 8.5)}
   .doc-page-content.revenue-image-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-image-page:before{display:none}.revenue-image-page img{display:block;width:100%;height:100%;object-fit:fill}
-  .doc-page-content.revenue-image-page:before{display:block;content:"";position:absolute;left:5%;right:3%;top:66.5%;height:7%;width:auto;background:#fff;z-index:1;pointer-events:none}
-  .revenue-image-page:after{content:"";position:absolute;left:0;bottom:0;width:37%;height:8%;background:linear-gradient(145deg,#013c76,#013066);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);mask-composite:intersect;pointer-events:none}
+  .doc-page-content.revenue-image-page:before{display:block;content:"";position:absolute;left:0;right:0;top:66%;bottom:0;width:auto;height:auto;background:#fff url('img/revenue-projections-clear.png') center bottom / 100% 400% no-repeat;z-index:1;pointer-events:none}
+  .revenue-image-page:after{content:"";position:absolute;z-index:2;left:0;bottom:0;width:37%;height:12%;background:linear-gradient(145deg,#013c76,#013066);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);mask-composite:intersect;pointer-events:none}
   .revenue-brand{position:absolute;top:2%;left:5%;right:5%;height:9%;display:flex;align-items:center;color:#08345d}.revenue-brand img{width:calc(100cqw / 419.25 * 45);height:calc(100cqw / 419.25 * 45);object-fit:contain}.revenue-brand b{font-size:calc(100cqw / 419.25 * 14);letter-spacing:.04em}.revenue-brand b span{color:#009f98}.revenue-brand small{display:block;font-size:calc(100cqw / 419.25 * 3.8);font-weight:700;letter-spacing:.12em}.revenue-brand p{margin-left:auto;color:#14466a;font-size:calc(100cqw / 419.25 * 4);font-weight:700;letter-spacing:.15em;line-height:1.4}
   .revenue-page h2{position:absolute;top:13%;left:6%;right:6%;margin:0;font-size:calc(100cqw / 419.25 * 23);line-height:1.02}.revenue-page h2 span{font-size:calc(100cqw / 419.25 * 18);font-weight:500}.revenue-page .revenue-rule{position:absolute;top:23%;left:6%;margin:0;width:calc(100cqw / 419.25 * 35)}.revenue-page .revenue-lead{position:absolute;top:25%;left:6%;right:8%;margin:0;font-size:calc(100cqw / 419.25 * 8);line-height:1.35}
   .revenue-page .revenue-years{top:31%;left:6%;right:6%;height:35%;gap:calc(100cqw / 419.25 * 5)}.revenue-page .revenue-year{border-radius:calc(100cqw / 419.25 * 4)}.revenue-page .revenue-disclaimer{top:68%;left:6%;right:6%;padding:calc(100cqw / 419.25 * 6)}.revenue-page .revenue-art{top:75%;background-position:center bottom}.revenue-page .revenue-art div{background:#063866;clip-path:polygon(0 0,0 100%,55% 100%)}.revenue-page .doc-foot{left:6%;right:6%}
@@ -1041,7 +1042,7 @@
     if(slide.design==='video-placeholder'){
       var placeholder=document.createElement('div');
       placeholder.className='doc-page-content video-placeholder-page';
-      placeholder.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2><div class="video-placeholder-box"><span aria-hidden="true">▶</span><p>Video will be placed here</p></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
+      placeholder.innerHTML='';
       return placeholder;
     }
     if(slide.design==='target-market') return makeTargetMarketContent(slide,slideNumber);
@@ -1103,10 +1104,17 @@
   var wrap = document.getElementById('wrap');
   var problemVideoSpread=document.createElement('div');
   problemVideoSpread.className='problem-video-spread';
-  problemVideoSpread.innerHTML='<div class="problem-video-inner"><video controls playsinline preload="metadata" aria-label="Problem and solution presentation video"><source src="img/WhatsApp%20Video%202026-11-26%20at%2023.02.17%20(1).mp4" type="video/mp4">Your browser does not support video playback.</video><div class="problem-video-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div></div>';
+  problemVideoSpread.innerHTML='<div class="problem-video-content"><h2>Problem &amp; Solution</h2><div class="problem-video-inner"><video controls playsinline preload="metadata" aria-label="Problem and solution presentation video"><source src="img/WhatsApp%20Video%202026-11-26%20at%2023.02.17%20(1).mp4" type="video/mp4">Your browser does not support video playback.</video><div class="problem-video-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div></div></div>';
   wrap.appendChild(problemVideoSpread);
   var problemVideo=problemVideoSpread.querySelector('video');
   ['mousedown','touchstart','pointerdown','click'].forEach(function(type){problemVideo.addEventListener(type,function(event){event.stopPropagation();});});
+  var journeyVideoSpread=document.createElement('div');
+  journeyVideoSpread.className='problem-video-spread journey-video-spread';
+  journeyVideoSpread.innerHTML='<div class="problem-video-inner"><video controls playsinline preload="metadata" aria-label="Full patient journey from inquiry to departure"><source src="img/medical-tourism-process-nepal-step-by-step-full-patient-journey-from-inquiry-to-departure-with-nepa.mp4" type="video/mp4">Your browser does not support video playback.</video><div class="problem-video-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div></div>';
+  wrap.appendChild(journeyVideoSpread);
+  var journeyVideoPlayer=journeyVideoSpread.querySelector('video'), journeyVideoDismissed=false;
+  ['mousedown','touchstart','pointerdown','click'].forEach(function(type){journeyVideoPlayer.addEventListener(type,function(event){event.stopPropagation();});});
+  journeyVideoPlayer.addEventListener('ended',function(){journeyVideoDismissed=true;journeyVideoSpread.classList.remove('is-visible');});
   var zoom = 1, ZOOMS = [1, 1.35, 1.75, 2.25];
   function fit(){
     var stage = document.getElementById('stage');
@@ -1198,6 +1206,13 @@
     problemVideoSpread.classList.toggle('is-visible',showProblemVideo);
     if(!showProblemVideo && wasShowing) problemVideo.pause();
     if(showProblemVideo && !wasShowing){var playRequest=problemVideo.play();if(playRequest && playRequest.catch) playRequest.catch(function(){});}
+    var onJourneySpread=vis.indexOf(13)!==-1;
+    if(!onJourneySpread){journeyVideoDismissed=false;if(journeyVideoSpread.classList.contains('is-visible')){journeyVideoPlayer.pause();journeyVideoSpread.classList.remove('is-visible');}}
+    else if(!journeyVideoDismissed && !journeyVideoSpread.classList.contains('is-visible')){
+      document.querySelectorAll('.patient-video-page video').forEach(function(video){video.pause();});
+      journeyVideoSpread.classList.add('is-visible');journeyVideoPlayer.currentTime=0;
+      var journeyPlay=journeyVideoPlayer.play();if(journeyPlay && journeyPlay.catch) journeyPlay.catch(function(){});
+    }
     count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
     var now = {}; vis.forEach(function(p){ now[p] = true; });
     if (now[0] && !lastVisible[0]) playTyping();
