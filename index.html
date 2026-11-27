@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRANVAS – A Partnership Proposal</title>
+<link rel="preload" as="image" href="img/problem-solution-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
 <style>
   :root{--teal:#3ddbb0;--navy:#021c45;}
@@ -24,8 +25,8 @@
   #wrap{margin:auto;flex:none;transition:transform .7s cubic-bezier(.3,.7,.3,1)}
   #wrap{position:relative}
   .problem-video-spread{display:flex;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease,visibility 0s linear .24s}
-  .problem-video-spread.is-visible:not(.is-turning){opacity:1;visibility:visible;pointer-events:auto;transition:opacity .28s ease,visibility 0s}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
-  @media(prefers-reduced-motion:reduce){.problem-video-spread,.problem-video-spread.is-visible:not(.is-turning){transition:none}}
+  .problem-video-spread.is-visible{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .28s ease,visibility 0s}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
+  @media(prefers-reduced-motion:reduce){.problem-video-spread,.problem-video-spread.is-visible{transition:none}}
   .problem-video-spread{container-type:size}
   .problem-video-spread:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(#3ddbb0,#0a6f9a)}
   .problem-video-content{--u:min(.12cqw,.17cqh);display:flex;flex-direction:column;width:100%;height:100%;min-height:0;gap:calc(var(--u)*16);padding:calc(var(--u)*10) calc(var(--u)*18) 0;font-family:'Inter',system-ui,sans-serif;text-align:left}
@@ -38,6 +39,8 @@
   .problem-video-trigger:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,22,48,.08) 40%,rgba(4,22,48,.86))}
   .problem-video-trigger:hover{box-shadow:0 16px 40px rgba(4,28,68,.3)}.problem-video-trigger:hover>img{transform:scale(1.025)}
   .problem-video-trigger:focus-visible{outline:3px solid #3ddbb0;outline-offset:3px}
+  .problem-video-inline{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:calc(var(--u)*5);background:#061c32}
+  .problem-video-inline video{object-fit:cover}
   .problem-video-caption{position:absolute;z-index:1;left:calc(var(--u)*16);bottom:calc(var(--u)*14);display:flex;align-items:center;gap:calc(var(--u)*10);color:#fff;text-align:left}
   .problem-video-play-btn{display:grid;place-items:center;flex:none;width:calc(var(--u)*34);height:calc(var(--u)*34);border-radius:50%;background:#3ddbb0;color:#042048}
   .problem-video-play-btn svg{width:42%;height:42%;margin-left:6%;fill:currentColor}
@@ -337,6 +340,10 @@
   #book>.page:not([data-deck="keep"]){display:none}
   .doc-page-content{position:absolute;inset:4.5% 5%;padding:calc(100cqw / 419.25 * 14);border:1px solid #d5e5ec;border-radius:calc(100cqw / 419.25 * 8);background:linear-gradient(145deg,#fff,#f8fcff);color:#14263d;font-family:'Inter',system-ui,sans-serif;overflow:hidden}
   .doc-page-content:before{content:"";position:absolute;inset:0 auto 0 0;width:calc(100cqw / 419.25 * 3);background:linear-gradient(#3ddbb0,#0a6f9a)}
+  .doc-page-content.video-placeholder-page{inset:0;padding:0;border:0;border-radius:0;background:#061c32}
+  .doc-page-content.video-placeholder-page:before{inset:0;width:auto;background-image:linear-gradient(180deg,rgba(4,22,48,.08) 40%,rgba(4,22,48,.7)),url('img/problem-solution-poster.jpg');background-size:100% 100%,253% 100%;background-repeat:no-repeat}
+  .video-placeholder-page.problem-video-placeholder-left:before{background-position:center,left center}
+  .video-placeholder-page.problem-video-placeholder-right:before{background-position:center,65.4% center}
   .doc-kicker{display:flex;align-items:center;gap:calc(100cqw / 419.25 * 4);font-size:calc(100cqw / 419.25 * 8);font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#087e86}
   .doc-kicker:before{content:"";width:calc(100cqw / 419.25 * 12);height:calc(100cqw / 419.25 * 1.2);border-radius:99px;background:linear-gradient(90deg,#3ddbb0,#4d8dff)}
   .doc-page-content h2{margin:calc(100cqw / 419.25 * 6) 0 0;font-size:calc(100cqw / 419.25 * 25);line-height:1.08;letter-spacing:-.03em;color:#062657}
@@ -564,6 +571,23 @@
   .mission-vision-page .mission-core-values{left:7%;right:7%;top:72%;height:17%;padding:calc(100cqw / 419.25 * 10);background:#f7fafc;border-color:#e2edf1;box-shadow:none}
   .mission-vision-page .mission-core-values h3{text-align:left;font-size:calc(100cqw / 419.25 * 9);color:#0b3965}
   .mission-vision-page .mission-values-row{height:70%;margin-top:calc(100cqw / 419.25 * 6)}
+  .mission-vision-page .entrepreneurial-journey{position:absolute;top:7%;left:7%;right:7%;height:43%;font-family:Inter,system-ui,sans-serif;color:#0b315e}
+  .entrepreneurial-journey h2{margin:0 0 2%;font-size:calc(100cqw / 419.25 * 14);line-height:1.1}.entrepreneurial-journey h2 span{color:#1988e7}
+  .entrepreneurial-journey table{width:100%;height:90%;border-collapse:separate;border-spacing:0 calc(100cqw / 419.25 * 2);table-layout:fixed;font-size:calc(100cqw / 419.25 * 6.2);line-height:1.25}
+  .entrepreneurial-journey th{background:#082e5a;color:#3ddbb0;text-align:left;font-size:calc(100cqw / 419.25 * 5.5);letter-spacing:.1em;padding:calc(100cqw / 419.25 * 4)}
+  .entrepreneurial-journey td{background:#f5f8fb;border-top:1px solid #d8e6ef;border-bottom:1px solid #d8e6ef;padding:calc(100cqw / 419.25 * 4);vertical-align:middle;color:#506a80}.entrepreneurial-journey td:first-child{border-left:1px solid #d8e6ef;color:#078e89;font-weight:700}.entrepreneurial-journey td:nth-child(2){color:#0b315e;font-weight:700}.entrepreneurial-journey td:last-child{border-right:1px solid #d8e6ef}
+  .entrepreneurial-journey h2{font-size:calc(100cqw / 419.25 * 16);letter-spacing:-.035em;margin-bottom:2.5%}
+  .entrepreneurial-journey table{height:88%;border-spacing:0 calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 6.5);line-height:1.3}
+  .entrepreneurial-journey th{padding:calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 6);font-size:calc(100cqw / 419.25 * 5.5)}
+  .entrepreneurial-journey th:first-child{border-radius:calc(100cqw / 419.25 * 5) 0 0 calc(100cqw / 419.25 * 5)}
+  .entrepreneurial-journey th:last-child{border-radius:0 calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 5) 0}
+  .entrepreneurial-journey td{padding:calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 6);background:#f5f9fb;border-color:#e0ebef}
+  .entrepreneurial-journey tbody tr:nth-child(even) td{background:#eef8f7}
+  .entrepreneurial-journey td:first-child{border-radius:calc(100cqw / 419.25 * 5) 0 0 calc(100cqw / 419.25 * 5);border-left:calc(100cqw / 419.25 * 3) solid #35bcae;white-space:nowrap;font-size:calc(100cqw / 419.25 * 6.2)}
+  .entrepreneurial-journey td:nth-child(2){font-size:calc(100cqw / 419.25 * 6.8);line-height:1.25}
+  .entrepreneurial-journey td:last-child{border-radius:0 calc(100cqw / 419.25 * 5) calc(100cqw / 419.25 * 5) 0}
+  .mission-vision-page .mission-heading{top:54%;left:7%;width:86%}.mission-vision-page .mission-heading h2 strong,.mission-vision-page .mission-heading h2 span{display:inline;font-size:calc(100cqw / 419.25 * 21)}.mission-vision-page .mission-heading p{margin-top:calc(100cqw / 419.25 * 4);font-size:calc(100cqw / 419.25 * 7.5)}
+  .mission-vision-page .mission-card-row{top:68%;height:25%}.mission-vision-page .mission-card{padding:calc(100cqw / 419.25 * 12)}
   .target-market-page{background:#fff}
   .target-market-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.08}
   .target-lead{margin:calc(100cqw / 419.25 * 5) 0 0;color:#516c80;font-size:calc(100cqw / 419.25 * 9);line-height:1.4}
@@ -611,6 +635,14 @@
   .target-market-page .chart-column .column-bar{height:calc(var(--height) * .56);clip-path:polygon(50% 0,100% calc(100cqw / 419.25 * 5),100% calc(100% - calc(100cqw / 419.25 * 5)),50% 100%,0 calc(100% - calc(100cqw / 419.25 * 5)),0 calc(100cqw / 419.25 * 5))}
   .target-market-page .chart-column .column-bar:before{height:calc(100cqw / 419.25 * 6)}
   .target-market-page .chart-column strong{bottom:calc(33% + var(--height) * .56)}
+  .target-market-page .target-insights{margin-top:calc(100cqw / 419.25 * 18);gap:calc(100cqw / 419.25 * 10)}
+  .target-market-page .target-insights section{padding:calc(100cqw / 419.25 * 14);min-height:calc(100cqw / 419.25 * 75);align-items:center;background:#f5fafb;border-color:#dcebef;border-radius:calc(100cqw / 419.25 * 9)}
+  .target-market-page .target-insights section:nth-child(2){background:#f3f7ff}
+  .target-market-page .target-insights h3{font-size:calc(100cqw / 419.25 * 11)}
+  .target-market-page .target-insights p{font-size:calc(100cqw / 419.25 * 8.5);line-height:1.5}
+  .target-market-page .insight-icon{flex:none;width:calc(100cqw / 419.25 * 34);height:calc(100cqw / 419.25 * 34)}
+  .target-market-page .target-revenue{margin-top:calc(100cqw / 419.25 * 12);padding:calc(100cqw / 419.25 * 12)}
+  .target-market-page .target-tagline{margin-top:calc(100cqw / 419.25 * 14)}
   .video-placeholder-box{position:absolute;left:7%;right:7%;top:25%;height:42%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(100cqw / 419.25 * 12);border:1px dashed #a6cbd3;border-radius:calc(100cqw / 419.25 * 10);background:#f2f9fa;color:#496c7d}
   .video-placeholder-box span{display:grid;place-items:center;width:calc(100cqw / 419.25 * 48);height:calc(100cqw / 419.25 * 48);padding-left:3px;border-radius:50%;background:#d9f2ee;color:#078f88;font-size:calc(100cqw / 419.25 * 18)}
   .video-placeholder-box p{margin:0;font-size:calc(100cqw / 419.25 * 11);font-weight:600}
@@ -793,6 +825,7 @@
   @property --commission-angle{syntax:'<angle>';inherits:false;initial-value:36deg}
   .model-visual-page .finance-commission{background:#f5f9ff;border-color:#dce9f7}.model-visual-page .finance-subscription{background:#f1fbf6;border-color:#d5eee0}.model-visual-page .finance-commission .finance-section-head>span{background:#ffe5e4;color:#d94b50}.model-visual-page .finance-commission .finance-section-head small{color:#d2575a}.model-visual-page .finance-subscription .finance-section-head>span{background:#d8f1e8;color:#168d72}.model-visual-page .commission-donut{--commission-angle:36deg;background:conic-gradient(#e2595e 0 var(--commission-angle),#c9dfed var(--commission-angle) 360deg)}.model-visual-page .commission-donut:before{background:#f5f9ff}.model-visual-page .commission-donut>span{color:#ce4a50}.model-visual-page .commission-math i{color:#e2595e}.model-visual-page .subscription-amount strong{color:#0a967b}
   .commission-key{display:inline-block;width:calc(100cqw / 419.25 * 7);height:calc(100cqw / 419.25 * 7);border-radius:50%;vertical-align:middle;margin-right:calc(100cqw / 419.25 * 2)}.commission-key.red{background:#e2595e}.commission-key.blue{background:#99c5dd;margin-left:calc(100cqw / 419.25 * 8)}
+  .model-visual-page .finance-commission .finance-section-head>span{background:#d8f1e8;color:#168d72}.model-visual-page .finance-commission .finance-section-head small{color:#168d72}.model-visual-page .commission-donut{background:conic-gradient(#12a77f 0 var(--commission-angle),#c9dfed var(--commission-angle) 360deg)}.model-visual-page .commission-donut>span,.model-visual-page .commission-math i{color:#168d72}.model-visual-page .commission-key.red{background:#12a77f}
   .model-visual-page.play .finance-commission,.model-visual-page.play .finance-subscription{animation:financeCardEnter .6s ease both}.model-visual-page.play .finance-subscription{animation-delay:.18s}.model-visual-page.play .commission-donut{animation:financeDonut .8s ease both,commissionDraw 1.5s ease-out both;animation-delay:.2s,.25s}@keyframes financeCardEnter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes commissionDraw{from{--commission-angle:0deg}to{--commission-angle:36deg}}@media(prefers-reduced-motion:reduce){.model-visual-page.play .finance-commission,.model-visual-page.play .finance-subscription,.model-visual-page.play .commission-donut{animation:none}}
   .roadmap-page{background:#fff}.roadmap-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1}.roadmap-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#607889;font-size:calc(100cqw / 419.25 * 9)}
   .roadmap-route{position:absolute;top:21%;bottom:15%;left:5%;right:5%;overflow:hidden}.road-svg{position:absolute;inset:0;width:100%;height:100%}.road-svg path{fill:none;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}.road-edge{stroke:#e6ecee;stroke-width:calc(100cqw / 419.25 * 31)}.road-surface{stroke:#4b5b63;stroke-width:calc(100cqw / 419.25 * 23)}.road-dash{stroke:#fff;stroke-width:calc(100cqw / 419.25 * 1.5);stroke-dasharray:8 7;opacity:.9}
@@ -991,6 +1024,9 @@
     var content=document.createElement('div');
     content.className='doc-page-content mission-vision-page';
     content.innerHTML='<img class="mission-photo" src="img/mission-vision-strategy.png" alt="Team members planning vision and mission together around a laptop"><div class="mission-page-number">'+String(slideNumber).padStart(2,'0')+'</div><section class="mission-heading"><div class="mission-eyebrow">PURPOSE &amp; DIRECTION</div><h2><strong>Our Vision</strong><span>&amp; Mission</span></h2><p>Guided by a clear purpose, we are building a more connected and compassionate healthcare journey for international patients.</p></section><section class="mission-card-row"><article class="mission-card vision"><div class="mission-card-icon"><img src="img/vision-icon.png" alt=""></div><h3>VISION</h3><span class="mission-card-rule"></span><p>'+escapeHtml(vision[1])+'</p></article><article class="mission-card mission"><div class="mission-card-icon"><img src="img/mission-icon.png" alt=""></div><h3>MISSION</h3><span class="mission-card-rule"></span><p>'+escapeHtml(mission[1])+'</p></article></section><section class="mission-core-values"><h3>CORE VALUES</h3><div class="mission-values-row">'+valueMarkup+'</div></section>';
+    content.querySelector('.mission-photo').remove();
+    content.querySelector('.mission-core-values').remove();
+    content.insertAdjacentHTML('afterbegin','<section class="entrepreneurial-journey"><h2>Entrepreneurial <span>Journey</span></h2><table><colgroup><col style="width:18%"><col style="width:26%"><col style="width:56%"></colgroup><thead><tr><th>YEAR</th><th>MILESTONE</th><th>DESCRIPTION</th></tr></thead><tbody><tr><td>2019</td><td>Dental Store Nepal</td><td>Founded Nepal’s first dedicated e-commerce platform for the dentistry sector.</td></tr><tr><td>2022</td><td>Business Exit</td><td>Successfully sold Dental Store Nepal, marking a significant entrepreneurial milestone.</td></tr><tr><td>2023–2024</td><td>Research &amp; Product Development</td><td>Conducted extensive market research and spent a year developing, testing, and refining a healthcare management software solution.</td></tr><tr><td>Mar 2025</td><td>ProCare Nepal</td><td>Launched a healthcare technology venture focused on clinic management solutions.</td></tr><tr><td>Aug 2026</td><td>New Investor Entry</td><td>Welcomed new investors into ProCare Nepal, marking a new phase of strategic partnership and business growth.</td></tr></tbody></table></section>');
     return content;
   }
   function makeServicesContent(slide,slideNumber){
@@ -1033,6 +1069,9 @@
     content.querySelector('.target-chart').innerHTML='<div class="chart-header"><h3>People across the journey</h3><span>PEOPLE</span></div><div class="column-chart"><div class="chart-column" style="--height:100%;--front:#00a89c;--side:#087b78;--top:#4ad8c2;--delay:.1s"><strong>2.19M</strong><div class="column-bar"></div><b>Nepalis abroad</b><small>2021 census</small></div><div class="chart-column" style="--height:38.3%;--front:#388add;--side:#1c5caa;--top:#72b7f4;--delay:.25s"><strong>839,270</strong><div class="column-bar"></div><b>Labour approvals</b><small>FY 2024/25 · incl. renewals</small></div><div class="chart-column" style="--height:24.5%;--front:#f29a42;--side:#bd5e23;--top:#ffc376;--delay:.4s"><strong>537,246</strong><div class="column-bar"></div><b>Worker returnees</b><small>FY 2023/24</small></div></div><p class="chart-context">Different measures and periods; shown for context.</p>';
     var icons=['<svg viewBox="0 0 24 24"><path d="M3 19h18M5 16v-4h3v4M10.5 16V8h3v8M16 16V4h3v12"/></svg>','<svg viewBox="0 0 24 24"><path d="M3 19h18M5 19V7l7-4 7 4v12M9 19v-5h6v5M12 7v4M10 9h4"/></svg>','<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6M15 6h3v3"/></svg>'];
     [content.querySelector('.target-revenue > span')].concat(Array.from(content.querySelectorAll('.insight-icon'))).forEach(function(el,i){el.innerHTML=icons[i];});
+    content.querySelector('.target-chart').remove();
+    content.querySelector('.target-insights').before(content.querySelector('.target-revenue'));
+    content.querySelector('.target-sources').textContent='Source provided: Radio Nepal, October 2026.';
     return content;
   }
   function makeProposalContent(slide,slideNumber){
@@ -1205,6 +1244,7 @@
     if(slide.design==='video-placeholder'){
       var placeholder=document.createElement('div');
       placeholder.className='doc-page-content video-placeholder-page';
+      placeholder.classList.add(slideNumber===3?'problem-video-placeholder-left':'problem-video-placeholder-right');
       placeholder.innerHTML='';
       return placeholder;
     }
@@ -1289,14 +1329,10 @@
   });
   var patientVideoSpread=document.createElement('div');
   patientVideoSpread.className='problem-video-spread patient-spread';
-  patientVideoSpread.innerHTML='<div class="problem-video-content"><div class="problem-video-head"><div class="doc-kicker">13 / 21 · 02 · Platform, Services &amp; Operations</div><h2>Detailed Patient Journey — Operational Flow</h2><p class="problem-video-sub">Follow the patient journey from inquiry through departure.</p></div><div class="problem-video-stage"><button type="button" class="problem-video-trigger" aria-label="Play full patient journey video"><img src="img/patient-journey-poster.jpg" alt=""><span class="fliki-cover" aria-hidden="true"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></span><span class="problem-video-caption"><span class="problem-video-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></span><span><strong>Watch Patient Journey</strong><small>Click to play fullscreen video</small></span></span></button></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>13 / 21</span></div></div>';
+  patientVideoSpread.innerHTML='<div class="problem-video-content"><div class="problem-video-head"><div class="doc-kicker">13 / 21 · 02 · Platform, Services &amp; Operations</div><h2>Detailed Patient Journey — Operational Flow</h2><p class="problem-video-sub">Follow the patient journey from inquiry through departure.</p></div><div class="problem-video-stage"><div class="problem-video-inline"><video controls playsinline muted autoplay loop preload="auto" poster="img/patient-journey-poster.jpg" aria-label="Full patient journey from inquiry to departure"><source src="img/medical-tourism-process-nepal-step-by-step-full-patient-journey-from-inquiry-to-departure-with-nepa.mp4" type="video/mp4"></video><span class="fliki-cover" aria-hidden="true"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></span></div></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>13 / 21</span></div></div>';
   wrap.appendChild(patientVideoSpread);
-  var patientSpreadTrigger=patientVideoSpread.querySelector('.problem-video-trigger');
-  ['mousedown','touchstart','pointerdown'].forEach(function(type){patientSpreadTrigger.addEventListener(type,function(event){event.stopPropagation();});});
-  patientSpreadTrigger.addEventListener('click',function(event){
-    event.stopPropagation();
-    openFullscreenVideo('img/medical-tourism-process-nepal-step-by-step-full-patient-journey-from-inquiry-to-departure-with-nepa.mp4','Full patient journey from inquiry to departure',true);
-  });
+  var patientSpreadVideo=patientVideoSpread.querySelector('video');
+  ['mousedown','touchstart','pointerdown','click'].forEach(function(type){patientSpreadVideo.addEventListener(type,function(event){event.stopPropagation();});});
   var zoom = 1, ZOOMS = [1, 1.35, 1.75, 2.25];
   function fit(){
     var stage = document.getElementById('stage');
@@ -1392,7 +1428,12 @@
   function syncVideoOverlays(vis){
     var showProblemVideo=vis.indexOf(3)!==-1 || vis.indexOf(4)!==-1;
     problemVideoSpread.classList.toggle('is-visible',showProblemVideo);
-    patientVideoSpread.classList.toggle('is-visible',vis.indexOf(13)!==-1 || vis.indexOf(14)!==-1);
+    var showPatientVideo=vis.indexOf(13)!==-1 || vis.indexOf(14)!==-1;
+    patientVideoSpread.classList.toggle('is-visible',showPatientVideo);
+    if(showPatientVideo){
+      var patientPlayRequest=patientSpreadVideo.play();
+      if(patientPlayRequest && patientPlayRequest.catch) patientPlayRequest.catch(function(){});
+    }else patientSpreadVideo.pause();
   }
   function update(){
     var vis = visiblePages();
