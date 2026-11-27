@@ -26,7 +26,28 @@
   .problem-video-spread{display:flex;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease,visibility 0s linear .24s}
   .problem-video-spread.is-visible:not(.is-turning){opacity:1;visibility:visible;pointer-events:auto;transition:opacity .28s ease,visibility 0s}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
   @media(prefers-reduced-motion:reduce){.problem-video-spread,.problem-video-spread.is-visible:not(.is-turning){transition:none}}
-  .problem-video-content{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;gap:clamp(12px,2vw,24px);padding:2% 6%}.problem-video-content h2{flex:none;align-self:center;margin:0;color:#062552;font-family:'Inter',system-ui,sans-serif;font-size:clamp(20px,2.8vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.15;text-align:center}.problem-video-sub{margin:0;color:#557084;font-family:'Inter',system-ui,sans-serif;font-size:clamp(11px,1.25vw,15px);text-align:center}.problem-video-trigger{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(10px,1.5vw,18px);width:min(100%,540px);aspect-ratio:16 / 9;padding:clamp(16px,2.5vw,28px);border:1px solid rgba(61,219,176,.34);border-radius:16px;background:radial-gradient(ellipse at 50% 42%,rgba(61,219,176,.22),transparent 62%),linear-gradient(145deg,#041c44 0%,#083a76 58%,#08758a 100%);color:#fff;cursor:pointer;box-shadow:0 14px 36px rgba(4,28,68,.22);transition:transform .2s ease,box-shadow .2s ease}.problem-video-trigger:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(4,28,68,.3)}.problem-video-play-btn{display:grid;place-items:center;width:clamp(56px,6.5vw,84px);height:clamp(56px,6.5vw,84px);border-radius:50%;background:linear-gradient(135deg,#3ddbb0,#09a89d);color:#042048;box-shadow:0 0 0 10px rgba(61,219,176,.2),0 8px 22px rgba(0,0,0,.28);transition:transform .2s ease}.problem-video-trigger:hover .problem-video-play-btn{transform:scale(1.07)}.problem-video-play-btn svg{width:42%;height:42%;margin-left:6%;fill:currentColor}.problem-video-trigger strong{font-family:'Inter',system-ui,sans-serif;font-size:clamp(14px,1.6vw,20px);font-weight:700;color:#fff}.problem-video-trigger span{font-family:'Inter',system-ui,sans-serif;font-size:clamp(10px,1.05vw,13px);color:rgba(225,244,255,.82)}
+  .problem-video-spread{container-type:size}
+  .problem-video-spread:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(#3ddbb0,#0a6f9a)}
+  .problem-video-content{--u:min(.12cqw,.17cqh);display:flex;flex-direction:column;width:100%;height:100%;min-height:0;gap:calc(var(--u)*16);padding:calc(var(--u)*10) calc(var(--u)*18) 0;font-family:'Inter',system-ui,sans-serif;text-align:left}
+  .problem-video-content .doc-kicker{font-size:calc(var(--u)*8);gap:calc(var(--u)*4)}.problem-video-content .doc-kicker:before{width:calc(var(--u)*12);height:calc(var(--u)*1.2)}
+  .problem-video-content h2{margin:calc(var(--u)*6) 0 0;color:#062657;font-size:calc(var(--u)*25);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+  .problem-video-sub{margin:calc(var(--u)*6) 0 0;color:#52657a;font-size:calc(var(--u)*10);line-height:1.5}
+  .problem-video-stage{flex:1;min-height:0;container-type:size;display:flex;align-items:center;justify-content:center}
+  .problem-video-trigger{position:relative;display:block;width:min(100cqw,177.78cqh);aspect-ratio:16 / 9;padding:0;overflow:hidden;border:0;border-radius:calc(var(--u)*8);background:#061c32;cursor:pointer;font-family:inherit;box-shadow:0 10px 30px rgba(4,28,68,.18);transition:box-shadow .25s ease}
+  .problem-video-trigger>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .problem-video-trigger:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,22,48,.08) 40%,rgba(4,22,48,.86))}
+  .problem-video-trigger:hover{box-shadow:0 16px 40px rgba(4,28,68,.3)}.problem-video-trigger:hover>img{transform:scale(1.025)}
+  .problem-video-trigger:focus-visible{outline:3px solid #3ddbb0;outline-offset:3px}
+  .problem-video-caption{position:absolute;z-index:1;left:calc(var(--u)*16);bottom:calc(var(--u)*14);display:flex;align-items:center;gap:calc(var(--u)*10);color:#fff;text-align:left}
+  .problem-video-play-btn{display:grid;place-items:center;flex:none;width:calc(var(--u)*34);height:calc(var(--u)*34);border-radius:50%;background:#3ddbb0;color:#042048}
+  .problem-video-play-btn svg{width:42%;height:42%;margin-left:6%;fill:currentColor}
+  .problem-video-spread.is-visible .problem-video-play-btn{animation:problemPlayPulse 2.4s ease-out infinite}
+  @keyframes problemPlayPulse{0%{box-shadow:0 0 0 0 rgba(61,219,176,.55)}100%{box-shadow:0 0 0 14px rgba(61,219,176,0)}}
+  .problem-video-caption strong{display:block;font-size:calc(var(--u)*12);font-weight:700}
+  .problem-video-caption small{display:block;margin-top:calc(var(--u)*2);font-size:calc(var(--u)*8);color:rgba(230,244,255,.82)}
+  .problem-video-spread .doc-foot{position:static;flex:none;padding-bottom:calc(var(--u)*2);font-size:calc(var(--u)*5.5)}
+  @container (max-aspect-ratio:1/1){.problem-video-content{--u:.28cqw}}
+  @media(prefers-reduced-motion:reduce){.problem-video-spread.is-visible .problem-video-play-btn{animation:none}.problem-video-trigger>img{transition:none}}
   .problem-video-brand{position:absolute;right:5%;bottom:4%;width:20%;height:12%;z-index:2;display:flex;align-items:center;justify-content:center;gap:3%;padding:1% 2%;border-radius:4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;box-shadow:0 2px 8px #001a3026}.problem-video-brand img{display:block;max-width:28%;height:100%;object-fit:contain}.problem-video-brand strong{color:#07345c;font:700 clamp(8px,1.2vw,16px)/1 Arial,sans-serif;letter-spacing:.03em}.problem-video-brand strong span{color:#009d93}
   #book{opacity:0;transition:opacity .6s ease, transform .7s cubic-bezier(.3,.7,.3,1)}
   #book.ready{opacity:1}
@@ -109,85 +130,67 @@
   .y3{background:#fff2d6;color:#a0620f}.y4{background:#efe6fd;color:#7c3aed}.y5{background:#ffe8da;color:#d9530b}
 
 
-  /* ---------- Page 3: Introduction ---------- */
-  .p3c{position:absolute;inset:0;padding:7.2% 8.2% 5.5%;--pt:calc(100cqw / 419.25);
-    background:radial-gradient(ellipse 65% 38% at 92% 8%,rgba(61,219,176,.09),transparent 60%),linear-gradient(180deg,#ffffff 0%,#f7fbfd 100%);
-    font-family:'Inter',system-ui,sans-serif;color:#40506a;display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--pt)*10)}
-  .p3c .serif{font-family:'Caladea',Georgia,serif}
-  .p3c .kicker{font-size:calc(var(--pt)*6.2);font-weight:700;letter-spacing:.2em;text-transform:uppercase}
-  .p3c p{margin:0}
-  /* hero */
-  .p3 .hero{position:relative;overflow:hidden;border-radius:calc(var(--pt)*11);
-    background:linear-gradient(128deg,#041d46 0%,#083b7a 56%,#09748f 100%);color:#fff;
-    padding:calc(var(--pt)*18) calc(var(--pt)*18);display:grid;grid-template-columns:calc(var(--pt)*70) 1fr;
-    column-gap:calc(var(--pt)*16);align-items:center;min-height:calc(var(--pt)*116);
-    box-shadow:0 calc(var(--pt)*8) calc(var(--pt)*24) rgba(4,29,70,.16)}
-  .p3 .hero:after{content:"";position:absolute;right:calc(var(--pt)*-28);top:calc(var(--pt)*-38);width:calc(var(--pt)*156);
-    height:calc(var(--pt)*156);border-radius:50%;background:radial-gradient(circle,rgba(61,219,176,.22),rgba(61,219,176,0) 70%);pointer-events:none}
-  .p3 .hero .kicker{color:#4de3be;margin-bottom:calc(var(--pt)*4.5)}
-  .p3 .hero h4{font-size:calc(var(--pt)*19);margin:0 0 calc(var(--pt)*5);font-weight:700;line-height:1.1;letter-spacing:-.01em}
-  .p3 .hero p{font-size:calc(var(--pt)*8.8);line-height:1.55;color:rgba(240,248,255,.88)}
-  .globe{position:relative;width:calc(var(--pt)*70);aspect-ratio:1}
-  .globe svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-  .globe .orbit{animation:spin 9s linear infinite;transform-origin:50% 50%}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  /* brand logo centerpiece (clean & borderless) */
-  .p3 .brand-intro{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    padding:calc(var(--pt)*14) calc(var(--pt)*12);background:transparent;border:0;box-shadow:none}
-  .p3 .brand-intro img{display:block;width:74%;max-width:calc(var(--pt)*252);height:auto;object-fit:contain;
-    filter:drop-shadow(0 calc(var(--pt)*4) calc(var(--pt)*12) rgba(4,29,70,.06))}
-  .p3 .brand-divider{width:42%;height:1px;margin:calc(var(--pt)*14) auto 0;
-    background:linear-gradient(90deg,transparent,rgba(5,165,181,.32),transparent)}
-  /* journey strip (outline-free, open editorial flow) */
-  .p3 .journey{position:relative;background:transparent;border:0;border-radius:0;
-    padding:calc(var(--pt)*4) calc(var(--pt)*4) calc(var(--pt)*6)}
-  .p3 .journey .kicker{color:#0b4b8a;text-align:center;font-size:calc(var(--pt)*6);letter-spacing:.22em;margin-bottom:calc(var(--pt)*14)}
+  /* ---------- Page 3: Introduction (same frame and type system as the proposal slides) ---------- */
+  .p3c{position:absolute;inset:4.5% 5%;--pt:calc(100cqw / 419.25);display:flex;flex-direction:column;gap:calc(var(--pt)*14);
+    padding:calc(var(--pt)*14) calc(var(--pt)*14) calc(var(--pt)*24);overflow:hidden;border:1px solid #d5e5ec;
+    border-radius:calc(var(--pt)*8);background:#fff;font-family:'Inter',system-ui,sans-serif;color:#14263d}
+  .p3c:before{content:"";position:absolute;inset:0 auto 0 0;width:calc(var(--pt)*3);background:linear-gradient(#3ddbb0,#0a6f9a)}
+  /* introducing section */
+  .p3 .hero{position:relative;overflow:hidden;display:grid;grid-template-columns:calc(var(--pt)*66) 1fr;column-gap:calc(var(--pt)*15);
+    align-items:center;margin-top:calc(var(--pt)*9);padding:calc(var(--pt)*16);border-radius:calc(var(--pt)*8);
+    background:linear-gradient(128deg,#041d46 0%,#083b7a 58%,#09748f 100%);color:#fff}
+  .p3 .hero:after{content:"";position:absolute;right:calc(var(--pt)*-30);top:calc(var(--pt)*-40);width:calc(var(--pt)*150);
+    height:calc(var(--pt)*150);border-radius:50%;background:radial-gradient(circle,rgba(61,219,176,.2),rgba(61,219,176,0) 70%);pointer-events:none}
+  .p3 h2{margin:0;font-size:calc(var(--pt)*19);line-height:1.1;letter-spacing:-.02em;color:#fff}
+  .p3 .hero p{margin:calc(var(--pt)*6) 0 0;font-size:calc(var(--pt)*8.8);line-height:1.55;color:#dceaf8}
+  .p3 .globe{position:relative;width:calc(var(--pt)*66);aspect-ratio:1}
+  .p3 .globe svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .p3 .globe .orbit{animation:spin 9s linear infinite;transform-origin:50% 50%}
+  /* logo */
+  .p3 .intro-brand{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;border:1px solid #e1ecef;
+    border-radius:calc(var(--pt)*8);background:linear-gradient(160deg,#f9fcfd,#f1f8f9)}
+  .p3 .intro-brand img{display:block;width:74%;height:auto;max-height:80%;object-fit:contain}
+  /* patient journey */
+  .p3 h3{margin:0 0 calc(var(--pt)*13);font-size:calc(var(--pt)*7);font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#087e86}
   .p3 .track{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
-  .p3 .line{position:absolute;left:12.5%;right:12.5%;top:calc(var(--pt)*16);height:calc(var(--pt)*1.8);
-    background:repeating-linear-gradient(90deg,#2fd4a8 0 calc(var(--pt)*4.5),transparent calc(var(--pt)*4.5) calc(var(--pt)*8));
-    transform-origin:left center}
-  .p3 .plane{position:absolute;top:calc(var(--pt)*9.5);left:12.5%;width:calc(var(--pt)*14);height:calc(var(--pt)*14);
-    margin-left:calc(var(--pt)*-7);color:#08488c;opacity:0}
-  .p3 .step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:1}
-  .p3 .node{width:calc(var(--pt)*32);height:calc(var(--pt)*32);border-radius:50%;background:#fff;border:calc(var(--pt)*1.8) solid #2fd4a8;
-    display:grid;place-items:center;box-shadow:0 0 0 calc(var(--pt)*4) #f8fcfe,0 calc(var(--pt)*5) calc(var(--pt)*14) rgba(4,29,70,.08)}
-  .p3 .node svg{width:56%;height:56%}
-  .p3 .step b{display:block;margin-top:calc(var(--pt)*7);font-size:calc(var(--pt)*7.6);color:#042454;font-weight:700}
-  .p3 .step span{display:block;font-size:calc(var(--pt)*6.1);color:#62758d;margin-top:calc(var(--pt)*1.5)}
+  .p3 .line{position:absolute;left:12.5%;right:12.5%;top:calc(var(--pt)*17.4);height:calc(var(--pt)*1.2);transform-origin:left center;
+    background:repeating-linear-gradient(90deg,#3bc5ac 0 calc(var(--pt)*4),transparent calc(var(--pt)*4) calc(var(--pt)*7))}
+  .p3 .plane{position:absolute;top:calc(var(--pt)*11.5);left:12.5%;width:calc(var(--pt)*13);height:calc(var(--pt)*13);
+    margin-left:calc(var(--pt)*-6.5);color:#08488c;opacity:0}
+  .p3 .step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .p3 .node{display:grid;place-items:center;box-sizing:border-box;width:calc(var(--pt)*36);height:calc(var(--pt)*36);border-radius:50%;
+    background:#fff;border:calc(var(--pt)*1.2) solid #3bc5ac;box-shadow:0 0 0 calc(var(--pt)*4) #fff;color:#0b4b8a}
+  .p3 .node svg{width:52%;height:52%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .p3 .step small{margin-top:calc(var(--pt)*9);font-size:calc(var(--pt)*6.5);font-weight:700;letter-spacing:.1em;color:#078f86}
+  .p3 .step b{margin-top:calc(var(--pt)*3);font-size:calc(var(--pt)*8.8);color:#062657}
+  .p3 .step span{margin-top:calc(var(--pt)*3);padding:0 calc(var(--pt)*2);font-size:calc(var(--pt)*7);line-height:1.35;color:#5b6f84}
   /* closing tagline */
-  .p3 .tagline-bar{display:flex;align-items:center;justify-content:center;gap:calc(var(--pt)*10);
-    padding:calc(var(--pt)*6) calc(var(--pt)*8) calc(var(--pt)*14);text-align:center}
-  .p3 .tagline-bar i{flex:1;max-width:calc(var(--pt)*56);height:calc(var(--pt)*1.4);border-radius:999px;
-    background:linear-gradient(90deg,transparent,#05a5b5)}
-  .p3 .tagline-bar i:last-child{background:linear-gradient(90deg,#05a5b5,transparent)}
-  .p3 .tagline-bar span{font-family:'Caladea',Georgia,serif;font-size:calc(var(--pt)*16);font-weight:700;
-    color:#042454;letter-spacing:.01em;white-space:nowrap}
-  .p3 .tagline-bar span em{font-style:italic;color:#058d9a}
-  .p3 .p3-foot{display:flex;justify-content:space-between;align-items:center;padding-top:calc(var(--pt)*6);
-    border-top:1px solid rgba(4,36,84,.08);color:#7e90a4;font-size:calc(var(--pt)*5.5);font-weight:600;letter-spacing:.08em}
-  /* entrance animations (replayed whenever page 3 comes into view) */
+  .p3 .intro-tagline{padding:calc(var(--pt)*11) calc(var(--pt)*10);border-radius:calc(var(--pt)*7);background:#edf8f6;
+    text-align:center;font-family:'Caladea',Georgia,serif;font-size:calc(var(--pt)*15);font-weight:700;color:#062657}
+  .p3 .intro-tagline em{color:#058d9a}
+  /* animations (replayed whenever page 3 comes into view) */
   .p3 .rise{opacity:0;transform:translateY(calc(var(--pt)*10))}
   .p3.play .rise{animation:rise .8s cubic-bezier(.2,.75,.25,1) forwards}
-  .p3.play .d1{animation-delay:.15s}.p3.play .d2{animation-delay:.35s}.p3.play .d3{animation-delay:.5s}
-  .p3.play .d4{animation-delay:.7s}.p3.play .d5{animation-delay:1.5s}
-  @keyframes rise{to{opacity:1;transform:none}}
+  .p3.play .d1{animation-delay:.15s}.p3.play .d2{animation-delay:.35s}.p3.play .d3{animation-delay:.7s}.p3.play .d4{animation-delay:1.5s}
   .p3 .draw{stroke-dasharray:1;stroke-dashoffset:1}
   .p3.play .draw{animation:draw 1.4s ease .5s forwards}
-  .p3.play .card .draw{animation-delay:.8s}
-  @keyframes draw{to{stroke-dashoffset:0}}
   .p3 .line{transform:scaleX(0)}
   .p3.play .line{animation:grow 1.4s ease 1s forwards}
-  @keyframes grow{to{transform:scaleX(1)}}
   .p3 .node{transform:scale(0)}
   .p3.play .node{animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards}
-  .p3.play .s1 .node{animation-delay:.95s}.p3.play .s2 .node{animation-delay:1.35s}
-  .p3.play .s3 .node{animation-delay:1.75s}.p3.play .s4 .node{animation-delay:2.15s}
-  @keyframes pop{to{transform:scale(1)}}
+  .p3.play .s1 .node{animation-delay:.95s}.p3.play .s2 .node{animation-delay:1.35s}.p3.play .s3 .node{animation-delay:1.75s}
+  .p3.play .s4 .node{animation:pop .5s cubic-bezier(.3,1.6,.5,1) 2.15s forwards,ring 2.4s ease-out 3s infinite}
   .p3.play .plane{animation:fly 5s ease-in-out 2.6s infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes grow{to{transform:scaleX(1)}}
+  @keyframes pop{to{transform:scale(1)}}
   @keyframes fly{0%{left:12.5%;opacity:0}8%{opacity:1}88%{opacity:1}100%{left:87.5%;opacity:0}}
-  .p3.play .s4 .node.pulse{animation:pop .5s cubic-bezier(.3,1.6,.5,1) 2.15s forwards, ring 2.4s ease-out 3s infinite}
-  @keyframes ring{0%{box-shadow:0 0 0 calc(var(--pt)*4) #f8fcfe,0 0 0 calc(var(--pt)*4) rgba(47,212,168,.5)}
-    100%{box-shadow:0 0 0 calc(var(--pt)*4) #f8fcfe,0 0 0 calc(var(--pt)*14) rgba(47,212,168,0)}}
+  @keyframes ring{0%{box-shadow:0 0 0 calc(var(--pt)*4) #fff,0 0 0 calc(var(--pt)*4) rgba(47,201,168,.55)}
+    100%{box-shadow:0 0 0 calc(var(--pt)*4) #fff,0 0 0 calc(var(--pt)*10) rgba(47,201,168,0)}}
+  @media(prefers-reduced-motion:reduce){.p3 .rise,.p3 .line,.p3 .node{opacity:1;transform:none}.p3 .draw{stroke-dashoffset:0}
+    .p3.play .rise,.p3.play .line,.p3.play .draw,.p3.play .node,.p3.play .s4 .node,.p3.play .plane,.p3 .globe .orbit{animation:none}}
 
   /* ---------- Page 4: Market opportunity ---------- */
   .market4{position:absolute;inset:7% 6%;padding:calc(100cqw / 419.25 * 9);border:1px solid #cfe0eb;border-radius:calc(100cqw / 419.25 * 8);background:rgba(255,255,255,.97);color:#16243a;font-family:'Inter',system-ui,sans-serif;box-shadow:0 calc(100cqw / 419.25 * 4) calc(100cqw / 419.25 * 16) rgba(0,38,87,.09);overflow:hidden}
@@ -410,11 +413,12 @@
   .founder-video-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#000;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}
   .founder-video-modal.is-open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s}
   .founder-video-modal video{display:block;width:100vw;height:100vh;object-fit:contain;background:#000}
-  .founder-video-modal .modal-brand{position:fixed;right:24px;bottom:56px;z-index:10000;display:none;align-items:center;gap:8px;padding:8px 14px;border-radius:6px;background:rgba(255,255,255,.95);box-shadow:0 4px 14px rgba(0,18,40,.35);pointer-events:none}
+  .founder-video-modal .modal-brand{--vw:min(100vw,177.78vh);--vh:min(100vh,56.25vw);position:fixed;left:calc((100vw - var(--vw))/2 + var(--vw)*.735);top:calc((100vh - var(--vh))/2 + var(--vh)*.855);width:calc(var(--vw)*.21);height:calc(var(--vh)*.12);z-index:10000;display:none;container-type:size;align-items:center;justify-content:center;border-radius:6px;background:#fff;box-shadow:0 4px 14px rgba(0,18,40,.35);pointer-events:none}
   .founder-video-modal.show-brand .modal-brand{display:flex}
-  .founder-video-modal .modal-brand img{display:block;height:26px;width:auto;object-fit:contain}
-  .founder-video-modal .modal-brand strong{color:#07345c;font:700 15px/1 Arial,sans-serif;letter-spacing:.03em}
-  .founder-video-modal .modal-brand strong span{color:#009d93}
+  .modal-brand img,.fliki-cover img{display:block;height:68cqh;width:auto;margin-right:5cqh;object-fit:contain}
+  .modal-brand strong,.fliki-cover strong{color:#07345c;font:700 40cqh/1 Arial,sans-serif;letter-spacing:.03em}
+  .modal-brand strong span,.fliki-cover strong span{color:#009d93}
+  .fliki-cover{position:absolute;z-index:2;left:73.5%;top:85.5%;width:21%;height:12%;display:flex;container-type:size;align-items:center;justify-content:center;border-radius:4px;background:#fff;pointer-events:none}
   .founder-video-close{position:fixed;top:16px;right:18px;z-index:10000;width:40px;height:40px;border:1px solid rgba(255,255,255,.32);border-radius:50%;background:rgba(4,20,44,.72);color:#fff;font-size:22px;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px);transition:background .15s ease,transform .15s ease}
   .founder-video-close:hover{background:rgba(61,219,176,.28);transform:scale(1.06)}
   .services-page-number{position:absolute;top:4.5%;right:6%;z-index:3;color:rgba(199,234,244,.78);font-size:calc(100cqw / 419.25 * 7);font-weight:600;letter-spacing:.16em}
@@ -763,13 +767,8 @@
   .revenue-modern.play .revenue-modern-card{animation:marketingRise .6s ease both}.revenue-modern.play .revenue-modern-card:nth-child(2){animation-delay:.16s}@media(prefers-reduced-motion:reduce){.revenue-modern.play .revenue-modern-card{animation:none}}
   .patient-video-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1;color:#062552}
   .patient-video-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7686;font-size:calc(100cqw / 419.25 * 9);line-height:1.45}
-  .patient-video-trigger{position:absolute;left:7%;right:7%;top:31%;height:42%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(100cqw / 419.25 * 10);padding:calc(100cqw / 419.25 * 14);border:1px solid rgba(61,219,176,.32);border-radius:calc(100cqw / 419.25 * 12);background:radial-gradient(ellipse at 50% 42%,rgba(61,219,176,.22),transparent 62%),linear-gradient(145deg,#041c44 0%,#083a76 58%,#08758a 100%);color:#fff;cursor:pointer;box-shadow:0 calc(100cqw / 419.25 * 10) calc(100cqw / 419.25 * 26) rgba(4,28,68,.2);transition:transform .2s ease,box-shadow .2s ease}
-  .patient-video-trigger:hover{transform:translateY(-2px);box-shadow:0 calc(100cqw / 419.25 * 14) calc(100cqw / 419.25 * 30) rgba(4,28,68,.28)}
-  .patient-video-play-btn{display:grid;place-items:center;width:calc(100cqw / 419.25 * 62);height:calc(100cqw / 419.25 * 62);border-radius:50%;background:linear-gradient(135deg,#3ddbb0,#09a89d);color:#042048;box-shadow:0 0 0 calc(100cqw / 419.25 * 8) rgba(61,219,176,.2),0 calc(100cqw / 419.25 * 6) calc(100cqw / 419.25 * 18) rgba(0,0,0,.28);transition:transform .2s ease}
-  .patient-video-trigger:hover .patient-video-play-btn{transform:scale(1.07)}
-  .patient-video-play-btn svg{width:42%;height:42%;margin-left:6%;fill:currentColor}
-  .patient-video-trigger strong{font-family:'Inter',system-ui,sans-serif;font-size:calc(100cqw / 419.25 * 11);font-weight:700;letter-spacing:-.01em;color:#fff}
-  .patient-video-trigger span{font-family:'Inter',system-ui,sans-serif;font-size:calc(100cqw / 419.25 * 7.2);color:rgba(225,244,255,.8);letter-spacing:.03em}
+  .patient-video-trigger{position:absolute;left:5%;right:5%;top:31%;width:90%;aspect-ratio:16 / 9;padding:0;overflow:hidden;border:0;border-radius:calc(100cqw / 419.25 * 8);background:#061c32;cursor:pointer}
+  .patient-video-trigger>img{display:block;width:100%;height:100%;object-fit:cover}
   .patient-video-help{position:absolute;top:76.5%;left:8%;right:8%;text-align:center;color:#567385;font-size:calc(100cqw / 419.25 * 8.2)}
   .doc-page-content.journey-video-blank{inset:0;padding:0;border:0;border-radius:0;background:#fff}.journey-video-blank:before{display:none}
   .doc-page-content.revenue-image-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-image-page:before{display:none}.revenue-image-page img{display:block;width:100%;height:100%;object-fit:fill}
@@ -847,7 +846,9 @@
     <div class="page" data-deck="keep"></div>
     <div class="page" data-deck="keep">
       <div class="p3c p3" id="p3">
-        <div class="hero rise d1">
+        <div class="intro-head rise d1">
+          <div class="doc-kicker">02 / 21 · 01 · Introduction &amp; Vision</div>
+          <div class="hero">
           <div class="globe">
             <svg viewBox="0 0 66 66" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="33" cy="33" r="21" stroke="#3ddbb0" stroke-width="2" class="draw" pathLength="1"/>
@@ -862,34 +863,31 @@
             </svg>
           </div>
           <div>
-            <div class="kicker">02 · Introduction</div>
-            <h4 class="serif">Introducing PRANVAS</h4>
+            <h2>Introducing PRANVAS</h2>
             <p>PRANVAS is a healthcare facilitation platform connecting international patients with healthcare providers and coordinated support throughout their care journey.</p>
           </div>
-        </div>
-
-        <div class="brand-intro rise d2">
-          <img src="img/pranvas-logo-lockup.png" alt="PRANVAS — Where Life Finds Care.">
-          <div class="brand-divider" aria-hidden="true"></div>
-        </div>
-
-        <div class="journey rise d4">
-          <div class="kicker">The PRANVAS patient journey</div>
-          <div class="track">
-            <div class="line"></div>
-            <svg class="plane" viewBox="-7 -7 14 14"><path transform="rotate(90)" d="M0-6 1.6-1.4 6.5 1.2v1.5L1.6 1.4 1.1 5l1.9 1.4v1.2L0 6.7-3 7.6V6.4L-1.1 5-1.6 1.4-6.5 2.7V1.2l4.9-2.6Z" fill="currentColor"/></svg>
-            <div class="step s1"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-2.6 2.3-3.6 5.3-3.6 8.5s1 6.2 3.6 8.5M12 3.5c2.6 2.3 3.6 5.3 3.6 8.5s-1 6.2-3.6 8.5"/></svg></div><b>Explore care</b><span>Suitable providers</span></div>
-            <div class="step s2"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M3 20h18"/><path d="M4.5 13.5 8 12l-2.6-5 1.8-.7 4.6 4.2 5.4-2.3a1.8 1.8 0 0 1 1.4 3.3L6.8 17.2 4 15Z"/></svg></div><b>Connect</b><span>Healthcare providers</span></div>
-            <div class="step s3"><div class="node"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.2v7.6M8.2 12h7.6" stroke="#05a5b5" stroke-width="2.2"/></svg></div><b>Coordinate</b><span>Care journey</span></div>
-            <div class="step s4"><div class="node pulse"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.8"><path d="M12 20s-7-4.3-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.7 12 20 12 20Z" fill="#e6faf4"/><path d="M7.5 12.5h2.3l1.2-2 2 4 1.2-2h2.3" stroke="#05a5b5"/></svg></div><b>Follow-up</b><span>Ongoing support</span></div>
           </div>
         </div>
 
-        <div class="tagline-bar rise d5">
-          <i></i><span>Medical Care, <em>Beyond Borders</em></span><i></i>
+        <div class="intro-brand rise d2">
+          <img src="img/pranvas-logo-lockup.png" alt="PRANVAS — Where Life Finds Care.">
         </div>
 
-        <div class="p3-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>02 / 21</span></div>
+        <div class="intro-journey rise d3">
+          <h3>The PRANVAS patient journey</h3>
+          <div class="track">
+            <div class="line" aria-hidden="true"></div>
+            <svg class="plane" viewBox="-7 -7 14 14"><path transform="rotate(90)" d="M0-6 1.6-1.4 6.5 1.2v1.5L1.6 1.4 1.1 5l1.9 1.4v1.2L0 6.7-3 7.6V6.4L-1.1 5-1.6 1.4-6.5 2.7V1.2l4.9-2.6Z" fill="currentColor"/></svg>
+            <div class="step s1"><div class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c-2.6 2.3-3.6 5.3-3.6 8.5s1 6.2 3.6 8.5M12 3.5c2.6 2.3 3.6 5.3 3.6 8.5s-1 6.2-3.6 8.5"/></svg></div><small>01</small><b>Explore care</b><span>Suitable providers</span></div>
+            <div class="step s2"><div class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M4.5 13.5 8 12l-2.6-5 1.8-.7 4.6 4.2 5.4-2.3a1.8 1.8 0 0 1 1.4 3.3L6.8 17.2 4 15Z"/></svg></div><small>02</small><b>Connect</b><span>Healthcare providers</span></div>
+            <div class="step s3"><div class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.2v7.6M8.2 12h7.6" stroke="#078f86"/></svg></div><small>03</small><b>Coordinate</b><span>Care journey</span></div>
+            <div class="step s4"><div class="node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-7-9.4A4 4 0 0 1 12 8a4 4 0 0 1 7 2.6C19 15.7 12 20 12 20Z"/><path d="M7.5 12.5h2.3l1.2-2 2 4 1.2-2h2.3" stroke="#078f86"/></svg></div><small>04</small><b>Follow-up</b><span>Ongoing support</span></div>
+          </div>
+        </div>
+
+        <div class="intro-tagline rise d4">Medical Care, <em>Beyond Borders</em></div>
+
+        <div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>02 / 21</span></div>
       </div>
     </div>
     <!-- Remaining proposal slides are inserted here before the legacy pages. -->
@@ -1114,7 +1112,7 @@
     }
     if(slide.design==='patient-journey-video'){
       var videoPage=document.createElement('div');videoPage.className='doc-page-content patient-video-page';
-      videoPage.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2><p class="patient-video-lead">Follow the patient journey from inquiry through departure.</p><button type="button" class="patient-video-trigger" aria-label="Play full patient journey video"><div class="patient-video-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></div><strong>Watch Patient Journey</strong><span>Click to play fullscreen video</span></button><p class="patient-video-help">Tap the play button to watch the complete patient journey.</p><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
+      videoPage.innerHTML='<div class="doc-kicker">'+escapeHtml(String(slideNumber).padStart(2,'0')+' / 21 · '+slide.section)+'</div><h2>'+escapeHtml(slide.title)+'</h2><p class="patient-video-lead">Follow the patient journey from inquiry through departure.</p><button type="button" class="patient-video-trigger" aria-label="Play full patient journey video"><img src="img/patient-journey-poster.jpg" alt=""><span class="fliki-cover" aria-hidden="true"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></span></button><p class="patient-video-help">Tap the play button to watch the complete patient journey.</p><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>'+String(slideNumber).padStart(2,'0')+' / 21</span></div>';
       var trigger=videoPage.querySelector('.patient-video-trigger');
       ['mousedown','touchstart','pointerdown'].forEach(function(type){trigger.addEventListener(type,function(event){event.stopPropagation();});});
       trigger.addEventListener('click',function(event){
@@ -1281,13 +1279,23 @@
   var wrap = document.getElementById('wrap');
   var problemVideoSpread=document.createElement('div');
   problemVideoSpread.className='problem-video-spread';
-  problemVideoSpread.innerHTML='<div class="problem-video-content"><h2>Problem &amp; Solution</h2><p class="problem-video-sub">Watch how PRANVAS bridges the gap for international patients.</p><button type="button" class="problem-video-trigger" aria-label="Play Problem and Solution video fullscreen"><div class="problem-video-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></div><strong>Watch Problem &amp; Solution</strong><span>Click to play fullscreen video</span></button></div>';
+  problemVideoSpread.innerHTML='<div class="problem-video-content"><div class="problem-video-head"><div class="doc-kicker">03–04 / 21 · 01 · Introduction &amp; Vision</div><h2>Problem &amp; Solution</h2><p class="problem-video-sub">Watch how PRANVAS bridges the gap for international patients.</p></div><div class="problem-video-stage"><button type="button" class="problem-video-trigger" aria-label="Play Problem and Solution video fullscreen"><img src="img/problem-solution-poster.jpg" alt=""><span class="fliki-cover" aria-hidden="true"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></span><span class="problem-video-caption"><span class="problem-video-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></span><span><strong>Watch Problem &amp; Solution</strong><small>Click to play fullscreen video</small></span></span></button></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>03–04 / 21</span></div></div>';
   wrap.appendChild(problemVideoSpread);
   var problemVideoTrigger=problemVideoSpread.querySelector('.problem-video-trigger');
   ['mousedown','touchstart','pointerdown'].forEach(function(type){problemVideoTrigger.addEventListener(type,function(event){event.stopPropagation();});});
   problemVideoTrigger.addEventListener('click',function(event){
     event.stopPropagation();
     openFullscreenVideo('img/WhatsApp%20Video%202026-11-26%20at%2023.02.17%20(1).mp4','Problem and solution presentation video',true);
+  });
+  var patientVideoSpread=document.createElement('div');
+  patientVideoSpread.className='problem-video-spread patient-spread';
+  patientVideoSpread.innerHTML='<div class="problem-video-content"><div class="problem-video-head"><div class="doc-kicker">13 / 21 · 02 · Platform, Services &amp; Operations</div><h2>Detailed Patient Journey — Operational Flow</h2><p class="problem-video-sub">Follow the patient journey from inquiry through departure.</p></div><div class="problem-video-stage"><button type="button" class="problem-video-trigger" aria-label="Play full patient journey video"><img src="img/patient-journey-poster.jpg" alt=""><span class="fliki-cover" aria-hidden="true"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></span><span class="problem-video-caption"><span class="problem-video-play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg></span><span><strong>Watch Patient Journey</strong><small>Click to play fullscreen video</small></span></span></button></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>13 / 21</span></div></div>';
+  wrap.appendChild(patientVideoSpread);
+  var patientSpreadTrigger=patientVideoSpread.querySelector('.problem-video-trigger');
+  ['mousedown','touchstart','pointerdown'].forEach(function(type){patientSpreadTrigger.addEventListener(type,function(event){event.stopPropagation();});});
+  patientSpreadTrigger.addEventListener('click',function(event){
+    event.stopPropagation();
+    openFullscreenVideo('img/medical-tourism-process-nepal-step-by-step-full-patient-journey-from-inquiry-to-departure-with-nepa.mp4','Full patient journey from inquiry to departure',true);
   });
   var zoom = 1, ZOOMS = [1, 1.35, 1.75, 2.25];
   function fit(){
@@ -1384,6 +1392,7 @@
   function syncVideoOverlays(vis){
     var showProblemVideo=vis.indexOf(3)!==-1 || vis.indexOf(4)!==-1;
     problemVideoSpread.classList.toggle('is-visible',showProblemVideo);
+    patientVideoSpread.classList.toggle('is-visible',vis.indexOf(13)!==-1 || vis.indexOf(14)!==-1);
   }
   function update(){
     var vis = visiblePages();
@@ -1428,11 +1437,13 @@
     if ((e.data === 'flipping' || e.data === 'user_fold') && !isPageTurning) {
       isPageTurning=true;
       problemVideoSpread.classList.add('is-turning');
+      patientVideoSpread.classList.add('is-turning');
     }
     if (e.data === 'read' && isPageTurning) {
       isPageTurning=false;
       syncVideoOverlays(visiblePages());
       problemVideoSpread.classList.remove('is-turning');
+      patientVideoSpread.classList.remove('is-turning');
     }
     if ((e.data === 'flipping' || e.data === 'user_fold') && shift !== 0) {
       wrap.style.transform = 'translateX(0px)'; shift = 0;
@@ -1446,7 +1457,7 @@
 
   var founderVideoModal=document.createElement('div');
   founderVideoModal.className='founder-video-modal';
-  founderVideoModal.innerHTML='<video controls playsinline preload="metadata" aria-label="Presentation video"></video><div class="modal-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div><button type="button" class="founder-video-close" aria-label="Close video">&times;</button>';
+  founderVideoModal.innerHTML='<video controls controlslist="nofullscreen" playsinline preload="metadata" aria-label="Presentation video"></video><div class="modal-brand" aria-label="PRANVAS"><img src="img/logo.png" alt=""><strong>PRAN<span>VAS</span></strong></div><button type="button" class="founder-video-close" aria-label="Close video">&times;</button>';
   document.body.appendChild(founderVideoModal);
   var founderVideoPlayer=founderVideoModal.querySelector('video');
   var founderVideoClose=founderVideoModal.querySelector('.founder-video-close');
