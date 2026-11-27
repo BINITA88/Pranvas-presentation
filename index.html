@@ -23,8 +23,9 @@
   #stage{position:absolute;inset:26px 0 66px 0;overflow:auto;display:flex;padding:4px 1vw}
   #wrap{margin:auto;flex:none;transition:transform .7s cubic-bezier(.3,.7,.3,1)}
   #wrap{position:relative}
-  .problem-video-spread{display:none;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25}
-  .problem-video-spread.is-visible{display:flex}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
+  .problem-video-spread{display:flex;position:absolute;inset:2% 2%;z-index:20;align-items:center;justify-content:center;padding:2%;overflow:hidden;background:#fff;border:1px solid #cfe0e8;border-radius:8px;box-shadow:0 3px 18px #00122b25;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .24s ease,visibility 0s linear .24s}
+  .problem-video-spread.is-visible:not(.is-turning){opacity:1;visibility:visible;pointer-events:auto;transition:opacity .28s ease,visibility 0s}.problem-video-inner{position:relative;width:100%;max-height:100%;aspect-ratio:16 / 9;background:#061c32;overflow:hidden}.problem-video-spread video{display:block;width:100%;height:100%;object-fit:contain;background:#061c32}
+  @media(prefers-reduced-motion:reduce){.problem-video-spread,.problem-video-spread.is-visible:not(.is-turning){transition:none}}
   .problem-video-content{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;min-height:0;gap:clamp(8px,1.2vw,18px)}.problem-video-content h2{flex:none;align-self:flex-start;margin:0;color:#092f5c;font-size:clamp(16px,2vw,27px);line-height:1.15}.problem-video-content .problem-video-inner{flex:0 1 auto;max-height:calc(100% - 45px)}
   .problem-video-brand{position:absolute;right:5%;bottom:4%;width:20%;height:12%;z-index:2;display:flex;align-items:center;justify-content:center;gap:3%;padding:1% 2%;border-radius:4px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;box-shadow:0 2px 8px #001a3026}.problem-video-brand img{display:block;max-width:28%;height:100%;object-fit:contain}.problem-video-brand strong{color:#07345c;font:700 clamp(8px,1.2vw,16px)/1 Arial,sans-serif;letter-spacing:.03em}.problem-video-brand strong span{color:#009d93}
   #book{opacity:0;transition:opacity .6s ease, transform .7s cubic-bezier(.3,.7,.3,1)}
@@ -718,6 +719,7 @@
   .marketing-icon{display:grid;place-items:center;flex:none;width:calc(100cqw / 419.25 * 46);height:calc(100cqw / 419.25 * 46);border-radius:calc(100cqw / 419.25 * 12);background:var(--accent);color:#fff}.marketing-icon svg{width:57%;height:57%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.marketing-copy small{font-size:calc(100cqw / 419.25 * 6);font-weight:800;letter-spacing:.12em;color:var(--accent)}.marketing-copy h3{margin:calc(100cqw / 419.25 * 3) 0 0;color:#0b355a;font-size:calc(100cqw / 419.25 * 12)}.marketing-copy p{margin:calc(100cqw / 419.25 * 4) 0 0;color:#607587;font-size:calc(100cqw / 419.25 * 9)}.marketing-index{margin-left:auto;align-self:flex-start;color:var(--accent);opacity:.4;font-size:calc(100cqw / 419.25 * 8);font-weight:700}
   .marketing-end{position:absolute;left:5%;right:5%;bottom:6%;display:flex;align-items:center;gap:calc(100cqw / 419.25 * 9);padding:calc(100cqw / 419.25 * 9);border-radius:calc(100cqw / 419.25 * 7);background:#0b3d62;color:#fff}.marketing-end>span{display:grid;place-items:center;width:calc(100cqw / 419.25 * 30);height:calc(100cqw / 419.25 * 30);border-radius:50%;background:#0caaa1;font-size:calc(100cqw / 419.25 * 17)}.marketing-end small,.marketing-end strong{display:block}.marketing-end small{color:#91e0d6;font-size:calc(100cqw / 419.25 * 6);font-weight:700;letter-spacing:.1em}.marketing-end strong{margin-top:calc(100cqw / 419.25 * 3);font-size:calc(100cqw / 419.25 * 9.5)}
   .marketing-page.play .marketing-card{animation:marketingRise .55s ease both;animation-delay:var(--delay)}.marketing-page.play .marketing-icon{animation:marketingIconIn .6s ease both;animation-delay:var(--delay)}.marketing-page.play .marketing-copy{animation:marketingRise .65s ease both;animation-delay:calc(var(--delay) + .1s)}@keyframes marketingRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes marketingIconIn{from{opacity:0;transform:scale(.8) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(0)}}@media(prefers-reduced-motion:reduce){.marketing-page.play .marketing-card,.marketing-page.play .marketing-icon,.marketing-page.play .marketing-copy{animation:none}}
+  .back-cover{position:absolute;inset:0;overflow:hidden;background:#072c53;color:#fff;font-family:Inter,system-ui,sans-serif}.back-cover:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 15%,#0d647066,transparent 46%),radial-gradient(ellipse at 0% 100%,#005e7b55,transparent 48%)}.back-cover-accent{position:absolute;left:0;top:0;bottom:0;width:1.3%;background:#20bcae}.back-cover-brand{position:absolute;top:11%;left:10%;right:10%;display:flex;align-items:center;gap:4%}.back-cover-logo{width:18%;aspect-ratio:1;border-radius:20%;background:#fff;overflow:hidden}.back-cover-logo img{display:block;width:100%;height:100%;object-fit:contain}.back-cover-brand strong{display:block;color:#fff;font-size:7cqw;line-height:1;letter-spacing:.02em}.back-cover-brand strong span{color:#28cdb8}.back-cover-brand small{display:block;margin-top:5%;color:#b7d9de;font-size:1.6cqw;letter-spacing:.15em;font-weight:700}.back-cover-message{position:absolute;top:43%;left:10%;right:12%}.back-cover-message>span{display:block;color:#4adbc7;font-size:2cqw;font-weight:800;letter-spacing:.2em}.back-cover-message h2{margin:5% 0 0;font-size:7cqw;line-height:1.12;letter-spacing:-.03em}.back-cover-message p{margin:7% 0 0;max-width:78%;color:#c5dde4;font-size:2.8cqw;line-height:1.5}.back-cover-footer{position:absolute;left:10%;right:10%;bottom:9%;display:flex;flex-direction:column;gap:1.8cqw;padding-top:4%;border-top:1px solid #ffffff40}.back-cover-footer span:first-child{font-size:2.8cqw;font-weight:700;color:#fff}.back-cover-footer span:last-child{font-size:1.5cqw;letter-spacing:.17em;color:#9ac4cd;font-weight:700}
   .revenue-page{background:#fff}.revenue-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.08}.revenue-page h2 span{display:block;font-size:calc(100cqw / 419.25 * 17);font-weight:500;color:#1a5374}.revenue-rule{width:calc(100cqw / 419.25 * 34);height:2px;background:#d5a346;margin-top:calc(100cqw / 419.25 * 7)}.revenue-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#456278;font-size:calc(100cqw / 419.25 * 8.2);line-height:1.35}
   .revenue-years{position:absolute;top:23%;left:5%;right:5%;height:37%;display:grid;grid-template-columns:1fr 1fr;gap:calc(100cqw / 419.25 * 6)}.revenue-year{min-width:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid #dce9ed;border-radius:calc(100cqw / 419.25 * 6);background:#fff;box-shadow:0 3px 9px #123c5712}.revenue-year h3{margin:0;padding:calc(100cqw / 419.25 * 6) calc(100cqw / 419.25 * 8);background:#0b3968;color:white;font-size:calc(100cqw / 419.25 * 9);letter-spacing:.06em}.revenue-year.year-two h3{background:#058f91}
   .revenue-line{display:flex;gap:calc(100cqw / 419.25 * 5);align-items:flex-start;flex:1;min-height:0;padding:calc(100cqw / 419.25 * 7);border-bottom:1px solid #edf2f3}.revenue-symbol{display:block;flex:none;width:calc(100cqw / 419.25 * 21);height:calc(100cqw / 419.25 * 21);color:#06a5a0}.revenue-symbol svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.revenue-line strong,.revenue-line small{display:block}.revenue-line strong{color:#0d3559;font-size:calc(100cqw / 419.25 * 7.8);line-height:1.3}.revenue-line small{margin-top:calc(100cqw / 419.25 * 3);color:#687e8c;font-size:calc(100cqw / 419.25 * 6.5);line-height:1.3}
@@ -726,8 +728,16 @@
   .revenue-art{position:absolute;top:71%;bottom:0;left:0;right:0;background:#dce9ee url('img/pranvas-investor-cover.png') center bottom / 100% auto no-repeat}.revenue-art div{position:absolute;inset:0;background:#073b68;clip-path:polygon(0 15%,0 100%,46% 100%)}.revenue-page .doc-foot{z-index:2;color:#fff;text-shadow:0 1px 3px #001a30}
   .revenue-page.play .revenue-year{animation:marketingRise .6s ease both}.revenue-page.play .revenue-year:nth-child(2){animation-delay:.15s}@media(prefers-reduced-motion:reduce){.revenue-page.play .revenue-year{animation:none}}
   .doc-page-content.revenue-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-page:before{display:none}.revenue-page .doc-kicker{display:none}
+  .revenue-modern{background:#fff}.revenue-modern h2{font-size:calc(100cqw / 419.25 * 23);line-height:1.08}.revenue-modern h2 span{color:#078d8a;font-size:calc(100cqw / 419.25 * 19);font-weight:600}.revenue-modern-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7486;font-size:calc(100cqw / 419.25 * 9);line-height:1.4}
+  .revenue-modern-cards{position:absolute;left:5%;right:5%;top:22%;bottom:8%;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:calc(100cqw / 419.25 * 9)}.revenue-modern-card{min-height:0;display:flex;flex-direction:column;padding:calc(100cqw / 419.25 * 11);border:1px solid #dae9ee;border-radius:calc(100cqw / 419.25 * 8);background:#f6fafc}.revenue-modern-card:nth-child(2){background:#f2faf8;border-color:#d7ebe8}.revenue-modern-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:calc(100cqw / 419.25 * 6);border-bottom:1px solid #dce9ed}.revenue-modern-head span{font-size:calc(100cqw / 419.25 * 10);font-weight:800;color:#0b3e66}.revenue-modern-card:nth-child(2) .revenue-modern-head span{color:#078d8a}.revenue-modern-head small{color:#718895;font-size:calc(100cqw / 419.25 * 6);font-weight:700;letter-spacing:.08em}
+  .revenue-modern-detail{padding-top:calc(100cqw / 419.25 * 7)}.revenue-modern-detail strong{display:block;color:#173c5d;font-size:calc(100cqw / 419.25 * 10)}.revenue-modern-detail p{margin:calc(100cqw / 419.25 * 2) 0 0;color:#5d7687;font-size:calc(100cqw / 419.25 * 8);line-height:1.3}.revenue-modern-total{margin-top:auto;padding-top:calc(100cqw / 419.25 * 7);border-top:1px solid #dce9ed}.revenue-modern-total span,.revenue-modern-total strong,.revenue-modern-total small{display:block}.revenue-modern-total span{color:#728997;font-size:calc(100cqw / 419.25 * 6.2);font-weight:700;letter-spacing:.08em}.revenue-modern-total strong{margin-top:calc(100cqw / 419.25 * 3);color:#078d8a;font-size:calc(100cqw / 419.25 * 18);line-height:1.05}.revenue-modern-total small{margin-top:calc(100cqw / 419.25 * 2);color:#365e73;font-size:calc(100cqw / 419.25 * 8);font-weight:600}
+  .revenue-modern.play .revenue-modern-card{animation:marketingRise .6s ease both}.revenue-modern.play .revenue-modern-card:nth-child(2){animation-delay:.16s}@media(prefers-reduced-motion:reduce){.revenue-modern.play .revenue-modern-card{animation:none}}
   .patient-video-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1}.patient-video-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7686;font-size:calc(100cqw / 419.25 * 9);line-height:1.45}.patient-video-frame{position:absolute;left:5%;right:5%;top:25%;height:45%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:calc(100cqw / 419.25 * 8);background:#09243b;box-shadow:0 4px 15px #102f4125}.patient-video-frame video{display:block;width:100%;height:100%;object-fit:contain}.patient-video-help{position:absolute;top:73%;left:8%;right:8%;text-align:center;color:#567385;font-size:calc(100cqw / 419.25 * 8.5)}
   .doc-page-content.revenue-image-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-image-page:before{display:none}.revenue-image-page img{display:block;width:100%;height:100%;object-fit:fill}
+  .revenue-clean{position:absolute;inset:0;z-index:3;pointer-events:none;font-family:Inter,system-ui,sans-serif;color:#0a3159}.revenue-clean-top{position:absolute;left:0;right:0;top:0;height:11%;background:#fff}.revenue-clean-title{position:absolute;left:5.5%;top:12.4%;width:66%;height:9%;background:#fff;display:flex;flex-direction:column;justify-content:center}.revenue-clean-title strong{font-size:5.5cqw;line-height:1.05;letter-spacing:-.03em}.revenue-clean-title span{font-size:4.4cqw;line-height:1.1;font-weight:500}.revenue-clean-intro{position:absolute;left:5.5%;top:25%;width:77%;height:4.3%;background:#fff}
+  .revenue-clean-copy{position:absolute;background:#fff;color:#12385c;font-size:1.9cqw;line-height:1.23;overflow:hidden}.revenue-clean-copy strong,.revenue-clean-copy small{display:block}.revenue-clean-copy small{margin-top:.5cqw;color:#506b7d;font-size:1.5cqw;line-height:1.25}.revenue-clean-copy.year-one{left:19%;width:28.5%}.revenue-clean-copy.year-two{left:65.5%;width:28.5%}.revenue-clean-copy.first{top:37%;height:7.8%}.revenue-clean-copy.second{top:47%;height:8.5%}
+  .revenue-clean-total{position:absolute;top:56.5%;height:8.3%;background:#e7edf0;overflow:hidden}.revenue-clean-total.year-one{left:8.8%;width:38%}.revenue-clean-total.year-two{left:55.4%;width:40%}.revenue-clean-total small,.revenue-clean-total strong,.revenue-clean-total b{display:block}.revenue-clean-total small{font-size:1.45cqw;line-height:1.1;font-weight:800}.revenue-clean-total strong{margin-top:.5cqw;color:#008e8c;font-size:3.3cqw;line-height:1.05;white-space:nowrap}.revenue-clean-total b{margin-top:.3cqw;font-size:1.9cqw}
+  .revenue-clean-year{position:absolute;top:32.4%;height:2.7%;width:20%;display:flex;align-items:center;color:#fff;font-size:2.5cqw;font-weight:800}.revenue-clean-year.year-one{left:9%;background:#052e60}.revenue-clean-year.year-two{left:55.5%;background:#008888}
   .doc-page-content.revenue-image-page:before{display:block;content:"";position:absolute;left:5%;right:3%;top:66.5%;height:7%;width:auto;background:#fff;z-index:1;pointer-events:none}
   .revenue-image-page:after{content:"";position:absolute;left:0;bottom:0;width:37%;height:8%;background:linear-gradient(145deg,#013c76,#013066);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 24%),linear-gradient(to left,transparent,#000 18%);mask-composite:intersect;pointer-events:none}
   .revenue-brand{position:absolute;top:2%;left:5%;right:5%;height:9%;display:flex;align-items:center;color:#08345d}.revenue-brand img{width:calc(100cqw / 419.25 * 45);height:calc(100cqw / 419.25 * 45);object-fit:contain}.revenue-brand b{font-size:calc(100cqw / 419.25 * 14);letter-spacing:.04em}.revenue-brand b span{color:#009f98}.revenue-brand small{display:block;font-size:calc(100cqw / 419.25 * 3.8);font-weight:700;letter-spacing:.12em}.revenue-brand p{margin-left:auto;color:#14466a;font-size:calc(100cqw / 419.25 * 4);font-weight:700;letter-spacing:.15em;line-height:1.4}
@@ -873,7 +883,7 @@
 <script>
 (function(){
   var RATIO = 1258/1787;            // page width / height
-  var TOTAL = 22;
+  var TOTAL = 24;
   var book = document.getElementById('book');
 
   var proposalSlides = [
@@ -964,7 +974,8 @@
     if(slide.design==='revenue-comparison'){
       var revenueImage=document.createElement('div');
       revenueImage.className='doc-page-content revenue-image-page';
-      revenueImage.innerHTML='<img src="img/revenue-projections-clear.png" alt="Revenue projections: Year 1, 150 providers and 365 patient journeys, gross revenue NPR 3,650,000. Year 2, 500 paying providers and 1,500 patient journeys, gross revenue NPR 40,000,000. These are gross projections, not net profit.">';
+      revenueImage.innerHTML='<img src="img/revenue-projections-clear.png" alt="Revenue projections: Year 1, 150 providers and 365 patient journeys, gross revenue NPR 3,650,000. Year 2, 500 paying providers and 1,500 patient journeys, gross revenue NPR 40,000,000."><div class="revenue-clean" aria-hidden="true"><div class="revenue-clean-top"></div><div class="revenue-clean-title"><strong>Revenue Projections</strong><span>Year 1 vs Year 2</span></div><div class="revenue-clean-intro"></div><div class="revenue-clean-copy year-one first"><strong>150 qualified healthcare providers onboarded</strong><small>Network target; no subscription revenue assumed.</small></div><div class="revenue-clean-copy year-one second"><strong>365 completed patient journeys × NPR 10,000 commission</strong></div><div class="revenue-clean-copy year-two first"><strong>500 paying providers × NPR 50,000 annual subscription</strong><small>NPR 25,000,000 · NPR 2.5 crore</small></div><div class="revenue-clean-copy year-two second"><strong>1,500 completed patient journeys × NPR 10,000 commission</strong><small>NPR 15,000,000 · NPR 1.5 crore</small></div><div class="revenue-clean-total year-one"><small>TOTAL PROJECTED YEAR 1 REVENUE</small><strong>NPR 3,650,000</strong><b>NPR 36.5 LAKH</b></div><div class="revenue-clean-total year-two"><small>TOTAL PROJECTED YEAR 2 REVENUE</small><strong>NPR 40,000,000</strong><b>NPR 4 CRORE</b></div></div>';
+      revenueImage.querySelector('.revenue-clean').insertAdjacentHTML('beforeend','<div class="revenue-clean-year year-one">YEAR 1</div><div class="revenue-clean-year year-two">YEAR 2</div>');
       return revenueImage;
     }
     if(slide.design==='revenue-comparison-legacy'){
@@ -1091,11 +1102,19 @@
       var page=document.createElement('div');
       page.className='page';
       page.setAttribute('data-deck','keep');
-      if(slideNumber===21) page.setAttribute('data-density','hard');
       page.appendChild(makeProposalContent(slide,slideNumber));
       previous.parentNode.insertBefore(page,previous.nextSibling);
       previous=page;
     });
+    var endpaper=document.createElement('div');
+    endpaper.className='page';endpaper.setAttribute('data-deck','keep');
+    endpaper.setAttribute('aria-label','Blank inside back cover');
+    previous.parentNode.insertBefore(endpaper,previous.nextSibling);
+    var backCover=document.createElement('div');
+    backCover.className='page';backCover.setAttribute('data-deck','keep');backCover.setAttribute('data-density','hard');
+    backCover.setAttribute('aria-label','PRANVAS back cover');
+    backCover.innerHTML='<div class="back-cover"><div class="back-cover-accent"></div><div class="back-cover-brand"><div class="back-cover-logo"><img src="img/logo.png" alt=""></div><div><strong>PRAN<span>VAS</span></strong><small>MEDICAL CARE, BEYOND BORDERS</small></div></div><div class="back-cover-message"><span>THANK YOU</span><h2>Better care.<br>Closer together.</h2><p>Connecting people to healthcare with guidance, care and confidence.</p></div><div class="back-cover-footer"><span>pranvas.com</span><span>MEDICAL CARE, BEYOND BORDERS</span></div></div>';
+    endpaper.parentNode.insertBefore(backCover,endpaper.nextSibling);
   }
   renderProposalSlides();
 
@@ -1199,8 +1218,8 @@
     var left = (i % 2 === 1) ? i : i - 1;
     return [left, left + 1].filter(function(p){ return p < TOTAL; });
   }
-  function update(){
-    var vis = visiblePages();
+  var isPageTurning=false, resumeProblem=false, resumeJourney=false;
+  function syncVideoOverlays(vis){
     var showProblemVideo=vis.indexOf(3)!==-1 || vis.indexOf(4)!==-1;
     var wasShowing=problemVideoSpread.classList.contains('is-visible');
     problemVideoSpread.classList.toggle('is-visible',showProblemVideo);
@@ -1213,6 +1232,10 @@
       journeyVideoSpread.classList.add('is-visible');journeyVideoPlayer.currentTime=0;
       var journeyPlay=journeyVideoPlayer.play();if(journeyPlay && journeyPlay.catch) journeyPlay.catch(function(){});
     }
+  }
+  function update(){
+    var vis = visiblePages();
+    if(!isPageTurning) syncVideoOverlays(vis);
     count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
     var now = {}; vis.forEach(function(p){ now[p] = true; });
     if (now[0] && !lastVisible[0]) playTyping();
@@ -1240,6 +1263,21 @@
   pageFlip.on('changeOrientation', function(){ lastVisible = {}; update(); center(); });
   // Start the welcome-page animation as soon as it begins to turn into view.
   pageFlip.on('changeState', function(e){
+    if ((e.data === 'flipping' || e.data === 'user_fold') && !isPageTurning) {
+      isPageTurning=true;
+      resumeProblem=problemVideoSpread.classList.contains('is-visible')&&!problemVideo.paused;
+      resumeJourney=journeyVideoSpread.classList.contains('is-visible')&&!journeyVideoPlayer.paused;
+      problemVideo.pause();journeyVideoPlayer.pause();
+      problemVideoSpread.classList.add('is-turning');journeyVideoSpread.classList.add('is-turning');
+    }
+    if (e.data === 'read' && isPageTurning) {
+      isPageTurning=false;
+      syncVideoOverlays(visiblePages());
+      problemVideoSpread.classList.remove('is-turning');journeyVideoSpread.classList.remove('is-turning');
+      if(resumeProblem && problemVideoSpread.classList.contains('is-visible')){var resumeP=problemVideo.play();if(resumeP && resumeP.catch) resumeP.catch(function(){});}
+      if(resumeJourney && journeyVideoSpread.classList.contains('is-visible')){var resumeJ=journeyVideoPlayer.play();if(resumeJ && resumeJ.catch) resumeJ.catch(function(){});}
+      resumeProblem=false;resumeJourney=false;
+    }
     if ((e.data === 'flipping' || e.data === 'user_fold') && shift !== 0) {
       wrap.style.transform = 'translateX(0px)'; shift = 0;
     }
