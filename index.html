@@ -745,6 +745,7 @@
   .revenue-modern-detail{padding-top:calc(100cqw / 419.25 * 7)}.revenue-modern-detail strong{display:block;color:#173c5d;font-size:calc(100cqw / 419.25 * 10)}.revenue-modern-detail p{margin:calc(100cqw / 419.25 * 2) 0 0;color:#5d7687;font-size:calc(100cqw / 419.25 * 8);line-height:1.3}.revenue-modern-total{margin-top:auto;padding-top:calc(100cqw / 419.25 * 7);border-top:1px solid #dce9ed}.revenue-modern-total span,.revenue-modern-total strong,.revenue-modern-total small{display:block}.revenue-modern-total span{color:#728997;font-size:calc(100cqw / 419.25 * 6.2);font-weight:700;letter-spacing:.08em}.revenue-modern-total strong{margin-top:calc(100cqw / 419.25 * 3);color:#078d8a;font-size:calc(100cqw / 419.25 * 18);line-height:1.05}.revenue-modern-total small{margin-top:calc(100cqw / 419.25 * 2);color:#365e73;font-size:calc(100cqw / 419.25 * 8);font-weight:600}
   .revenue-modern.play .revenue-modern-card{animation:marketingRise .6s ease both}.revenue-modern.play .revenue-modern-card:nth-child(2){animation-delay:.16s}@media(prefers-reduced-motion:reduce){.revenue-modern.play .revenue-modern-card{animation:none}}
   .patient-video-page h2{font-size:calc(100cqw / 419.25 * 22);line-height:1.1}.patient-video-lead{margin:calc(100cqw / 419.25 * 6) 0 0;color:#5d7686;font-size:calc(100cqw / 419.25 * 9);line-height:1.45}.patient-video-frame{position:absolute;left:5%;right:5%;top:25%;height:45%;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:calc(100cqw / 419.25 * 8);background:#09243b;box-shadow:0 4px 15px #102f4125}.patient-video-frame video{display:block;width:100%;height:100%;object-fit:contain}.patient-video-help{position:absolute;top:73%;left:8%;right:8%;text-align:center;color:#567385;font-size:calc(100cqw / 419.25 * 8.5)}
+  .doc-page-content.journey-video-blank{inset:0;padding:0;border:0;border-radius:0;background:#fff}.journey-video-blank:before{display:none}
   .doc-page-content.revenue-image-page{inset:0;padding:0;border:0;border-radius:0;background:#fff}.revenue-image-page:before{display:none}.revenue-image-page img{display:block;width:100%;height:100%;object-fit:fill}
   .doc-page-content.revenue-image-page{inset:4.5% 5%;border:1px solid #d5e5ec;border-radius:calc(100cqw / 419.25 * 8);overflow:hidden}.revenue-page-accent{position:absolute;z-index:5;left:0;top:0;bottom:0;width:calc(100cqw / 419.25 * 3);background:linear-gradient(#3ddbb0,#0a6f9a)}.revenue-image-kicker{position:absolute;z-index:5;top:3%;left:4%;right:4%}.revenue-image-foot{z-index:5;color:#fff;text-shadow:0 1px 3px #002044;left:4%;right:4%;bottom:1.5%}
   .revenue-clean{position:absolute;inset:0;z-index:3;pointer-events:none;font-family:Inter,system-ui,sans-serif;color:#0a3159}.revenue-clean-top{position:absolute;left:0;right:0;top:0;height:11%;background:#fff}.revenue-clean-title{position:absolute;left:5.5%;top:12.4%;width:66%;height:9%;background:#fff;display:flex;flex-direction:column;justify-content:center}.revenue-clean-title strong{font-size:5.5cqw;line-height:1.05;letter-spacing:-.03em}.revenue-clean-title span{font-size:4.4cqw;line-height:1.1;font-weight:500}.revenue-clean-intro{position:absolute;left:5.5%;top:25%;width:77%;height:4.3%;background:#fff}
@@ -929,7 +930,7 @@
     {section:'02 · Platform, Services & Operations',title:'Hospital Partnership Strategy',design:'partnership-reference'},
     {section:'02 · Platform, Services & Operations',title:'Complete Patient Journey',design:'journey-animation',items:[['Inquiry','First contact'],['Registration','Patient details'],['Doctor match','Care options'],['Treatment','Coordinated care'],['Recovery','Patient support'],['Follow-up','Continued contact']]},
     {section:'02 · Platform, Services & Operations',title:'Detailed Patient Journey — Operational Flow',design:'patient-journey-video'},
-    {section:'02 · Platform, Services & Operations',title:'Patient Concierge & Transportation Operations',design:'concierge',items:[['Dedicated coordinator','A consistent point of contact for the patient.'],['Personal guide','Support with hospital navigation and appointments.'],['Private vehicle','Planned transportation between airport, hotel and hospital.'],['Airport transfers','Arrival and departure assistance.']],note:'Service scope and availability to be confirmed with the operating team and transport partners.'},
+    {section:'02 · Platform, Services & Operations',title:'',design:'journey-video-blank'},
     {section:'02 · Platform, Services & Operations',title:'Marketing & Patient Acquisition Strategy',design:'ai-healthcare-use-cases'},
     {section:'03 · Business & Financial Plan',title:'Business Model & Revenue Streams',items:[['Patient facilitation commission','10% of the treatment value. Average treatment value assumption: NPR 100,000 per completed patient. Commission per completed patient: NPR 10,000.'],['Healthcare provider subscription','NPR 50,000 per clinic/hospital per year (Year 2 assumption).']],note:'Revenue is planned from completed patient treatment journeys and annual subscriptions from listed providers, beginning in Year 2.'},
     {section:'03 · Business & Financial Plan',title:'Monthly Operating & Marketing Expenses',design:'expense-chart',items:[['Salary','NPR 80,000'],['Google Ads','NPR 50,000'],['Facebook & Instagram Ads','NPR 50,000'],['Content Creation (5 × 5,000)','NPR 25,000'],['SEO','NPR 15,000'],['Influencer Collaboration, News & Airport Advertising','NPR 2,00,000']]},
@@ -995,6 +996,9 @@
     return content;
   }
   function makeProposalContent(slide,slideNumber){
+    if(slide.design==='journey-video-blank'){
+      var blankPage=document.createElement('div');blankPage.className='doc-page-content journey-video-blank';blankPage.setAttribute('aria-label','Blank page beside the patient journey video');return blankPage;
+    }
     if(slide.design==='five-year-revenue'){
       var outlook=document.createElement('div');outlook.className='doc-page-content five-year-page';
       var forecasts=[['Year 1','0.365','36.5L','1.46'],['Year 2','4','4 Cr','16'],['Year 3','8','8 Cr','32'],['Year 4','15','15 Cr','60'],['Year 5','25','25 Cr','100']];
@@ -1208,6 +1212,7 @@
     var previous=anchor;
     proposalSlides.slice(2).forEach(function(slide,index){
       var slideNumber=index+3;
+      if(slideNumber>14) slideNumber--;
       var page=document.createElement('div');
       page.className='page';
       page.setAttribute('data-deck','keep');
@@ -1220,7 +1225,7 @@
     backCover.setAttribute('aria-label','PRANVAS back cover');
     backCover.innerHTML='<div class="back-cover"><div class="back-cover-accent"></div><div class="back-cover-brand"><div class="back-cover-logo"><img src="img/logo.png" alt=""></div><div><strong>PRAN<span>VAS</span></strong><small>MEDICAL CARE, BEYOND BORDERS</small></div></div><div class="back-cover-message"><span>THANK YOU</span><h2>Better care.<br>Closer together.</h2><p>Connecting people to healthcare with guidance, care and confidence.</p></div><div class="back-cover-footer"><span>pranvas.com</span><span>MEDICAL CARE, BEYOND BORDERS</span></div></div>';
     previous.parentNode.insertBefore(backCover,previous.nextSibling);
-    document.querySelectorAll('#book .doc-kicker, #book .doc-foot span').forEach(function(label){label.textContent=label.textContent.replace(/\/\s*21\b/g,'/ 22');});
+    document.querySelectorAll('#book .doc-kicker, #book .doc-foot span').forEach(function(label){label.textContent=label.textContent.replace(/\/\s*(?:21|22)\b/g,'/ 21');});
   }
   renderProposalSlides();
 
@@ -1349,7 +1354,8 @@
   function update(){
     var vis = visiblePages();
     if(!isPageTurning) syncVideoOverlays(vis);
-    count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
+    var numberedPages=vis.filter(function(p){return p!==14;}).map(function(p){return p<14?p+1:p;});
+    count.textContent=(numberedPages.length?numberedPages.join('–'):'—')+' / '+(TOTAL-1);
     try {
       var curIdx = pageFlip.getCurrentPageIndex();
       sessionStorage.setItem('pranvas_page_index', String(curIdx));
@@ -1378,7 +1384,10 @@
     shift = x;
     wrap.style.transform = 'translateX(' + x + 'px)';
   }
-  pageFlip.on('flip', function(){ document.querySelectorAll('.patient-video-page video').forEach(function(video){video.pause();}); update(); center(); });
+  pageFlip.on('flip', function(){
+    if(pageFlip.getOrientation()==='portrait' && pageFlip.getCurrentPageIndex()===14){pageFlip.turnToPage(lastVisible[13]?15:13);return;}
+    document.querySelectorAll('.patient-video-page video').forEach(function(video){video.pause();}); update(); center();
+  });
   pageFlip.on('changeOrientation', function(){ lastVisible = {}; update(); center(); });
   // Start the welcome-page animation as soon as it begins to turn into view.
   pageFlip.on('changeState', function(e){
