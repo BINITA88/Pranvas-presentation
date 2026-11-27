@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PRANVAS – A Partnership Proposal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
 <style>
   :root{--teal:#3ddbb0;--navy:#021c45;}
   *{box-sizing:border-box;margin:0;padding:0}
@@ -111,15 +111,20 @@
 
   /* ---------- Page 3: Introduction ---------- */
   .p3c{position:absolute;left:8.754%;top:18.30%;width:82.41%;height:74.3%;--pt:calc(100cqw / 419.25);
-    font-family:'Inter',system-ui,sans-serif;color:#40506a;display:flex;flex-direction:column;gap:calc(var(--pt)*8)}
+    font-family:'Inter',system-ui,sans-serif;color:#40506a;display:flex;flex-direction:column;justify-content:space-between;gap:calc(var(--pt)*10)}
   .p3c .serif{font-family:'Caladea',Georgia,serif}
   .p3c .kicker{font-size:calc(var(--pt)*6.2);font-weight:600;letter-spacing:.2em;text-transform:uppercase}
   .p3c p{margin:0}
+  /* brand logo intro */
+  .p3 .brand-intro{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:calc(var(--pt)*12) calc(var(--pt)*16);border-radius:calc(var(--pt)*9);
+    background:#fff;border:1px solid #e1ebf2;box-shadow:0 calc(var(--pt)*4) calc(var(--pt)*14) rgba(0,38,87,.05)}
+  .p3 .brand-intro img{display:block;width:68%;max-width:calc(var(--pt)*220);height:auto;object-fit:contain}
   /* hero */
   .p3 .hero{position:relative;overflow:hidden;border-radius:calc(var(--pt)*9);
     background:linear-gradient(125deg,#002657 0%,#0b3d86 58%,#0a6f9a 100%);color:#fff;
-    padding:calc(var(--pt)*13) calc(var(--pt)*14);display:grid;grid-template-columns:calc(var(--pt)*66) 1fr;
-    column-gap:calc(var(--pt)*14);align-items:center;min-height:calc(var(--pt)*104)}
+    padding:calc(var(--pt)*14) calc(var(--pt)*15);display:grid;grid-template-columns:calc(var(--pt)*66) 1fr;
+    column-gap:calc(var(--pt)*14);align-items:center;min-height:calc(var(--pt)*108)}
   .p3 .hero:after{content:"";position:absolute;right:calc(var(--pt)*-30);top:calc(var(--pt)*-40);width:calc(var(--pt)*150);
     height:calc(var(--pt)*150);border-radius:50%;background:radial-gradient(circle,rgba(61,219,176,.22),rgba(61,219,176,0) 70%)}
   .p3 .hero .kicker{color:#3ddbb0;margin-bottom:calc(var(--pt)*4)}
@@ -129,22 +134,10 @@
   .globe svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .globe .orbit{animation:spin 9s linear infinite;transform-origin:50% 50%}
   @keyframes spin{to{transform:rotate(360deg)}}
-  /* two cards */
-  .p3 .duo{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--pt)*8)}
-  .p3 .card{position:relative;background:#fff;border:1px solid #dfe8ef;border-radius:calc(var(--pt)*9);
-    padding:calc(var(--pt)*11) calc(var(--pt)*11) calc(var(--pt)*12);box-shadow:0 calc(var(--pt)*3) calc(var(--pt)*10) rgba(0,38,87,.06);overflow:hidden}
-  .p3 .card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(var(--pt)*3);background:linear-gradient(#3ddbb0,#0a6f9a)}
-  .p3 .card .top{display:flex;align-items:center;gap:calc(var(--pt)*8);margin-bottom:calc(var(--pt)*7)}
-  .p3 .ico{flex:none;width:calc(var(--pt)*30);height:calc(var(--pt)*30);border-radius:calc(var(--pt)*8);
-    display:grid;place-items:center;background:linear-gradient(135deg,#e6faf4,#e3effd)}
-  .p3 .ico svg{width:66%;height:66%}
-  .p3 .card .kicker{color:#05a5b5;font-size:calc(var(--pt)*5.6)}
-  .p3 .card h5{font-size:calc(var(--pt)*12.5);color:#002657;margin:calc(var(--pt)*1) 0 0;font-weight:700;line-height:1.1}
-  .p3 .card p{font-size:calc(var(--pt)*7.8);line-height:1.5}
   /* journey strip */
   .p3 .journey{position:relative;background:#f1f7fb;border:1px dashed #b9d3e3;border-radius:calc(var(--pt)*9);
-    padding:calc(var(--pt)*9) calc(var(--pt)*10) calc(var(--pt)*8)}
-  .p3 .journey .kicker{color:#0141a3;text-align:center;font-size:calc(var(--pt)*5.8);margin-bottom:calc(var(--pt)*7)}
+    padding:calc(var(--pt)*11) calc(var(--pt)*10) calc(var(--pt)*10)}
+  .p3 .journey .kicker{color:#0141a3;text-align:center;font-size:calc(var(--pt)*5.8);margin-bottom:calc(var(--pt)*8)}
   .p3 .track{position:relative;display:grid;grid-template-columns:repeat(4,1fr)}
   .p3 .line{position:absolute;left:12.5%;right:12.5%;top:calc(var(--pt)*14);height:calc(var(--pt)*1.6);
     background:repeating-linear-gradient(90deg,#3ddbb0 0 calc(var(--pt)*4),transparent calc(var(--pt)*4) calc(var(--pt)*7));
@@ -157,14 +150,15 @@
   .p3 .node svg{width:58%;height:58%}
   .p3 .step b{display:block;margin-top:calc(var(--pt)*5);font-size:calc(var(--pt)*7);color:#002657;font-weight:600}
   .p3 .step span{display:block;font-size:calc(var(--pt)*5.8);color:#6b7b90;margin-top:calc(var(--pt)*1)}
-  /* closing banner */
-  .p3 .banner{position:relative;overflow:hidden;border-radius:calc(var(--pt)*9);text-align:center;
-    padding:calc(var(--pt)*15) calc(var(--pt)*14);background:linear-gradient(100deg,#0a6f9a,#05a5b5 45%,#3ddbb0)}
-  .p3 .banner .l1{font-size:calc(var(--pt)*16);color:#fff;font-weight:700;line-height:1.15}
-  .p3 .banner .l2{font-size:calc(var(--pt)*11);color:#002657;font-style:italic;margin-top:calc(var(--pt)*4)}
-  .p3 .banner:after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:30%;transform:skewX(-20deg);
-    background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.35),rgba(255,255,255,0));animation:shine 4.5s ease-in-out 2.5s infinite}
-  @keyframes shine{0%{left:-40%}55%,100%{left:130%}}
+  /* closing tagline */
+  .p3 .tagline-bar{display:flex;align-items:center;justify-content:center;gap:calc(var(--pt)*10);
+    padding:calc(var(--pt)*8) calc(var(--pt)*10);text-align:center}
+  .p3 .tagline-bar i{flex:1;max-width:calc(var(--pt)*54);height:calc(var(--pt)*1.4);border-radius:999px;
+    background:linear-gradient(90deg,transparent,#05a5b5)}
+  .p3 .tagline-bar i:last-child{background:linear-gradient(90deg,#05a5b5,transparent)}
+  .p3 .tagline-bar span{font-family:'Caladea',Georgia,serif;font-size:calc(var(--pt)*15.5);font-weight:700;
+    color:#002657;letter-spacing:.01em;white-space:nowrap}
+  .p3 .tagline-bar span em{font-style:italic;color:#058d9a}
   /* entrance animations (replayed whenever page 3 comes into view) */
   .p3 .rise{opacity:0;transform:translateY(calc(var(--pt)*10))}
   .p3.play .rise{animation:rise .8s cubic-bezier(.2,.75,.25,1) forwards}
@@ -457,28 +451,32 @@
   @media(prefers-reduced-motion:reduce){.services-page.play .services-heading,.services-page.play .service-row,.services-page.play .globe-land,.services-page.play .globe-longitude,.services-page.play .service-route,.services-page.play .service-origin,.services-page.play .global-pranvas-pin,.services-page.play .services-disclaimer,.services-page.play .global-pranvas-pin text{animation:none;opacity:1;stroke-dashoffset:0}}
   .doc-page-content.welcome-page{padding:0;border-color:rgba(255,255,255,.22);background:linear-gradient(160deg,#051a3c 0%,#073668 58%,#086c7a 100%);color:#fff;overflow:hidden}
   .doc-page-content.welcome-page:before{display:none}
-  .welcome-artstage{position:absolute;left:0;right:0;top:5.5%;height:46%;z-index:3;display:grid;place-items:center}
+  .welcome-eyebrow{position:absolute;left:0;right:0;top:3.8%;z-index:3;text-align:center;color:#8ce4d0;font-size:calc(100cqw / 419.25 * 5.8);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+  .welcome-artstage{position:absolute;left:0;right:0;top:7.5%;height:44.5%;z-index:3;display:grid;place-items:center}
   .welcome-art-panel{position:relative;z-index:1;width:62%;height:100%;display:grid;place-items:center;background:transparent;border:0;box-shadow:none;overflow:visible}
   .welcome-art-shadow{position:absolute;bottom:1%;width:52%;height:calc(100cqw / 419.25 * 8);border-radius:50%;background:radial-gradient(ellipse at center,rgba(2,12,30,.48) 0%,rgba(2,12,30,0) 74%);pointer-events:none}
   .welcome-artwork{position:relative;z-index:2;display:block;width:100%;height:96%;object-fit:contain;filter:drop-shadow(0 calc(100cqw / 419.25 * 6) calc(100cqw / 419.25 * 14) rgba(2,14,34,.38))}
-  .welcome-message{position:absolute;left:calc(100cqw / 419.25 * 22);right:calc(100cqw / 419.25 * 22);top:56.5%;z-index:3;text-align:center}
-  .welcome-message small{display:block;color:#8ce4d0;font-size:calc(100cqw / 419.25 * 6);font-weight:700;letter-spacing:.22em;text-transform:uppercase}
-  .welcome-message .namaste{margin:calc(100cqw / 419.25 * 4) 0 0;color:#f3cc7c;font-family:'Caladea',Georgia,serif;font-size:calc(100cqw / 419.25 * 34);font-weight:700;line-height:1}
-  .welcome-message h2{margin:calc(100cqw / 419.25 * 3) 0 0;color:#fff;font-size:calc(100cqw / 419.25 * 19);font-weight:750;line-height:1.15;letter-spacing:-.02em}
+  .welcome-message{position:absolute;left:calc(100cqw / 419.25 * 18);right:calc(100cqw / 419.25 * 18);top:61.5%;z-index:3;text-align:center}
+  .welcome-namaste-lockup{position:relative;display:inline-flex;align-items:flex-end;justify-content:center;padding:0 calc(100cqw / 419.25 * 4) calc(100cqw / 419.25 * 11)}
+  .welcome-message .namaste{margin:0;color:#f5d286;font-family:'Kaushan Script','Brush Script MT',cursive;font-size:calc(100cqw / 419.25 * 44);font-weight:400;line-height:1;letter-spacing:.01em;text-shadow:0 calc(100cqw / 419.25 * 3) calc(100cqw / 419.25 * 12) rgba(2,12,30,.42)}
+  .welcome-nepal-flag{flex:none;width:calc(100cqw / 419.25 * 22);height:auto;margin-left:calc(100cqw / 419.25 * 2);margin-bottom:calc(100cqw / 419.25 * 2);transform:rotate(6deg);filter:drop-shadow(0 calc(100cqw / 419.25 * 2) calc(100cqw / 419.25 * 5) rgba(2,12,30,.45))}
+  .welcome-namaste-swoosh{position:absolute;left:10%;right:2%;bottom:0;width:88%;height:calc(100cqw / 419.25 * 14);overflow:visible;pointer-events:none}
+  .welcome-message h2{margin:calc(100cqw / 419.25 * 2) 0 0;color:#fff;font-family:'Inter',system-ui,sans-serif;font-size:calc(100cqw / 419.25 * 21);font-weight:800;line-height:1.12;letter-spacing:-.025em}
   .welcome-message h2 .brand{color:#4de3be}
-  .welcome-message p{max-width:calc(100cqw / 419.25 * 290);margin:calc(100cqw / 419.25 * 5) auto 0;color:rgba(232,243,255,.82);font-size:calc(100cqw / 419.25 * 8);line-height:1.48}
-  .welcome-values{position:absolute;left:calc(100cqw / 419.25 * 18);right:calc(100cqw / 419.25 * 18);bottom:calc(100cqw / 419.25 * 22);z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:calc(100cqw / 419.25 * 5);text-align:center}
+  .welcome-message p{max-width:calc(100cqw / 419.25 * 305);margin:calc(100cqw / 419.25 * 4.5) auto 0;color:rgba(235,245,255,.86);font-family:'Inter',system-ui,sans-serif;font-size:calc(100cqw / 419.25 * 8.3);font-weight:500;line-height:1.45}
+  .welcome-values{position:absolute;left:calc(100cqw / 419.25 * 18);right:calc(100cqw / 419.25 * 18);bottom:calc(100cqw / 419.25 * 21);z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:calc(100cqw / 419.25 * 5);text-align:center}
   .welcome-value-pill{display:flex;align-items:center;justify-content:center;padding:calc(100cqw / 419.25 * 4.5) calc(100cqw / 419.25 * 4);border:1px solid rgba(140,228,208,.22);border-radius:calc(100cqw / 419.25 * 4);background:rgba(4,24,52,.32);color:rgba(240,249,255,.88);font-size:calc(100cqw / 419.25 * 5.2);font-weight:700;letter-spacing:.08em;line-height:1.25}
   .welcome-type-char{opacity:0}
   .welcome-page.play .welcome-type-char{animation:welcomeType .01s linear var(--type-delay) both}
   .doc-page-content.welcome-page .doc-foot{z-index:3;color:rgba(255,255,255,.52)}
   @keyframes welcomeType{to{opacity:1}}
+  .doc-page-content.welcome-page.play .welcome-eyebrow{animation:welcomeTextIn .6s cubic-bezier(.2,.75,.25,1) .05s both}
   .doc-page-content.welcome-page.play .welcome-art-panel{animation:welcomeArtIn .85s cubic-bezier(.2,.75,.25,1) .1s both}
   .doc-page-content.welcome-page.play .welcome-message{animation:welcomeTextIn .7s cubic-bezier(.2,.75,.25,1) .45s both}
   .doc-page-content.welcome-page.play .welcome-values{animation:welcomeTextIn .65s cubic-bezier(.2,.75,.25,1) .75s both}
   @keyframes welcomeArtIn{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 10)) scale(.97)}to{opacity:1;transform:none}}
   @keyframes welcomeTextIn{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 7))}to{opacity:1;transform:none}}
-  @media (prefers-reduced-motion:reduce){.doc-page-content.welcome-page.play .welcome-art-panel,.doc-page-content.welcome-page.play .welcome-message,.doc-page-content.welcome-page.play .welcome-values{animation:none}.welcome-type-char{opacity:1;animation:none!important}}
+  @media (prefers-reduced-motion:reduce){.doc-page-content.welcome-page.play .welcome-eyebrow,.doc-page-content.welcome-page.play .welcome-art-panel,.doc-page-content.welcome-page.play .welcome-message,.doc-page-content.welcome-page.play .welcome-values{animation:none}.welcome-type-char{opacity:1;animation:none!important}}
   .doc-foot{position:absolute;bottom:calc(100cqw / 419.25 * 6);left:calc(100cqw / 419.25 * 14);right:calc(100cqw / 419.25 * 14);display:flex;justify-content:space-between;color:#8090a2;font-size:calc(100cqw / 419.25 * 5.5);letter-spacing:.07em}
   .doc-page-content.play .doc-card,.doc-page-content.play .doc-step{animation:docRise .55s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(var(--n,0)*.05s)}
   @keyframes docRise{from{opacity:0;transform:translateY(calc(100cqw / 419.25 * 4))}to{opacity:1;transform:none}}
@@ -813,7 +811,11 @@
     <div class="page" data-deck="keep"></div>
     <div class="page" data-deck="keep"><img class="pg" src="img/p03.jpg" alt="Page 3">
       <div class="p3c p3" id="p3">
-        <div class="hero rise d1">
+        <div class="brand-intro rise d1">
+          <img src="img/pranvas-logo-lockup.png" alt="PRANVAS — Where Life Finds Care.">
+        </div>
+
+        <div class="hero rise d2">
           <div class="globe">
             <svg viewBox="0 0 66 66" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="33" cy="33" r="21" stroke="#3ddbb0" stroke-width="2" class="draw" pathLength="1"/>
@@ -834,28 +836,6 @@
           </div>
         </div>
 
-        <div class="duo">
-          <div class="card rise d2">
-            <div class="top">
-              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.7">
-                <path d="M6 20.5s-4-4.2-4-7.1a4 4 0 0 1 8 0c0 2.9-4 7.1-4 7.1Z" class="draw" pathLength="1"/><circle cx="6" cy="13.4" r="1.3"/>
-                <path d="M18 9.5s-3.2-3.4-3.2-5.7a3.2 3.2 0 0 1 6.4 0c0 2.3-3.2 5.7-3.2 5.7Z" stroke="#05a5b5" class="draw" pathLength="1"/><circle cx="18" cy="3.9" r="1" stroke="#05a5b5"/>
-                <path d="M9 20.5h4.5a3 3 0 0 0 0-6h-1a3 3 0 0 1 0-6H16" stroke-dasharray="1.6 2.2" stroke="#3ddbb0"/></svg></div>
-              <div><div class="kicker">01 · Healthcare Connections</div><h5 class="serif">Healthcare connections</h5></div>
-            </div>
-            <p>Helping patients explore suitable providers and treatment options.</p>
-          </div>
-          <div class="card rise d3">
-            <div class="top">
-              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0141a3" stroke-width="1.7">
-                <path d="M3 11.2 12 4l9 7.2" class="draw" pathLength="1"/><path d="M5.2 9.6V20h13.6V9.6" class="draw" pathLength="1"/>
-                <path d="M12 17.6s-3.4-2-3.4-4.3a1.9 1.9 0 0 1 3.4-1.1 1.9 1.9 0 0 1 3.4 1.1c0 2.3-3.4 4.3-3.4 4.3Z" fill="#3ddbb0" stroke="#05a5b5" stroke-width="1.2"/></svg></div>
-              <div><div class="kicker">02 · Patient Coordination</div><h5 class="serif">Patient coordination</h5></div>
-            </div>
-            <p>Supporting the journey from inquiry through follow-up.</p>
-          </div>
-        </div>
-
         <div class="journey rise d4">
           <div class="kicker">The PRANVAS patient journey</div>
           <div class="track">
@@ -868,9 +848,8 @@
           </div>
         </div>
 
-        <div class="banner rise d5">
-          <div class="l1 serif">Connecting Patients to Care.</div>
-          <div class="l2 serif">Support Throughout the Patient Journey.</div>
+        <div class="tagline-bar rise d5">
+          <i></i><span>Medical Care, <em>Beyond Borders</em></span><i></i>
         </div>
       </div>
     </div>
@@ -1185,7 +1164,7 @@
     if(pages.length<3) throw new Error('The original introduction page was not found.');
     var welcome=document.createElement('div');
     welcome.className='doc-page-content welcome-page';
-    welcome.innerHTML='<div class="welcome-artstage"><div class="welcome-art-panel"><div class="welcome-art-shadow"></div><img class="welcome-artwork" src="img/welcome-namaste-cutout.png" alt="Traditional Nepali characters greeting with Namaste and a Nepal flag"></div></div><section class="welcome-message"><small data-typewriter>MEDICAL CARE, MADE EASIER TO NAVIGATE</small><div class="namaste" data-typewriter>Namaste</div><h2><span data-typewriter>Welcome to </span><span class="brand" data-typewriter>PRANVAS</span></h2><p data-typewriter>Discover trusted healthcare in Nepal, with thoughtful guidance from your first inquiry through follow-up.</p></section><div class="welcome-values"><div class="welcome-value-pill"><span data-typewriter>TRUSTED PROVIDERS</span></div><div class="welcome-value-pill"><span data-typewriter>PERSONAL GUIDANCE</span></div><div class="welcome-value-pill"><span data-typewriter>SUPPORT THROUGH FOLLOW-UP</span></div></div><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>01 / 21</span></div>';
+    welcome.innerHTML='<div class="welcome-eyebrow" data-typewriter>MEDICAL CARE, MADE EASIER TO NAVIGATE</div><div class="welcome-artstage"><div class="welcome-art-panel"><div class="welcome-art-shadow"></div><img class="welcome-artwork" src="img/welcome-namaste-cutout.png" alt="Traditional Nepali characters greeting with Namaste and a Nepal flag"></div></div><section class="welcome-message"><div class="welcome-namaste-lockup"><div class="namaste" data-typewriter>Namaste</div><svg class="welcome-nepal-flag" viewBox="0 0 46 56" aria-hidden="true"><polygon points="4,4 42,24 18,24 43,52 4,52" fill="#dc143c" stroke="#eef5ff" stroke-width="2.6" stroke-linejoin="miter"/><polygon points="5.5,6.5 38,22.8 15.5,22.8 39.5,50.5 5.5,50.5" fill="#dc143c" stroke="#003893" stroke-width="2" stroke-linejoin="miter"/><path d="M12.2 18.6 A5.2 5.2 0 0 0 21.4 18.6 A4.5 4.5 0 0 1 12.2 18.6 Z" fill="#fff"/><circle cx="16.8" cy="18.2" r="2.2" fill="#fff"/><polygon points="17,31.5 18.4,35 22,33.4 20,36.6 23.6,38.1 20,39.6 22,42.8 18.4,41.2 17,44.7 15.6,41.2 12,42.8 14,39.6 10.4,38.1 14,36.6 12,33.4 15.6,35" fill="#fff"/></svg><svg class="welcome-namaste-swoosh" viewBox="0 0 280 28" preserveAspectRatio="none" aria-hidden="true"><path d="M10 18 C 52 27, 118 4, 198 15 C 122 10, 56 32, 10 18 Z" fill="#e11d3f"/><path d="M204 14 C 228 24, 254 19, 272 5 C 254 24, 226 28, 204 14 Z" fill="#e11d3f"/></svg></div><h2><span data-typewriter>Welcome to </span><span class="brand" data-typewriter>PRANVAS</span></h2><p data-typewriter>Discover trusted healthcare in Nepal, with thoughtful guidance from your first inquiry through follow-up.</p></section><div class="doc-foot"><span>PRANVAS · A PARTNERSHIP PROPOSAL</span><span>01 / 21</span></div>';
     var typeDelay=0;
     Array.prototype.forEach.call(welcome.querySelectorAll('[data-typewriter]'),function(node){
       var text=node.textContent;
@@ -1307,11 +1286,18 @@
     content.classList.add('play');
   }
   // ---- page flip
+  var initialPage = 0;
+  try {
+    var hashMatch = location.hash.match(/page=(\d+)/i);
+    var savedIdx = hashMatch ? (parseInt(hashMatch[1], 10) - 1) : parseInt(sessionStorage.getItem('pranvas_page_index'), 10);
+    if (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < TOTAL) initialPage = savedIdx;
+  } catch (e) {}
   var pageFlip = new St.PageFlip(book, {
     width: 560, height: 795, size: 'stretch',
     minWidth: window.innerWidth < 600 ? Math.floor(wrap.clientWidth * .75) : 100, maxWidth: 1400, minHeight: 140, maxHeight: 1990,
     showCover: true, usePortrait: true, drawShadow: true, maxShadowOpacity: .45,
-    flippingTime: 900, mobileScrollSupport: false, autoSize: true
+    flippingTime: 900, mobileScrollSupport: false, autoSize: true,
+    startPage: initialPage
   });
   pageFlip.loadFromHTML(document.querySelectorAll('#book .page[data-deck="keep"]'));
 
@@ -1343,6 +1329,12 @@
     var vis = visiblePages();
     if(!isPageTurning) syncVideoOverlays(vis);
     count.textContent = vis.map(function(p){return p+1;}).join('–') + ' / ' + TOTAL;
+    try {
+      var curIdx = pageFlip.getCurrentPageIndex();
+      sessionStorage.setItem('pranvas_page_index', String(curIdx));
+      var targetHash = '#page=' + (curIdx + 1);
+      if (location.hash !== targetHash && history.replaceState) history.replaceState(null, '', targetHash);
+    } catch (e) {}
     var now = {}; vis.forEach(function(p){ now[p] = true; });
     if (now[0] && !lastVisible[0]) playTyping();
     if (now[1] && !lastVisible[1]) playProposal(0);
@@ -1423,6 +1415,7 @@
   })).then(function(){
     document.getElementById('loader').remove();
     book.classList.add('ready');
+    if (initialPage > 0 && pageFlip.getCurrentPageIndex() !== initialPage) pageFlip.turnToPage(initialPage);
     update(); center();
     setTimeout(function(){ var h=document.getElementById('hint'); if(h) h.style.opacity=0; }, 6000);
   });
